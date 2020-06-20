@@ -1,5 +1,18 @@
 # mobile-node
+
 PoC Freenet mobile node
+
+## Goals
+
+- Be able to start and stop a node
+- See logs and other basic information
+
+## Non-goals
+
+- Content browser or upload
+- Install plugins
+- Change node configuration
+- Detect wifi/data, on battery/on power
 
 ## How
 
@@ -30,7 +43,7 @@ Once added as libraries we can interact with Freenet:
 
 ## Building
 
-git clone https://github.com/freenet/fred
-cd fred
-./gradlew jar
- > copy build/libs/freenet.jar
+    git clone https://github.com/freenet/fred
+    cd fred
+    ./gradlew jar
+     > copy build/libs/freenet.jar
