@@ -40,11 +40,11 @@ dependencies {
 
     implementation files('libs/freenet.jar')
 
-    implementation files('libs/wrapper.jar')
     implementation files('libs/freenet-ext.jar')
-    implementation files('libs/bcprov-jdk15on-1.59.jar')
     implementation files('libs/mantissa-7.2.jar')
 
+    implementation "tanukisoft:wrapper:3.2.3"
     implementation "net.java.dev.jna:jna:4.2.2"
     implementation "net.java.dev.jna:jna-platform:4.2.2"
+    implementation "org.bouncycastle:bcprov-jdk15on:1.59"
 }
