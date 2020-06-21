@@ -40,9 +40,9 @@ Once added as libraries we can interact with Freenet:
 
 Additionally we found that some changes would be required to interact with the filesystem. Some cryprographic function need some work to make it work as well.
 
-All this work is being done at https://github.com/desyncr/fred/tree/mobile-node and slightly documented here: https://github.com/desyncr/fred/blob/mobile-node/building-fred.md.
+All this work is being done at [mobile-node](https://github.com/desyncr/fred/tree/mobile-node) branch and slightly documented [here](https://github.com/desyncr/fred/blob/mobile-node/building-fred.md).
 
-A log of the node (trying to) run: https://gist.github.com/desyncr/3c2f0316495732b03f367ed47daad03b
+A log of the node (trying to) running can be seen [here](https://gist.github.com/desyncr/3c2f0316495732b03f367ed47daad03b).
 
 ### Limitations
 
