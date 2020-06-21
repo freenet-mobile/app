@@ -50,7 +50,8 @@ A log of the node (trying to) running can be seen [here](https://gist.github.com
 
 ## Building
 
-    git clone https://github.com/freenet/fred
+    git clone https://github.com/desyncr/fred
     cd fred
+    git checkout mobile-node
     ./gradlew jar
      > copy build/libs/freenet.jar
