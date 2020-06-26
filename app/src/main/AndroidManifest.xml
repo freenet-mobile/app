@@ -13,10 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <service
-            android:name=".Fred"
-            android:enabled="true"
-            android:exported="true"></service>
+        <service android:name=".FreenetService"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="org.freenetproject.mobilenode.intent.action.START_NODE">
+                </action>
+                <action android:name="org.freenetproject.mobilenode.intent.action.STOP_NODE">
+                </action>
+            </intent-filter>
+        </service>
 
         <activity
             android:name=".MainActivity"
