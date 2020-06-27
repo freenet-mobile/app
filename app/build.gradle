@@ -1,5 +1,11 @@
 apply plugin: 'com.android.application'
 
+repositories {
+    mavenLocal()
+    maven { url 'https://mvn.freenetproject.org' }
+    jcenter()
+}
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.0"
@@ -39,13 +45,19 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui:2.1.0'
     implementation 'com.android.support:multidex:1.0.3'
 
+    implementation 'org.bouncycastle:bcpkix-jdk15on:1.59'
+    implementation "org.bouncycastle:bcprov-jdk15on:1.59"
+
     implementation "tanukisoft:wrapper:3.2.3"
     implementation "net.java.dev.jna:jna:4.2.2"
     implementation "net.java.dev.jna:jna-platform:4.2.2"
+    implementation "org.apache.commons:commons-compress:1.14"
 
-    implementation 'com.madgag.spongycastle:bcpkix-jdk15on:1.58.0.0'
-    implementation 'com.madgag.spongycastle:bcpg-jdk15on:1.58.0.0'
-    implementation "org.apache.commons:commons-compress:1.4.1"
+    implementation files('libs/onion-common.jar')
+    implementation files('libs/freenet-ext.jar')
+    implementation files('libs/mantissa-7.2.jar')
+    implementation files('libs/freenet.jar')
+    implementation files('libs/lzmajio.jar')
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
