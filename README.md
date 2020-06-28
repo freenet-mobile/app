@@ -50,8 +50,28 @@ A log of the node (trying to) running can be seen [here](https://gist.github.com
 
 ## Building
 
-    git clone https://github.com/desyncr/fred
-    cd fred
-    git checkout mobile-node
-    ./gradlew jar
+If you don't want to use the provided jars you can build them manually:
+
+Fred:
+
+     git clone https://github.com/desyncr/fred
+     cd fred
+     git checkout mobile-node
+     ./gradlew jar
      > copy build/libs/freenet.jar
+     
+
+Freenet-ext:
+
+     git clone https://github.com/desyncr/contrib
+     cd contrib/freenet-ext
+     git checkout package-unbundled
+     ant package-unbundled
+     
+lzmajio, mantissa-7.2, onion-common: Build them on the contrib directory.
+
+Then you can build the application APK:
+
+    ./gradlew build
+    
+The APK can be found at: app/build/outputs/apk/*/
