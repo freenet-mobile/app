@@ -4,7 +4,6 @@ PoC Freenet mobile node: https://trello.com/b/gA60mTAo/freenet-mnode
 
 
 ![](https://github.com/desyncr/mobile-node/blob/master/docs/main.png?raw=true)
-![](https://github.com/desyncr/mobile-node/blob/master/docs/running.png?raw=true)
 
 ## Goals
 
