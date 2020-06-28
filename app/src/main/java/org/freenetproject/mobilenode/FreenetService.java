@@ -34,9 +34,7 @@ public class FreenetService extends Service {
         updateStatus("Starting up...");
         doStart();
         return Service.START_NOT_STICKY;
-
     }
-
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
@@ -103,6 +101,7 @@ public class FreenetService extends Service {
     @Override
     public void onDestroy() {
         doStop();
+        updateStatus("");
         super.onDestroy();
     }
 
@@ -112,8 +111,8 @@ public class FreenetService extends Service {
     }
 
     private synchronized void doStart() {
-        Log.i("Freenet", "=== doStart === " + running);
         if (!running) {
+            Log.i("Freenet", "=== doStart === " + running);
             if (!FREENET_INI_PATH.exists()) {
                 try {
                     final FileOutputStream ini = openFileOutput("freenet.ini", MODE_PRIVATE);
@@ -153,8 +152,8 @@ public class FreenetService extends Service {
     }
 
     private synchronized void doStop() {
-        Log.i("Freenet", "=== doStop === " + running);
         if (running) {
+            Log.i("Freenet", "=== doStop === " + running);
             Thread t = new Thread(new Runnable() {
                 @Override
                 public void run() {

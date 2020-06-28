@@ -19,12 +19,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
 import java.util.Objects;
 
-import freenet.node.NodeStarter;
+import freenet.support.Logger;
 
 public class MainActivity extends AppCompatActivity {
     FreenetStatusReceiver receiver;
@@ -42,7 +39,11 @@ public class MainActivity extends AppCompatActivity {
     {
         super.onStop();
         this.startNode();
-        unregisterReceiver(receiver);
+        try {
+            unregisterReceiver(receiver);
+        } catch (Exception e) {
+            Logger.error(this, "Failed to unregister receiver");
+        }
     }
 
     @Override
@@ -92,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
                 TextView detailText = (TextView) findViewById(R.id.detailText);
                 if (status.equals("Running")) {
                     detailText.setText("Navigate to 127.0.0.1:8888 to access Freenet");
-                } else if (!detailText.getText().equals("")){
+                } else {
                     detailText.setText("");
                 }
             }

@@ -32,8 +32,8 @@ public class FirstFragment extends Fragment {
                     ((MainActivity) getActivity()).startNode();
                     controlButton.setText("Shutdown");
                 } else {
-                    controlButton.setText("Start");
                     ((MainActivity) getActivity()).stopNode();
+                    controlButton.setText("Start");
                 }
             }
         });
