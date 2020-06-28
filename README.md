@@ -1,6 +1,6 @@
 # mobile-node
 
-PoC Freenet mobile node
+PoC Freenet mobile node: https://trello.com/b/gA60mTAo/freenet-mnode
 
 ## Goals
 
