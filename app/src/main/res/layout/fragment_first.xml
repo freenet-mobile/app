@@ -4,25 +4,70 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FirstFragment">
+    tools:context=".FirstFragment" android:background="#1b3e7d" >
 
     <TextView
-        android:id="@+id/textview_first"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_first_fragment"
-        app:layout_constraintBottom_toTopOf="@id/button_first"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button_first"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/next"
+        android:id="@+id/textView"
+        android:layout_width="179dp"
+        android:layout_height="107dp"
+        android:capitalize="characters"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:gravity="center"
+        android:text="Freenet"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="46sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_first" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.618" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="344dp"
+        android:layout_height="243dp"
+        android:src="@drawable/ic_freenet_logo"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.86" />
+
+    <TextView
+        android:id="@+id/freenetStatus"
+        android:layout_width="238dp"
+        android:layout_height="21dp"
+        android:gravity="center"
+        android:text=""
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/controlButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start"
+        app:layout_constraintBottom_toTopOf="@+id/freenetStatus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/detailText"
+        android:layout_width="329dp"
+        android:layout_height="67dp"
+        android:ems="10"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/freenetStatus" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

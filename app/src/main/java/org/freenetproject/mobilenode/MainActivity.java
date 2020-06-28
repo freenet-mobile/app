@@ -1,7 +1,13 @@
 package org.freenetproject.mobilenode;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.os.Build;
 import android.os.Bundle;
+
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -10,32 +16,33 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import java.util.Objects;
+
 import freenet.node.NodeStarter;
 
 public class MainActivity extends AppCompatActivity {
+    FreenetStatusReceiver receiver;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Intent serviceIntent = new Intent(this,FreenetService.class);
-        this.startService(serviceIntent);
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, freenet.node.Version.getVersionString(), Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        receiver = new FreenetStatusReceiver();
+        registerReceiver(receiver, new IntentFilter("STATUS"));
+    }
 
+    @Override
+    public void onStop()
+    {
+        super.onStop();
+        this.startNode();
+        unregisterReceiver(receiver);
     }
 
     @Override
@@ -58,5 +65,37 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void startNode() {
+        Intent serviceIntent = new Intent(this, FreenetService.class);
+        this.startService(serviceIntent);
+    }
+
+    public void stopNode() {
+        Intent serviceIntent = new Intent(this, FreenetService.class);
+        this.stopService(serviceIntent);
+    }
+
+    class FreenetStatusReceiver extends BroadcastReceiver {
+
+        @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+        @Override
+        public void onReceive(Context context, Intent intent) {
+
+            if (Objects.equals(intent.getAction(), "STATUS"))
+            {
+                TextView textView = (TextView) findViewById(R.id.freenetStatus);
+                String status = intent.getStringExtra("STATUS_HUMAN_READABLE");
+                textView.setText(status);
+
+                TextView detailText = (TextView) findViewById(R.id.detailText);
+                if (status.equals("Running")) {
+                    detailText.setText("Navigate to 127.0.0.1:8888 to access Freenet");
+                } else if (!detailText.getText().equals("")){
+                    detailText.setText("");
+                }
+            }
+        }
     }
 }

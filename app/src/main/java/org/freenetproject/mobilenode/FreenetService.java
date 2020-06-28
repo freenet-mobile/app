@@ -31,9 +31,12 @@ public class FreenetService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        updateStatus("Starting up...");
         doStart();
         return Service.START_NOT_STICKY;
+
     }
+
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
@@ -43,8 +46,11 @@ public class FreenetService extends Service {
         DATA_DIR = getDir("data", MODE_PRIVATE);
         LOG_DIR = getDir("logs", MODE_PRIVATE);
 
+        updateStatus("Setting up BouncyCastle...");
         this.setupBundledBCProvider();
+        updateStatus("Setting up Seednodes...");
         this.createSeednodesFile();
+        updateStatus("Done setup");
     }
 
     /**
@@ -135,8 +141,11 @@ public class FreenetService extends Service {
                     synchronized(FreenetService.this) {
                         running = true;
                     }
+
+                    updateStatus("Starting node...");
                     NodeStarter.start_osgi(new String[] { FREENET_INI_PATH.getAbsolutePath() });
                     Log.i("Freenet", "==> NodeStarter.start thread returned");
+                    updateStatus("Running");
                 }
             });
             t.start();
@@ -152,11 +161,20 @@ public class FreenetService extends Service {
                     synchronized(FreenetService.this) {
                         running = false;
                     }
+                    updateStatus("Stopping node...");
                     NodeStarter.stop_osgi(0);
                     Log.i("Freenet", "==> NodeStarter.stop thread returned");
+                    updateStatus("");
                 }
             });
             t.start();
         }
+    }
+
+    private void updateStatus(String message) {
+        Intent i = new Intent();
+        i.setAction("STATUS");
+        i.putExtra("STATUS_HUMAN_READABLE", message);
+        sendBroadcast(i);
     }
 }
