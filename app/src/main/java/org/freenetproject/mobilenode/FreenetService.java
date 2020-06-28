@@ -2,16 +2,26 @@ package org.freenetproject.mobilenode;
 
 import android.app.Service;
 import android.content.Intent;
+import android.os.Build;
 import android.os.IBinder;
 import android.util.Log;
+
+import androidx.annotation.RequiresApi;
+
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
+import java.security.Security;
 
 import freenet.node.NodeStarter;
+import freenet.support.Logger;
 
 public class FreenetService extends Service {
     private boolean running = false;
@@ -25,12 +35,63 @@ public class FreenetService extends Service {
         return Service.START_NOT_STICKY;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onCreate() {
         super.onCreate();
         FREENET_INI_PATH = getFileStreamPath("freenet.ini");
         DATA_DIR = getDir("data", MODE_PRIVATE);
         LOG_DIR = getDir("logs", MODE_PRIVATE);
+
+        this.setupBundledBCProvider();
+        this.createSeednodesFile();
+    }
+
+    /**
+     * Replace Android's BC provider with the bundled version.
+     *
+     * @return
+     */
+    private int setupBundledBCProvider() {
+        Security.removeProvider("BC");
+
+        return Security.insertProviderAt(new BouncyCastleProvider(), 1);
+    }
+
+    /**
+     * Creates the seednodes.fref file in order for the node to bootstrap into the network.
+     *
+     * @return Boolean true if the seednodes file exists or was created successfully, false otherwise.
+     */
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private boolean createSeednodesFile() {
+        InputStream seednodes = this.getResources().openRawResource(R.raw.seednodes);
+
+        File f = new File(DATA_DIR + "/seednodes.fref");
+        if (f.exists()) {
+            return true;
+        }
+
+        try {
+            if (!f.createNewFile()) {
+                Logger.error(this, "Failed to call createNewFile.");
+                return false;
+            }
+        } catch (IOException e) {
+            Logger.error(this, "Failed to create temporary file for seednodes.");
+            Logger.error(this, e.getMessage());
+            return false;
+        }
+
+        try {
+            Files.copy(seednodes, f.toPath(), StandardCopyOption.REPLACE_EXISTING);
+        } catch (IOException e) {
+            Logger.error(this, "Failed to copy temporary file for seednodes.");
+            Logger.error(this, e.getMessage());
+            return false;
+        }
+
+        return true;
     }
 
     @Override
