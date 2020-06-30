@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -92,9 +93,18 @@ public class MainActivity extends AppCompatActivity {
 
                 TextView detailText = (TextView) findViewById(R.id.detailText);
                 if (status.equals("Running")) {
-                    detailText.setText("Navigate to 127.0.0.1:8888 to access Freenet");
+                    detailText.setText("Click to Navigate Freenet");
+                    detailText.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent i = new Intent(Intent.ACTION_VIEW);
+                            i.setData(Uri.parse("http://127.0.0.1:8888/"));
+                            startActivity(i);
+                        }
+                    });
                 } else {
                     detailText.setText("");
+                    detailText.setOnClickListener(null);
                 }
             }
         }
