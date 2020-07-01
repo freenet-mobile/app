@@ -134,7 +134,7 @@ public class FreenetService extends Service {
         return builder
                 .setContentTitle("Freenet service")
                 .setContentText("Freenet service is running in background.")
-                .setSmallIcon(R.drawable.ic_freenet_logo)
+                .setSmallIcon(R.drawable.ic_freenet_logo_notification)
                 .build();
     }
 
