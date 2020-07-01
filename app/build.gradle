@@ -51,7 +51,7 @@ dependencies {
     implementation "tanukisoft:wrapper:3.2.3"
     implementation "net.java.dev.jna:jna:4.2.2"
     implementation "net.java.dev.jna:jna-platform:4.2.2"
-    implementation "org.apache.commons:commons-compress:1.14"
+    implementation "org.apache.commons:commons-compress:1.4.1"
 
     implementation files('libs/onion-common.jar')
     implementation files('libs/freenet-ext.jar')
