@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
     public void onStop()
     {
         super.onStop();
-        this.startNode();
         try {
             unregisterReceiver(receiver);
         } catch (Exception e) {
