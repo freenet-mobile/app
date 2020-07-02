@@ -105,6 +105,7 @@ public class FreenetService extends Service {
         out.println("node.masterKeyFile=" + data + "/master.keys");
         out.println("node.install.storeDir=" + data + "/datastore");
         out.println("node.install.userDir=" + data);
+        out.println("node.storePreallocate=false");
         out.println("node.install.pluginStoresDir=" + data + "/plugin-data");
         out.println("node.install.tempDir=" + data + "/temp");
         out.println("node.install.nodeDir=" + data);

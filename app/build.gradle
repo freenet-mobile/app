@@ -56,8 +56,8 @@ dependencies {
     implementation files('libs/onion-common.jar')
     implementation files('libs/freenet-ext.jar')
     implementation files('libs/mantissa-7.2.jar')
-    implementation files('libs/freenet.jar')
     implementation files('libs/lzmajio.jar')
+    implementation files('libs/freenet.jar')
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
