@@ -102,6 +102,7 @@ public class FreenetService extends Service {
 
         out.println("node.install.persistentTempDir=" + data + "/persistent-temp");
         out.println("node.install.cfgDir=" + data);
+        out.println("node.masterKeyFile=" + data + "/master.keys");
         out.println("node.install.storeDir=" + data + "/datastore");
         out.println("node.install.userDir=" + data);
         out.println("node.install.pluginStoresDir=" + data + "/plugin-data");
