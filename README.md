@@ -1,6 +1,6 @@
 # Freenet Mobile
 
-Access Freenet from the palm of your hand.
+Access [Freenet][7] from the palm of your hand.
 
 [![Screenshot 1][screen1thumb]][screen1] [![Screenshot 2][screen2thumb]][screen2] [![Screenshot 3][screen3thumb]][screen3]
 
@@ -36,6 +36,7 @@ The project is licensed under the [GNU GPL v3][2] license.
   [4]: https://github.com/desyncr/mobile-node/issues
   [5]: https://github.com/desyncr/mobile-node/releases
   [6]: https://www.lifewire.com/install-apk-on-android-4177185
+  [7]: https://freenetproject.org/
   [screen1]: docs/screenshot_1.png
   [screen1thumb]:  docs/screenshot_1_thumb.png
   [screen2]: docs/screenshot_2.png
