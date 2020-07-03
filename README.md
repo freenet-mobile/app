@@ -1,80 +1,36 @@
-# mobile-node
+# Freenet Mobile
 
-PoC Freenet mobile node: https://trello.com/b/gA60mTAo/freenet-mnode
+Access Freenet from the palm of your hand.
 
+# Features
 
-![](https://github.com/desyncr/mobile-node/blob/master/docs/main.png?raw=true)
+- **Simple and intuitive interface** for controlling the node: start and stop with a single tap.
 
-## Goals
+- **Runs on background** for better performance to access content.
 
-- Be able to start and stop a node
-- See logs and other basic information
+# Installing
 
-## Non-goals
+See the [release page][5] for the latest release. Follow the [steps to install][6] an APK in your Android device.
 
-- Content browser or upload
-- Install plugins
-- Change node configuration
-- Detect wifi/data, on battery/on power
+# Contributing
 
-## How
+[Freenet][3] and [Freenet Mobile][1] are open source projects developed entirely by volunteers. If you would like to contribute to the project, you are very welcome.
 
-By adding freenet.jar, wrapper.jar and other jars as dependences to gradle:
+There are many ways to contribute:
 
+- Report bugs, suggest features: The easiest way to contribute is to simply use the app and let us know if you find any problems or have any suggestions to improve it.
 
-    dependencies {
-        ...
-        implementation files('libs/freenet.jar')
-        ...   
-    }   
+- Write some code: If you are a Java or Android developer, you are very welcome to contribute with code. See the [issues][4] and [project pages][1].
 
-Once added as libraries we can interact with Freenet:
+- Spread the word: If you like the Freenet share it with the world. You can also create content on Freenet.
 
+# License
 
-    public class MainActivity extends AppCompatActivity {
+The project is licensed under the [GNU GPL v3][2] license.
 
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-
-            freenet.node.NodeStarter.main(args);
-
-        }    
-
-
-Additionally we found that some changes would be required to interact with the filesystem. Some cryprographic function need some work to make it work as well.
-
-All this work is being done at [mobile-node](https://github.com/desyncr/fred/tree/mobile-node) branch and slightly documented [here](https://github.com/desyncr/fred/blob/mobile-node/building-fred.md).
-
-A log of the node (trying to) running can be seen [here](https://gist.github.com/desyncr/3c2f0316495732b03f367ed47daad03b).
-
-### Limitations
-
-- Node won't be able to self update (in theory)
-
-## Building
-
-If you don't want to use the provided jars you can build them manually:
-
-Fred:
-
-     git clone https://github.com/desyncr/fred
-     cd fred
-     git checkout mobile-node
-     ./gradlew jar
-     > copy build/libs/freenet.jar
-     
-
-Freenet-ext:
-
-     git clone https://github.com/desyncr/contrib
-     cd contrib/freenet-ext
-     git checkout package-unbundled
-     ant package-unbundled
-     
-lzmajio, mantissa-7.2, onion-common: Build them on the contrib directory.
-
-Then you can build the application APK:
-
-    ./gradlew build
-    
-The APK can be found at: app/build/outputs/apk/*/
+  [1]: https://github.com/desyncr/mobile-node/
+  [2]: http://www.gnu.org/licenses/gpl.html
+  [3]: https://github.com/freenet
+  [4]: https://github.com/desyncr/mobile-node/issues
+  [5]: https://github.com/desyncr/mobile-node/releases
+  [6]: https://www.lifewire.com/install-apk-on-android-4177185
