@@ -2,6 +2,8 @@
 
 Access Freenet from the palm of your hand.
 
+[![Screenshot 1][screen1thumb]][screen1] [![Screenshot 2][screen2thumb]][screen2] [![Screenshot 3][screen3thumb]][screen3]
+
 # Features
 
 - **Simple and intuitive interface** for controlling the node: start and stop with a single tap.
@@ -34,3 +36,9 @@ The project is licensed under the [GNU GPL v3][2] license.
   [4]: https://github.com/desyncr/mobile-node/issues
   [5]: https://github.com/desyncr/mobile-node/releases
   [6]: https://www.lifewire.com/install-apk-on-android-4177185
+  [screen1]: docs/screenshot_1.png
+  [screen1thumb]:  docs/screenshot_1_thumb.png
+  [screen2]: docs/screenshot_2.png
+  [screen2thumb]:  docs/screenshot_2_thumb.png
+  [screen3]: docs/screenshot_3.png
+  [screen3thumb]:  docs/screenshot_3_thumb.png
