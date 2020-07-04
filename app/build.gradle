@@ -4,6 +4,14 @@ repositories {
     mavenLocal()
     maven { url 'https://mvn.freenetproject.org' }
     jcenter()
+    maven {
+        name = "GitHubPackages"
+        url = uri("https://maven.pkg.github.com/desyncr/fred")
+        credentials {
+            username = System.getenv("USERNAME")
+            password = System.getenv("TOKEN")
+        }
+    }
 }
 
 android {
@@ -37,7 +45,6 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
@@ -53,11 +60,13 @@ dependencies {
     implementation "net.java.dev.jna:jna-platform:4.2.2"
     implementation "org.apache.commons:commons-compress:1.4.1"
 
-    implementation files('libs/onion-common.jar')
-    implementation files('libs/freenet-ext.jar')
-    implementation files('libs/mantissa-7.2.jar')
-    implementation files('libs/lzmajio.jar')
-    implementation files('libs/freenet.jar')
+    implementation 'com.github.desyncr:mantissa:0.0.1-SNAPSHOT'
+    implementation "org.b1.pack:lzma-sdk-4j:9.22.0"
+    implementation "com.github.desyncr:lzmajio:0.0.1-SNAPSHOT"
+    implementation 'com.github.desyncr:onion-common:0.0.1-SNAPSHOT'
+    implementation 'com.github.desyncr:onion-fec:0.0.1-SNAPSHOT'
+    implementation 'com.github.desyncr:freenet-ext:0.60.0-SNAPSHOT'
+    implementation 'com.github.desyncr:fred:build01485-32-gc0655'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
