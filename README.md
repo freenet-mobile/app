@@ -30,11 +30,11 @@ There are many ways to contribute:
 
 The project is licensed under the [GNU GPL v3][2] license.
 
-  [1]: https://github.com/desyncr/mobile-node/
+  [1]: https://github.com/desyncr/freenet-mobile/
   [2]: http://www.gnu.org/licenses/gpl.html
   [3]: https://github.com/freenet
-  [4]: https://github.com/desyncr/mobile-node/issues
-  [5]: https://github.com/desyncr/mobile-node/releases
+  [4]: https://github.com/desyncr/freenet-mobile/issues
+  [5]: https://github.com/desyncr/freenet-mobile/releases
   [6]: https://www.lifewire.com/install-apk-on-android-4177185
   [7]: https://freenetproject.org/
   [screen1]: docs/screenshot_1.png
