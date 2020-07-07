@@ -8,6 +8,6 @@
     <fragment
         android:id="@+id/FirstFragment"
         android:name="org.freenetproject.mobilenode.FirstFragment"
-        android:label="@string/first_fragment_label"
+        android:label=""
         tools:layout="@layout/fragment_first"/>
 </navigation>
