@@ -8,15 +8,16 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="179dp"
-        android:layout_height="107dp"
+        android:layout_width="216dp"
+        android:layout_height="96dp"
         android:capitalize="characters"
         android:fontFamily="sans-serif-condensed-medium"
         android:gravity="center"
         android:text="Freenet"
         android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#FFFFFF"
-        android:textSize="46sp"
+        android:textSize="32sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,15 +26,14 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="344dp"
-        android:layout_height="243dp"
+        android:layout_width="302dp"
+        android:layout_height="224dp"
         android:src="@drawable/ic_freenet_logo"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.86" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/freenetStatus"

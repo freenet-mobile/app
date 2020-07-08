@@ -13,8 +13,7 @@ import android.os.Build;
 import android.os.IBinder;
 import android.util.Log;
 
-import androidx.annotation.RequiresApi;
-
+import org.apache.commons.compress.utils.IOUtils;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
 import java.io.File;
@@ -22,10 +21,9 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
-import java.nio.file.Files;
-import java.nio.file.StandardCopyOption;
 import java.security.Security;
 
 import freenet.node.NodeStarter;
@@ -49,7 +47,6 @@ public class FreenetService extends Service {
 
     private Boolean isServiceStarted = false;
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         if (isServiceStarted) {
@@ -70,7 +67,6 @@ public class FreenetService extends Service {
         return Service.START_STICKY;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onCreate() {
         super.onCreate();
@@ -80,7 +76,11 @@ public class FreenetService extends Service {
 
         updateStatus(ServiceStatus.SETUP, "Setting up dependencies...");
         this.setupBundledBCProvider();
-        this.createConfiguration(R.raw.seednodes, data_dir + "/seednodes.fref");
+        try {
+            this.createConfiguration(R.raw.seednodes, data_dir + "/seednodes.fref");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
         freenet_config = new File(data_dir + "/" + FREENET_CONFIG_FILE);
         if (!freenet_config.exists()) {
             try {
@@ -91,7 +91,6 @@ public class FreenetService extends Service {
         }
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     private void createDefaultConfiguration() throws FileNotFoundException {
         final String data = data_dir.getAbsolutePath();
 
@@ -117,16 +116,19 @@ public class FreenetService extends Service {
         out.close();
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     private Notification createNotification() {
         final String CHANNEL_ID = "FREENET SERVICE";
 
         NotificationManager nm = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        NotificationChannel nc = new NotificationChannel(CHANNEL_ID, "Freenet service", NotificationManager.IMPORTANCE_HIGH);
-        nc.setDescription("Freenet service");
-        nc.enableLights(true);
-        nc.setLightColor(Color.BLUE);
-        nm.createNotificationChannel(nc);
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            NotificationChannel nc = null;
+            nc = new NotificationChannel(CHANNEL_ID, "Freenet service", NotificationManager.IMPORTANCE_HIGH);
+            nc.setDescription("Freenet service");
+            nc.enableLights(true);
+            nc.setLightColor(Color.BLUE);
+            nm.createNotificationChannel(nc);
+        }
 
         Notification.Builder builder;
         if (android.os.Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
@@ -158,8 +160,7 @@ public class FreenetService extends Service {
      *
      * @return Boolean true if the seednodes file exists or was created successfully, false otherwise.
      */
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    private boolean createConfiguration(int res, String filename) {
+    private boolean createConfiguration(int res, String filename) throws FileNotFoundException {
         InputStream seednodes = this.getResources().openRawResource(res);
 
         File f = new File(filename);
@@ -178,8 +179,10 @@ public class FreenetService extends Service {
             return false;
         }
 
+        OutputStream outputStream = new FileOutputStream(f);
+
         try {
-            Files.copy(seednodes, f.toPath(), StandardCopyOption.REPLACE_EXISTING);
+            IOUtils.copy(seednodes, outputStream);
         } catch (IOException e) {
             Log.e("Freenet", "Failed to copy temporary file.");
             Log.e("Freenet", e.getMessage());
