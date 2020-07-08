@@ -14,6 +14,8 @@ Access [Freenet][7] from the palm of your hand.
 
 See the [release page][5] for the latest release. Follow the [steps to install][6] an APK in your Android device.
 
+*Important*: Currently only supporting Android Oreo.
+
 # Contributing
 
 [Freenet][3] and [Freenet Mobile][1] are open source projects developed entirely by volunteers. If you would like to contribute to the project, you are very welcome.
