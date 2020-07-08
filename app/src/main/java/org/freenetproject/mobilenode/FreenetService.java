@@ -75,11 +75,13 @@ public class FreenetService extends Service {
     public void onCreate() {
         super.onCreate();
 
-        freenet_config = getFileStreamPath(FREENET_CONFIG_FILE);
         data_dir = getDir(DATA_PATH, MODE_PRIVATE);
-
         log_dir = getDir(LOG_PATH, MODE_PRIVATE);
 
+        updateStatus(ServiceStatus.SETUP, "Setting up dependencies...");
+        this.setupBundledBCProvider();
+        this.createConfiguration(R.raw.seednodes, data_dir + "/seednodes.fref");
+        freenet_config = new File(data_dir + "/" + FREENET_CONFIG_FILE);
         if (!freenet_config.exists()) {
             try {
                 createDefaultConfiguration();
@@ -87,31 +89,31 @@ public class FreenetService extends Service {
                 e.printStackTrace();
             }
         }
-
-        updateStatus(ServiceStatus.SETUP, "Setting up dependencies...");
-        this.setupBundledBCProvider();
-        this.createSeednodesFile();
-
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     private void createDefaultConfiguration() throws FileNotFoundException {
-        final FileOutputStream ini = openFileOutput(FREENET_CONFIG_FILE, MODE_PRIVATE);
-        final PrintWriter out = new PrintWriter(new OutputStreamWriter(ini));
         final String data = data_dir.getAbsolutePath();
-        final String log = log_dir.getAbsolutePath();
+
+        this.createConfiguration(R.raw.freenet, data + "/" + FREENET_CONFIG_FILE);
+
+        final FileOutputStream ini = new FileOutputStream(data + "/" + FREENET_CONFIG_FILE, true);
+        final PrintWriter out = new PrintWriter(new OutputStreamWriter(ini));
 
         out.println("node.install.persistentTempDir=" + data + "/persistent-temp");
         out.println("node.install.cfgDir=" + data);
         out.println("node.masterKeyFile=" + data + "/master.keys");
         out.println("node.install.storeDir=" + data + "/datastore");
         out.println("node.install.userDir=" + data);
-        out.println("node.storePreallocate=false");
         out.println("node.install.pluginStoresDir=" + data + "/plugin-data");
         out.println("node.install.tempDir=" + data + "/temp");
         out.println("node.install.nodeDir=" + data);
         out.println("node.install.pluginDir=" + data + "/plugins");
         out.println("node.install.runDir=" + data);
-        out.println("logger.dirname=" + log);
+        out.println("node.downloadsDir=" + data + "/downloads");
+
+        out.println("logger.dirname=" + log_dir.getAbsolutePath());
+        out.println("End");
         out.close();
     }
 
@@ -135,7 +137,7 @@ public class FreenetService extends Service {
 
         return builder
                 .setContentTitle("Freenet service")
-                .setContentText("Freenet service is running in background.")
+                .setContentText("Freenet service is running.")
                 .setSmallIcon(R.drawable.ic_freenet_logo_notification)
                 .build();
     }
@@ -143,7 +145,7 @@ public class FreenetService extends Service {
     /**
      * Replace Android's BC provider with the bundled version.
      *
-     * @return
+     * @return Return the position where the provider was inserted
      */
     private int setupBundledBCProvider() {
         Security.removeProvider("BC");
@@ -157,10 +159,10 @@ public class FreenetService extends Service {
      * @return Boolean true if the seednodes file exists or was created successfully, false otherwise.
      */
     @RequiresApi(api = Build.VERSION_CODES.O)
-    private boolean createSeednodesFile() {
-        InputStream seednodes = this.getResources().openRawResource(R.raw.seednodes);
+    private boolean createConfiguration(int res, String filename) {
+        InputStream seednodes = this.getResources().openRawResource(res);
 
-        File f = new File(data_dir + "/seednodes.fref");
+        File f = new File(filename);
         if (f.exists()) {
             return true;
         }
@@ -171,7 +173,7 @@ public class FreenetService extends Service {
                 return false;
             }
         } catch (IOException e) {
-            Log.e("Freenet", "Failed to create temporary file for seednodes.");
+            Log.e("Freenet", "Failed to create temporary file.");
             Log.e("Freenet", e.getMessage());
             return false;
         }
@@ -179,7 +181,7 @@ public class FreenetService extends Service {
         try {
             Files.copy(seednodes, f.toPath(), StandardCopyOption.REPLACE_EXISTING);
         } catch (IOException e) {
-            Log.e("Freenet", "Failed to copy temporary file for seednodes.");
+            Log.e("Freenet", "Failed to copy temporary file.");
             Log.e("Freenet", e.getMessage());
             return false;
         }
