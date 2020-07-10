@@ -32,7 +32,7 @@ There are many ways to contribute:
 
 The project is licensed under the [GNU GPL v3][2] license.
 
-  [1]: https://github.com/desyncr/freenet-mobile/
+  [1]: https://trello.com/b/gA60mTAo/freenet-mnode
   [2]: http://www.gnu.org/licenses/gpl.html
   [3]: https://github.com/freenet
   [4]: https://github.com/desyncr/freenet-mobile/issues
