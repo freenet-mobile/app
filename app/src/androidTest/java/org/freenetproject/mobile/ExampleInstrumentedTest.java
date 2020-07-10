@@ -1,4 +1,4 @@
-package org.freenetproject.mobilenode;
+package org.freenetproject.mobile;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("org.freenetproject.mobilenode", appContext.getPackageName());
+        assertEquals("org.freenetproject.mobile", appContext.getPackageName());
     }
 }

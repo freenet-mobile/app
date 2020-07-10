@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FirstFragment" android:background="#1b3e7d" >
+    tools:context=".ui.main.activity.MainFragment" android:background="#1b3e7d" >
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="216dp"
-        android:layout_height="96dp"
+        android:layout_width="222dp"
+        android:layout_height="48dp"
         android:capitalize="characters"
         android:fontFamily="sans-serif-condensed-medium"
         android:gravity="center"
@@ -20,14 +20,15 @@
         android:textSize="32sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.618" />
+        app:layout_constraintVertical_bias="0.55" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="302dp"
-        android:layout_height="224dp"
+        android:layout_width="272dp"
+        android:layout_height="194dp"
         android:src="@drawable/ic_freenet_logo"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,14 +45,18 @@
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.429" />
 
-    <Button
+    <ToggleButton
         android:id="@+id/controlButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Start"
+        android:textOff="Start"
+        android:textOn="Shutdown"
         app:layout_constraintBottom_toTopOf="@+id/freenetStatus"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -60,14 +65,15 @@
 
     <TextView
         android:id="@+id/detailText"
-        android:layout_width="329dp"
-        android:layout_height="67dp"
+        android:layout_width="335dp"
+        android:layout_height="63dp"
         android:ems="10"
-        android:gravity="center"
+        android:gravity="center|top"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/freenetStatus" />
+        app:layout_constraintTop_toBottomOf="@+id/freenetStatus"
+        app:layout_constraintVertical_bias="0.242" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

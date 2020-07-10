@@ -1,4 +1,4 @@
-package org.freenetproject.mobilenode;
+package org.freenetproject.mobile;
 
 import org.junit.Test;
 
