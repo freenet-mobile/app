@@ -14,7 +14,7 @@ Access [Freenet][7] from the palm of your hand.
 
 See the [release page][5] for the latest release. Follow the [steps to install][6] an APK in your Android device.
 
-Android KitKat or newer required.
+Android 5.0 "Lollipop" or newer required.
 
 # Contributing
 
