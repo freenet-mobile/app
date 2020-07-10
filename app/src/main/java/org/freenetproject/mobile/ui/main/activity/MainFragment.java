@@ -1,10 +1,9 @@
 package org.freenetproject.mobile.ui.main.activity;
 
-import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,14 +33,12 @@ public class MainFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         MainViewModel mainViewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            // HACK: Workaround to determine if Freenet is running on the background.
-            NotificationManager nm = (NotificationManager) getActivity().getSystemService(Context.NOTIFICATION_SERVICE);
-            if (nm.getActiveNotifications().length > 0) {
-                mainViewModel.init(MainViewModel.Status.STARTED);
-            }
-        }
+        SharedPreferences sharedPref = requireActivity().getPreferences(Context.MODE_PRIVATE);
+        mainViewModel.init(
+            sharedPref.getBoolean("isRunning", false) ? MainViewModel.Status.STARTED : MainViewModel.Status.STOPPED
+        );
 
+        updateSharedPreferences(mainViewModel, view);
         updateControls(mainViewModel, view);
         updateStatus(mainViewModel, view);
         updateStatusDetail(mainViewModel, view);
@@ -68,7 +65,7 @@ public class MainFragment extends Fragment {
             }).start();
         });
 
-        vm.getStatus().observe(this, status -> {
+        vm.getStatus().observe(getViewLifecycleOwner(), status -> {
             controlButton
                 .setEnabled(
                     !vm.isTransitioning()
@@ -82,7 +79,7 @@ public class MainFragment extends Fragment {
 
     private void updateStatus(MainViewModel vm, View view) {
         TextView statusText = view.findViewById(R.id.freenetStatus);
-        vm.getStatus().observe(this, status -> {
+        vm.getStatus().observe(getViewLifecycleOwner(), status -> {
             if (status.equals(MainViewModel.Status.STARTED)) {
                 statusText.setText("Freenet is running");
             } else if (status.equals(MainViewModel.Status.STARTING_UP)) {
@@ -99,7 +96,7 @@ public class MainFragment extends Fragment {
 
     private void updateStatusDetail(MainViewModel vm, View view) {
         TextView detailText = view.findViewById(R.id.detailText);
-        vm.getStatus().observe(this, status -> {
+        vm.getStatus().observe(getViewLifecycleOwner(), status -> {
             detailText.setOnClickListener(null);
             if (status.equals(MainViewModel.Status.STARTED)) {
                 detailText.setText("Tap here to Navigate");
@@ -116,6 +113,16 @@ public class MainFragment extends Fragment {
             } else {
                 detailText.setText("");
             }
+        });
+    }
+
+    private void updateSharedPreferences(MainViewModel vm, View view) {
+        SharedPreferences sharedPref = requireActivity().getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+
+        vm.getStatus().observe(getViewLifecycleOwner(), status -> {
+            editor.putBoolean("isRunning", vm.isRunning());
+            editor.apply();
         });
     }
 }
