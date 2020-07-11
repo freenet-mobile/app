@@ -81,13 +81,13 @@ public class MainFragment extends Fragment {
         TextView statusText = view.findViewById(R.id.freenetStatus);
         vm.getStatus().observe(getViewLifecycleOwner(), status -> {
             if (status.equals(MainViewModel.Status.STARTED)) {
-                statusText.setText("Freenet is running");
+                statusText.setText(R.string.node_running);
             } else if (status.equals(MainViewModel.Status.STARTING_UP)) {
-                statusText.setText("Starting up");
+                statusText.setText(R.string.node_starting_up);
             } else if (status.equals(MainViewModel.Status.STOPPING)) {
-                statusText.setText("Shutting down");
+                statusText.setText(R.string.node_shutting_down);
             } else if (status.equals(MainViewModel.Status.ERROR)) {
-                statusText.setText("Error starting Freenet.");
+                statusText.setText(R.string.error_starting_up);
             } else {
                 statusText.setText("");
             }
@@ -99,7 +99,7 @@ public class MainFragment extends Fragment {
         vm.getStatus().observe(getViewLifecycleOwner(), status -> {
             detailText.setOnClickListener(null);
             if (status.equals(MainViewModel.Status.STARTED)) {
-                detailText.setText("Tap here to Navigate");
+                detailText.setText(R.string.tap_to_navigate);
                 detailText.setOnClickListener(view12 -> {
                     startActivity(
                         new Intent(Intent.ACTION_VIEW)
@@ -107,9 +107,9 @@ public class MainFragment extends Fragment {
                     );
                 });
             } else if (status.equals(MainViewModel.Status.STARTING_UP)) {
-                detailText.setText("This may take a while.");
+                detailText.setText(R.string.may_take_a_while);
             } else if (status.equals(MainViewModel.Status.ERROR)) {
-                detailText.setText("Restart the application and try again.\nIf the error persist reinstall the application.");
+                detailText.setText(R.string.error_detail);
             } else {
                 detailText.setText("");
             }
