@@ -1,4 +1,4 @@
-# Freenet Mobile ![Release](https://img.shields.io/github/v/release/desyncr/freenet-mobile) ![License](https://img.shields.io/github/license/desyncr/freenet-mobile)
+# Freenet Mobile [![Release](https://img.shields.io/github/v/release/desyncr/freenet-mobile)][5] [![License](https://img.shields.io/github/license/desyncr/freenet-mobile)][2]
 
 Access [Freenet][7] from the palm of your hand.
 
