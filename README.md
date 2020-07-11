@@ -28,6 +28,8 @@ There are many ways to contribute:
 
 - Spread the word: If you like the Freenet share it with the world. You can also create content on Freenet.
 
+- Donate: Freenet is entitely run by volunteers. You can donate to The Freenet Project Inc, a 501(c)(3) non-profit organization. More [here][donate].
+
 # License
 
 The project is licensed under the [GNU GPL v3][2] license.
@@ -39,6 +41,7 @@ The project is licensed under the [GNU GPL v3][2] license.
   [5]: https://github.com/desyncr/freenet-mobile/releases
   [6]: https://www.lifewire.com/install-apk-on-android-4177185
   [7]: https://freenetproject.org/
+  [donate]: https://freenetproject.org/pages/donate.html
   [screen1]: docs/screenshot_1.png
   [screen1thumb]:  docs/screenshot_1_thumb.png
   [screen2]: docs/screenshot_2.png
