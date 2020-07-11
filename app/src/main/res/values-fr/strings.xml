@@ -21,4 +21,5 @@
     <string name="preserve_battery_summary">Freenet peut provoquer une décharge rapide de la batterie. Avec cette option activée, Freenet ne fonctionnera que lors du chargement.</string>
     <string name="web_access">Accéder à Freenet depuis un PC</string>
     <string name="web_access_summary">Accédez à Freenet en cours d\'exécution sur votre téléphone depuis un PC ou une tablette. L\'appareil doit être sur le même réseau.</string>
+    <string name="node_paused">Freenet est en pause.</string>
 </resources>

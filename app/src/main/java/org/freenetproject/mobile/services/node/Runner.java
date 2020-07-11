@@ -15,6 +15,9 @@ public class Runner {
     private static Runner instance = null;
     private Runner() { }
     private Boolean isRunning = false;
+    private static Boolean DEBUG = false;
+    private static Integer DEBUG_START_DELAY = 1000; // ms
+    private static Integer DEBUG_STOP_DELAY = 1000;
 
     public static Runner getInstance() {
         if (instance == null) {
@@ -40,9 +43,13 @@ public class Runner {
         }
 
         try {
-            NodeStarter.main(args);
+            if (DEBUG) {
+                Thread.sleep(DEBUG_START_DELAY);
+            } else {
+                NodeStarter.main(args);
+            }
             isRunning = true;
-        } catch (IllegalStateException e) {
+        } catch (IllegalStateException | InterruptedException e) {
             return -2;
         }
 
@@ -62,7 +69,11 @@ public class Runner {
         }
 
         try {
-            WrapperManager.stopImmediate(0);
+            if (DEBUG) {
+                Thread.sleep(DEBUG_STOP_DELAY);
+            } else {
+                NodeStarter.stop_osgi(0);
+            }
         } catch (NullPointerException e){
             // Node was already stopped
             isRunning = false;

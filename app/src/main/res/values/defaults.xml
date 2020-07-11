@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_url" translatable="false">http://127.0.0.1:8888/</string>
+</resources>

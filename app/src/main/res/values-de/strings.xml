@@ -21,4 +21,5 @@
     <string name="preserve_battery_summary">Freenet kann dazu führen, dass sich der Akku schnell entlädt. Wenn diese Option aktiviert ist, läuft Freenet nur beim Aufladen.</string>
     <string name="web_access">Zugriff auf Freenet vom PC aus</string>
     <string name="web_access_summary">Greifen Sie von einem PC oder Tablet auf Freenet zu, das auf Ihrem Telefon ausgeführt wird. Das Gerät muss sich im selben Netzwerk befinden.</string>
+    <string name="node_paused">Freenet ist angehalten.</string>
 </resources>
