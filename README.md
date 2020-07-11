@@ -1,6 +1,8 @@
-# Freenet Mobile
+# Freenet Mobile ![Release](https://img.shields.io/github/v/release/desyncr/freenet-mobile) ![License](https://img.shields.io/github/license/desyncr/freenet-mobile)
 
 Access [Freenet][7] from the palm of your hand.
+
+Freenet is a peer-to-peer platform for censorship-resistant communication and publishing. To know more about Freenet look [here][about-freenet].
 
 [![Screenshot 1][screen1thumb]][screen1] [![Screenshot 2][screen2thumb]][screen2] [![Screenshot 3][screen3thumb]][screen3]
 
@@ -42,6 +44,7 @@ The project is licensed under the [GNU GPL v3][2] license.
   [6]: https://www.lifewire.com/install-apk-on-android-4177185
   [7]: https://freenetproject.org/
   [donate]: https://freenetproject.org/pages/donate.html
+  [about-freenet]: https://freenetproject.org/pages/about.html
   [screen1]: docs/screenshot_1.png
   [screen1thumb]:  docs/screenshot_1_thumb.png
   [screen2]: docs/screenshot_2.png
