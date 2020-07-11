@@ -12,4 +12,13 @@
     <string name="start_label">Anfang</string>
     <string name="shutdown_label">Herunterfahren</string>
     <string name="freenet">Freenet</string>
+    <string name="title_activity_settings">Konfiguration</string>
+    <string name="battery_and_data">Batterie- und Datennutzung</string>
+    <string name="freenet_web">Freenet Web</string>
+    <string name="preserve_data">Daten erhalten</string>
+    <string name="preserve_data_summary">Freenet nutzt Netzwerkdaten intensiv. Wenn diese Option aktiviert ist, wird Freenet nur ausgeführt, wenn eine Verbindung zu Wifi besteht.</string>
+    <string name="preserve_battery">Batterie schonen</string>
+    <string name="preserve_battery_summary">Freenet kann dazu führen, dass sich der Akku schnell entlädt. Wenn diese Option aktiviert ist, läuft Freenet nur beim Aufladen.</string>
+    <string name="web_access">Zugriff auf Freenet vom PC aus</string>
+    <string name="web_access_summary">Greifen Sie von einem PC oder Tablet auf Freenet zu, das auf Ihrem Telefon ausgeführt wird. Das Gerät muss sich im selben Netzwerk befinden.</string>
 </resources>

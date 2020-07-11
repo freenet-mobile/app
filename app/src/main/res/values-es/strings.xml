@@ -12,4 +12,13 @@
     <string name="start_label">Empezar</string>
     <string name="shutdown_label">Apagar</string>
     <string name="freenet">Freenet</string>
+    <string name="title_activity_settings">Configuraciones</string>
+    <string name="battery_and_data">Uso de batería y datos</string>
+    <string name="freenet_web">Freenet Web</string>
+    <string name="preserve_data">Preservar datos</string>
+    <string name="preserve_data_summary">Freenet hace un uso intensivo de los datos de la red. Con esta opción habilitada, Freenet se ejecutará solo cuando esté conectado a Wifi.</string>
+    <string name="preserve_battery">Conservar la batería</string>
+    <string name="preserve_battery_summary">Freenet puede hacer que la batería se descargue rápidamente. Con esta opción habilitada, Freenet solo se ejecutará cuando se cargue.</string>
+    <string name="web_access">Acceda a Freenet desde la PC</string>
+    <string name="web_access_summary">Acceda a Freenet en su teléfono desde una PC o tableta. El dispositivo debe estar en la misma red.</string>
 </resources>

@@ -1,0 +1,32 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/battery_and_data">
+
+        <SwitchPreferenceCompat
+            app:key="preserve_battery"
+            app:title="@string/preserve_battery"
+            app:defaultValue="true"
+            app:summary="@string/preserve_battery_summary"
+            />
+
+        <SwitchPreferenceCompat
+            app:key="preserve_data"
+            app:title="@string/preserve_data"
+            app:defaultValue="true"
+            app:summary="@string/preserve_data_summary"
+            />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/freenet_web">
+
+        <SwitchPreferenceCompat
+            app:key="web_access"
+            app:title="@string/web_access"
+            app:defaultValue="false"
+            app:summary="@string/web_access_summary"
+            />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

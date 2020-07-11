@@ -12,4 +12,16 @@
     <string name="start_label">Start</string>
     <string name="shutdown_label">Shutdown</string>
     <string name="freenet">Freenet</string>
+    <string name="title_activity_settings">Settings</string>
+    <!-- Preference Titles -->
+    <string name="battery_and_data">Battery and data usage</string>
+    <string name="freenet_web">Freenet Web</string>
+    <!-- Battery and Data Preferences -->
+    <string name="preserve_data">Preserve data</string>
+    <string name="preserve_data_summary">Freenet makes an intensive use of network data. With this option enabled Freenet will run only when connected to Wifi.</string>
+    <string name="preserve_battery">Preserve battery</string>
+    <string name="preserve_battery_summary">Freenet may cause the battery to discharge quickly. With this option enabled Freenet will run only when charging.</string>
+    <!-- Freenet Web Preferences -->
+    <string name="web_access">Access Freenet from PC</string>
+    <string name="web_access_summary">Access Freenet running on your phone from a PC or Tablet. The device must be on the same network.</string>
 </resources>

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
@@ -15,8 +16,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import org.freenetproject.mobile.R;
 import org.freenetproject.mobile.ui.main.viewmodel.MainViewModel;
+import org.freenetproject.mobile.ui.settings.activity.SettingsActivity;
 
 public class MainFragment extends Fragment {
 
@@ -39,6 +43,7 @@ public class MainFragment extends Fragment {
         );
 
         updateSharedPreferences(mainViewModel, view);
+        updateSettings(mainViewModel, view);
         updateControls(mainViewModel, view);
         updateStatus(mainViewModel, view);
         updateStatusDetail(mainViewModel, view);
@@ -123,6 +128,13 @@ public class MainFragment extends Fragment {
         vm.getStatus().observe(getViewLifecycleOwner(), status -> {
             editor.putBoolean("isRunning", vm.isRunning());
             editor.apply();
+        });
+    }
+
+    private void updateSettings(MainViewModel vm, View view) {
+        FloatingActionButton settings = view.findViewById(R.id.settingsButton);
+        settings.setOnClickListener(view1 -> {
+            startActivity(new Intent(getActivity(), SettingsActivity.class));
         });
     }
 }
