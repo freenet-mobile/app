@@ -28,8 +28,8 @@ public class Notification {
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
             NotificationChannel nc = null;
-            nc = new NotificationChannel(CHANNEL_ID, String.valueOf(R.string.app_name), NotificationManager.IMPORTANCE_HIGH);
-            nc.setDescription(String.valueOf(R.string.app_name));
+            nc = new NotificationChannel(CHANNEL_ID, context.getString(R.string.app_name), NotificationManager.IMPORTANCE_HIGH);
+            nc.setDescription(context.getString(R.string.app_name));
             nc.enableLights(true);
             nc.setLightColor(Color.BLUE);
             nm.createNotificationChannel(nc);
@@ -43,8 +43,8 @@ public class Notification {
         }
 
         return builder
-            .setContentTitle(String.valueOf(R.string.node_running))
-            .setContentText(String.valueOf(R.string.connected_to_the_network))
+            .setContentTitle(context.getString(R.string.node_running))
+            .setContentText(context.getString(R.string.connected_to_the_network))
             .setSmallIcon(R.drawable.ic_freenet_logo_notification)
             .setContentIntent(
                 PendingIntent.getActivity(
