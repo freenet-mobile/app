@@ -38,7 +38,7 @@ public class Installer {
      *
      * @throws FileNotFoundException
      */
-    public void install(String path, InputStream seeds, InputStream config) throws FileNotFoundException {
+    public void install(String path, InputStream seeds, InputStream config, String lang) throws FileNotFoundException {
         File f = new File(path);
         if (!f.exists() || !f.canWrite()) {
             throw new FileNotFoundException("Invalid installation directory: " + path);
@@ -54,19 +54,23 @@ public class Installer {
         final FileOutputStream ini = new FileOutputStream(getFreenetIniPath(), true);
         final PrintWriter out = new PrintWriter(new OutputStreamWriter(ini));
 
-        out.println("node.install.persistentTempDir=" + path + "/persistent-temp");
         out.println("node.install.cfgDir=" + path);
-        out.println("node.masterKeyFile=" + path + "/master.keys");
-        out.println("node.install.storeDir=" + path + "/pathstore");
         out.println("node.install.userDir=" + path);
-        out.println("node.install.pluginStoresDir=" + path + "/plugin-path");
-        out.println("node.install.tempDir=" + path + "/temp");
         out.println("node.install.nodeDir=" + path);
-        out.println("node.install.pluginDir=" + path + "/plugins");
         out.println("node.install.runDir=" + path);
+        out.println("node.install.storeDir=" + path + "/pathstore");
+        out.println("node.install.tempDir=" + path + "/temp");
+        out.println("node.install.pluginDir=" + path + "/plugins");
+        out.println("node.install.pluginStoresDir=" + path + "/plugin-path");
+        out.println("node.install.persistentTempDir=" + path + "/persistent-temp");
+
+        out.println("node.masterKeyFile=" + path + "/master.keys");
         out.println("node.downloadsDir=" + path + "/downloads");
 
         out.println("logger.dirname=" + path + "/logs");
+
+        out.println("node.l10n=" + lang);
+
         out.println("End");
         out.close();
     }

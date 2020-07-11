@@ -2,6 +2,7 @@ package org.freenetproject.mobile.ui.main.viewmodel;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.util.Log;
 
 import androidx.lifecycle.LiveData;
@@ -61,10 +62,12 @@ public class MainViewModel extends ViewModel {
         if (!Installer.getInstance().isInstalled()) {
             status.postValue(Status.INSTALLING);
             try {
+                Resources res = context.getResources();
                 Installer.getInstance().install(
                     context.getDir("data", android.content.Context.MODE_PRIVATE).getAbsolutePath(),
-                    context.getResources().openRawResource(R.raw.seednodes),
-                    context.getResources().openRawResource(R.raw.freenet)
+                    res.openRawResource(R.raw.seednodes),
+                    res.openRawResource(R.raw.freenet),
+                    res.getConfiguration().locale.getDisplayLanguage()
                 );
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
