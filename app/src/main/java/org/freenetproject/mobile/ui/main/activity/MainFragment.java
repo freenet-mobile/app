@@ -8,14 +8,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
-import android.widget.ToggleButton;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.freenetproject.mobile.R;
 import org.freenetproject.mobile.services.node.Manager;
@@ -53,10 +51,8 @@ public class MainFragment extends Fragment {
     }
 
     private void updateControls(Manager m, View view) {
-        ToggleButton controlButton = view.findViewById(R.id.controlButton);
+        Button controlButton = view.findViewById(R.id.control_button);
         controlButton.setOnClickListener(view1 -> {
-            // HACK: Disable toggle button automatic check on click
-            controlButton.setChecked(!controlButton.isChecked());
             new Thread(() -> {
                 // Return right aways if for some reason it is still working (either
                 // starting up or stopping).
@@ -79,15 +75,16 @@ public class MainFragment extends Fragment {
                 .setEnabled(
                     !m.isTransitioning()
                 );
-            controlButton
-                .setChecked(
-                    m.isRunning() || m.isPaused()
-                );
+            controlButton.setBackgroundResource(
+                m.isRunning() || m.isPaused() ?
+                    R.drawable.ic_baseline_power_settings_new_24 :
+                        R.drawable.ic_baseline_play_circle_outline_24
+            );
         });
     }
 
     private void updateStatus(Manager m, View view) {
-        TextView statusText = view.findViewById(R.id.freenetStatus);
+        TextView statusText = view.findViewById(R.id.node_status);
         m.getStatus().observe(getViewLifecycleOwner(), status -> {
             if (status.equals(Manager.Status.STARTED)) {
                 statusText.setText(R.string.node_running);
@@ -106,7 +103,7 @@ public class MainFragment extends Fragment {
     }
 
     private void updateStatusDetail(Manager m, View view) {
-        TextView detailText = view.findViewById(R.id.detailText);
+        TextView detailText = view.findViewById(R.id.node_status_detail);
         m.getStatus().observe(getViewLifecycleOwner(), status -> {
             detailText.setOnClickListener(null);
             if (status.equals(Manager.Status.STARTED)) {
@@ -141,7 +138,7 @@ public class MainFragment extends Fragment {
     }
 
     private void updateSettings(Manager m, View view) {
-        FloatingActionButton settings = view.findViewById(R.id.settingsButton);
+        Button settings = view.findViewById(R.id.settings_button);
         settings.setOnClickListener(view1 -> {
             startActivity(new Intent(getActivity(), SettingsActivity.class));
         });

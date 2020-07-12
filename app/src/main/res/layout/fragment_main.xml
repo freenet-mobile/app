@@ -36,7 +36,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/freenetStatus"
+        android:id="@+id/node_status"
         android:layout_width="238dp"
         android:layout_height="21dp"
         android:gravity="center"
@@ -50,19 +50,24 @@
         app:layout_constraintVertical_bias="0.429" />
 
     <ToggleButton
-        android:id="@+id/controlButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textOff="@string/start_label"
-        android:textOn="@string/shutdown_label"
-        app:layout_constraintBottom_toTopOf="@+id/freenetStatus"
+        android:id="@+id/control_button"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:background="@drawable/ic_baseline_power_settings_new_24"
+        android:backgroundTintMode="multiply"
+        android:checked="false"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:textOff=''
+        android:textOn=''
+        app:layout_constraintBottom_toTopOf="@+id/node_status"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
-        android:id="@+id/detailText"
+        android:id="@+id/node_status_detail"
         android:layout_width="335dp"
         android:layout_height="63dp"
         android:ems="10"
@@ -71,15 +76,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/freenetStatus"
+        app:layout_constraintTop_toBottomOf="@+id/node_status"
         app:layout_constraintVertical_bias="0.242" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/settingsButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:src="@drawable/ic_baseline_settings_24"
+    <Button
+        android:id="@+id/settings_button"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:background="@drawable/ic_baseline_settings_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.952"
