@@ -19,7 +19,7 @@
     <string name="preserve_data_summary">A Freenet faz um uso intensivo dos dados da rede. Com esta opção ativada, o Freenet será executado apenas quando conectado ao Wifi.  O nó deve ser reiniciado para ativar esta configuração.</string>
     <string name="preserve_battery">Preservar bateria</string>
     <string name="preserve_battery_summary">O Freenet pode fazer com que a bateria descarregue rapidamente. Com esta opção ativada, o Freenet funcionará apenas durante o carregamento.  O nó deve ser reiniciado para ativar esta configuração.</string>
-    <string name="web_access">Acesse o Freenet a partir do PC</string>
+    <string name="web_access">Acesso do PC</string>
     <string name="web_access_summary">Acesse o Freenet em execução no seu telefone a partir de um PC ou tablet. O dispositivo deve estar na mesma rede. Acesse-o através do IP local do telefone e porta: 9999 (ex. 192.168.x.x: 8888).</string>
     <string name="node_paused">Freenet está em pausa.</string>
 </resources>
