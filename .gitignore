@@ -30,3 +30,5 @@ Thumbs.db
 *.ap_
 *.aar
 *.aab
+app/debug/
+app/release/
