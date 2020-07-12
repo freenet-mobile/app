@@ -76,7 +76,7 @@ dependencies {
     implementation 'com.github.desyncr:onion-common:0.0.1-SNAPSHOT'
     implementation 'com.github.desyncr:onion-fec:0.0.1-SNAPSHOT'
     implementation 'com.github.desyncr:freenet-ext:0.60.0-SNAPSHOT'
-    implementation 'com.github.desyncr:fred:build01485-39-gce6ac'
+    implementation 'com.github.desyncr:fred:build01485-38-g83761'
     implementation 'androidx.preference:preference:1.1.1'
 
     testImplementation 'junit:junit:4.12'

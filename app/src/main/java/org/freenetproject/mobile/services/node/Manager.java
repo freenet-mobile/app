@@ -46,24 +46,7 @@ public class Manager {
     }
 
     public void init(Status value, Context context) {
-        if (value == Manager.Status.ERROR) {
-            new Thread(() -> {
-                reset(context);
-                status.postValue(Status.STOPPED);
-            }).start();
-            status.setValue(Status.STOPPED);
-            return;
-        }
-
         status.setValue(value);
-    }
-
-    public void reset(Context context) {
-        try {
-            stopService(context);
-        } catch (Exception e) {
-            Log.e("Freenet", "Error stopping service: " + e.getMessage());
-        }
     }
 
     public LiveData<Status> getStatus() {
@@ -97,8 +80,7 @@ public class Manager {
             }
         }
 
-        int ret = resumeService(context);
-
+        int ret = startNode();
         if (ret == 0) {
             Intent serviceIntent = new Intent(context, Service.class);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -107,10 +89,30 @@ public class Manager {
                 context.startService(serviceIntent);
             }
         } else {
-            Log.e("Freenet", "Error starting freenet");
+            Log.e("Freenet", "Error starting freenet (" + ret + ")");
+            status.postValue(Status.ERROR);
         }
 
         return 0;
+    }
+
+    private int startNode() {
+        status.postValue(Status.STARTING_UP);
+        int ret = -1;
+        try {
+            ret = runner.start(new String[]{Installer.getInstance().getFreenetIniPath()});
+            if (ret == 0) {
+                status.postValue(Status.STARTED);
+            } else if (ret == -1) {
+                // Already running
+                status.postValue(Status.STARTED);
+            } else {
+                status.postValue(Status.ERROR);
+            }
+        } catch (Exception e) {
+            status.postValue(Status.ERROR);
+        }
+        return ret;
     }
 
     /**
@@ -171,25 +173,11 @@ public class Manager {
      * @return
      */
     public int resumeService(Context context) {
-        if (isPaused()) {
-            return -1;
+        if (!isPaused()) {
+            return -2;
         }
 
-        status.postValue(Status.STARTING_UP);
-        int ret = -1;
-        try {
-            ret = runner.start(new String[]{Installer.getInstance().getFreenetIniPath()});
-            if (ret == 0) {
-                status.postValue(Status.STARTED);
-            } else if (ret == -1) {
-                // Already running
-                status.postValue(Status.STARTED);
-            } else {
-                status.postValue(Status.ERROR);
-            }
-        } catch (Exception e) {
-            status.postValue(Status.ERROR);
-        }
+        int ret = startNode();
 
         return ret;
     }

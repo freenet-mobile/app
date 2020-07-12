@@ -19,18 +19,12 @@ public class PowerConnectionReceiver extends BroadcastReceiver {
         // only if configured to manage start/stop
         switch(Objects.requireNonNull(intent.getAction())){
             case Intent.ACTION_POWER_CONNECTED:
-                Log.d("Freenet", "Power connected");
-                if (Manager.getInstance().isPaused()) {
-                    Log.i("Freenet", "Resuming service");
-                    Manager.getInstance().resumeService(context);
-                }
+                Log.i("Freenet", "Resuming service from power change");
+                Manager.getInstance().resumeService(context);
                 break;
             case Intent.ACTION_POWER_DISCONNECTED:
-                Log.d("Freenet", "Power disconnected");
-                if (Manager.getInstance().isRunning()) {
-                    Log.i("Freenet", "Pausing service");
-                    Manager.getInstance().pauseService(context);
-                }
+                Log.i("Freenet", "Pausing service from power change");
+                Manager.getInstance().pauseService(context);
                 break;
         }
     }

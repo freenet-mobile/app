@@ -57,7 +57,6 @@ public class MainFragment extends Fragment {
         controlButton.setOnClickListener(view1 -> {
             // HACK: Disable toggle button automatic check on click
             controlButton.setChecked(!controlButton.isChecked());
-
             new Thread(() -> {
                 // Return right aways if for some reason it is still working (either
                 // starting up or stopping).

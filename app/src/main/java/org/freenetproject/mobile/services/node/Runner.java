@@ -1,11 +1,11 @@
 package org.freenetproject.mobile.services.node;
 
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
-import org.tanukisoftware.wrapper.WrapperManager;
 
 import java.security.Security;
 
 import freenet.node.NodeStarter;
+import freenet.node.SemiOrderedShutdownHook;
 
 /**
  * Small wrapper around NodeStarter and WrapperManager to start and stop the node. Also is responsible
@@ -46,7 +46,7 @@ public class Runner {
             if (DEBUG) {
                 Thread.sleep(DEBUG_START_DELAY);
             } else {
-                NodeStarter.main(args);
+                NodeStarter.start_osgi(args);
             }
             isRunning = true;
         } catch (IllegalStateException | InterruptedException e) {
@@ -73,13 +73,14 @@ public class Runner {
                 Thread.sleep(DEBUG_STOP_DELAY);
             } else {
                 NodeStarter.stop_osgi(0);
+                SemiOrderedShutdownHook.get().run();
             }
         } catch (NullPointerException e){
             // Node was already stopped
-            isRunning = false;
         } catch (Exception e) {
-            isRunning = false;
             return -2;
+        }finally {
+            isRunning = false;
         }
 
         return 0;
