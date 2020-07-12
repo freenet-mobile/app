@@ -13,6 +13,7 @@ import android.util.Log;
 
 import androidx.preference.PreferenceManager;
 
+import org.freenetproject.mobile.proxy.Simple;
 import org.freenetproject.mobile.receivers.PowerConnectionReceiver;
 import org.freenetproject.mobile.ui.notification.Notification;
 
@@ -20,14 +21,14 @@ public class Service extends android.app.Service {
     PowerConnectionReceiver powerConnectionReceiver = new PowerConnectionReceiver();
     ConnectivityManager connectivityManager;
     ConnectivityManager.NetworkCallback networkCallback;
+    Thread proxyThread = null;
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.i("Freenet", "Called service onStartCommand");
+
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         Boolean preserveBattery = sharedPreferences.getBoolean("preserve_battery", true);
-        Boolean preserveData = sharedPreferences.getBoolean("preserve_data",true);
-
         // Register power connection receiver
         if (preserveBattery) {
             IntentFilter powerConnectedFilter = new IntentFilter();
@@ -36,6 +37,7 @@ public class Service extends android.app.Service {
             registerReceiver(powerConnectionReceiver, powerConnectedFilter);
         }
 
+        Boolean preserveData = sharedPreferences.getBoolean("preserve_data",true);
         // Register network callback
         if (preserveData) {
             Context context = getApplicationContext();
@@ -62,6 +64,13 @@ public class Service extends android.app.Service {
             connectivityManager.registerNetworkCallback(networkRequest, networkCallback);
         }
 
+        Boolean webAccess = sharedPreferences.getBoolean("web_access",false);
+        if (webAccess) {
+            if (proxyThread != null) proxyThread.interrupt();
+            proxyThread = new Thread(new Simple(), "simple-proxy-server");
+            proxyThread.start();
+        }
+
         startForeground(1, Notification.show(this));
 
         return android.app.Service.START_STICKY;
@@ -72,11 +81,17 @@ public class Service extends android.app.Service {
     public void onDestroy() {
         Log.i("Freenet", "Stopping service");
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-        Boolean preserveBattery = sharedPreferences.getBoolean("preserve_battery", true);
-        Boolean preserveData = sharedPreferences.getBoolean("preserve_data",true);
 
+        Boolean preserveBattery = sharedPreferences.getBoolean("preserve_battery", true);
         if (preserveBattery) unregisterReceiver(powerConnectionReceiver);
+
+        Boolean preserveData = sharedPreferences.getBoolean("preserve_data",true);
         if (preserveData) connectivityManager.unregisterNetworkCallback(networkCallback);
+
+        Boolean webAccess = sharedPreferences.getBoolean("web_access",false);
+        if (webAccess) {
+            if (proxyThread != null) proxyThread.interrupt();
+        }
 
         Notification.remove(getApplicationContext());
         stopForeground(true);

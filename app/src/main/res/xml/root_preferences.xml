@@ -18,4 +18,15 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory app:title="@string/freenet_web">
+
+        <SwitchPreferenceCompat
+            app:key="web_access"
+            app:title="@string/web_access"
+            app:defaultValue="false"
+            app:summary="@string/web_access_summary"
+            />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
