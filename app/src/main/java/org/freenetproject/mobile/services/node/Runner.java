@@ -65,7 +65,8 @@ public class Runner {
      */
     public synchronized int stop() {
         if (!isStarted()) {
-            return -1;
+            // Already stopped
+            return 0;
         }
 
         try {
@@ -79,7 +80,7 @@ public class Runner {
             // Node was already stopped
         } catch (Exception e) {
             return -2;
-        }finally {
+        } finally {
             isRunning = false;
         }
 
