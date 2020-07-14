@@ -1,6 +1,7 @@
 package org.freenetproject.mobile.services.node;
 
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
+import org.tanukisoftware.wrapper.WrapperManager;
 
 import java.security.Security;
 
@@ -74,7 +75,7 @@ public class Runner {
                 Thread.sleep(DEBUG_STOP_DELAY);
             } else {
                 NodeStarter.stop_osgi(0);
-                SemiOrderedShutdownHook.get().run();
+                WrapperManager.stop(0);
             }
         } catch (NullPointerException e){
             // Node was already stopped
@@ -85,6 +86,22 @@ public class Runner {
         }
 
         return 0;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public synchronized int pause() {
+        return NodeStarter.pause();
+    }
+
+    /**
+     *
+     * @return
+     */
+    public synchronized int resume() {
+        return NodeStarter.resume();
     }
 
     public Boolean isStarted() {
