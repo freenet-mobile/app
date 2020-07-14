@@ -12,6 +12,8 @@ import androidx.lifecycle.MutableLiveData;
 import org.freenetproject.mobile.R;
 
 import java.io.FileNotFoundException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Class responsible for exposing data to the UI. It also exposes methods for the UI to interact with,
@@ -32,6 +34,14 @@ public class Manager {
         PAUSED,
         PAUSING // when adding a new state that has transitions be sure to update isTransitioning method
     }
+
+    public static final String CONTEXT_NETWORK = "network";
+    public static final String CONTEXT_BATTERY = "battery";
+
+    private Map<String, Boolean> contextRunFlag = new HashMap<String, Boolean>() {{
+        put(CONTEXT_NETWORK, true);
+        put(CONTEXT_BATTERY, true);
+    }};
 
     private MutableLiveData<Status> status = new MutableLiveData<Status>();
     private Manager() {
@@ -146,14 +156,15 @@ public class Manager {
      * @param context
      * @return
      */
-    public int pauseService(Context context) {
+    public int pauseService(Context context, String serviceContext) {
         if (isPaused()) {
             return -1;
         }
+        contextRunFlag.put(serviceContext, false);
 
         status.postValue(Status.PAUSING);
         try {
-            if (runner.stop() == 0) {
+            if (runner.pause() == 0) {
                 status.postValue(Status.PAUSED);
             } else {
                 status.postValue(Status.ERROR);
@@ -172,14 +183,29 @@ public class Manager {
      * @param context
      * @return
      */
-    public int resumeService(Context context) {
+    public int resumeService(Context context, String serviceContext) {
         if (!isPaused()) {
             return -2;
         }
+        contextRunFlag.put(serviceContext, true);
 
-        int ret = startNode();
+        for (Boolean value : contextRunFlag.values()) {
+           if (!value)
+               return -3; // a given context has flagged not to run
+        }
 
-        return ret;
+        status.postValue(Status.STARTING_UP);
+        try {
+            if (runner.resume() == 0) {
+                status.postValue(Status.STARTED);
+            } else {
+                status.postValue(Status.ERROR);
+            }
+        } catch (Exception e) {
+            status.postValue(Status.ERROR);
+        }
+
+        return 0;
     }
 
     public Boolean isPaused() {
