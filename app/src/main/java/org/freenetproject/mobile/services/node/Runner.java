@@ -6,7 +6,6 @@ import org.tanukisoftware.wrapper.WrapperManager;
 import java.security.Security;
 
 import freenet.node.NodeStarter;
-import freenet.node.SemiOrderedShutdownHook;
 
 /**
  * Small wrapper around NodeStarter and WrapperManager to start and stop the node. Also is responsible
