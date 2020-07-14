@@ -78,7 +78,13 @@ dependencies {
     implementation 'com.github.desyncr:onion-common:0.0.1-SNAPSHOT'
     implementation 'com.github.desyncr:onion-fec:0.0.1-SNAPSHOT'
     implementation 'com.github.desyncr:freenet-ext:0.60.0-SNAPSHOT'
-    implementation 'com.github.desyncr:fred:build01485-38-g83761'
+    implementation 'com.github.desyncr:fred:build01485-39-gfd283'
+
+    // For running a locally built freenet.jar
+    //implementation "net.java.dev.jna:jna:4.2.2"
+    //implementation "net.java.dev.jna:jna-platform:4.2.2"
+    //implementation files('libs/freenet.jar')
+
     implementation 'androidx.preference:preference:1.1.1'
 
     testImplementation 'junit:junit:4.12'
