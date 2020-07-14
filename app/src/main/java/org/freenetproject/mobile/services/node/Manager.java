@@ -132,20 +132,18 @@ public class Manager {
      * @return
      */
     public int stopService(Context context) {
-        status.postValue(Status.STOPPING);
-        try {
-            if (runner.stop() == 0) {
-                status.postValue(Status.STOPPED);
-            } else {
-                status.postValue(Status.ERROR);
+        Intent serviceIntent = new Intent(context, Service.class);
+        context.stopService(serviceIntent);
 
+        // Flagging the status as Stopped as it kills the app instantly
+        status.postValue(Status.STOPPED);
+        try {
+            if (runner.stop() != 0) {
+                status.postValue(Status.ERROR);
             }
         } catch (Exception e) {
             status.postValue(Status.ERROR);
         }
-
-        Intent serviceIntent = new Intent(context, Service.class);
-        context.stopService(serviceIntent);
 
         return 0;
     }
