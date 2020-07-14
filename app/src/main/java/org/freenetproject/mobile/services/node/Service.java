@@ -51,13 +51,13 @@ public class Service extends android.app.Service {
                 @Override
                 public void onAvailable(Network network) {
                     Log.d("Freenet", "Resuming service from network change");
-                    Manager.getInstance().resumeService(context);
+                    Manager.getInstance().resumeService(context, Manager.CONTEXT_NETWORK);
                 }
 
                 @Override
                 public void onLost(Network network) {
                     Log.d("Freenet", "Pausing service from network change");
-                    Manager.getInstance().pauseService(context);
+                    Manager.getInstance().pauseService(context, Manager.CONTEXT_NETWORK);
                 }
             };
 
