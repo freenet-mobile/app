@@ -41,14 +41,7 @@ repositories {
     mavenLocal()
     maven { url 'https://mvn.freenetproject.org' }
     jcenter()
-    maven {
-        name = "GitHubPackages"
-        url = uri("https://maven.pkg.github.com/desyncr/fred")
-        credentials {
-            username = System.getenv("GITHUB_PACKAGE_REGISTRY_USERNAME")
-            password = System.getenv("GITHUB_PACKAGE_REGISTRY_TOKEN")
-        }
-    }
+    maven { url 'https://jitpack.io' }
 }
 
 dependencies {
@@ -72,13 +65,13 @@ dependencies {
 
     implementation "org.apache.commons:commons-compress:1.4.1"
 
-    implementation 'com.github.desyncr:mantissa:0.0.1-SNAPSHOT'
+    implementation 'com.github.desyncr:mantissa:0.0.2'
     implementation "org.b1.pack:lzma-sdk-4j:9.22.0"
-    implementation "com.github.desyncr:lzmajio:0.0.1-SNAPSHOT"
-    implementation 'com.github.desyncr:onion-common:0.0.1-SNAPSHOT'
-    implementation 'com.github.desyncr:onion-fec:0.0.1-SNAPSHOT'
-    implementation 'com.github.desyncr:freenet-ext:0.60.0-SNAPSHOT'
-    implementation 'com.github.desyncr:fred:build01485-39-gfd283'
+    implementation "com.github.desyncr:lzmajio:0.95.3"
+    implementation 'com.github.desyncr:onion-common:0.0.2'
+    implementation 'com.github.desyncr:onion-fec:0.0.2'
+    implementation 'com.github.desyncr:freenet-ext:0.60.2'
+    implementation 'com.github.desyncr:fred:1485.1m'
 
     // For running a locally built freenet.jar
     //implementation "net.java.dev.jna:jna:4.2.2"
