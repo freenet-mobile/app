@@ -14,9 +14,19 @@ Freenet is a peer-to-peer platform for censorship-resistant communication and pu
 
 # Installing
 
-See the [release page][5] for the latest release. Follow the [steps to install][6] an APK in your Android device.
+<a href="https://github.com/desyncr/freenet-mobile/releases/download/v0.1.1-beta/freenet-mobile-release.apk" alt="Download APK">
+    <img src="./docs/apk-file-format-symbol.png" width="200">
+</a>
 
-Android 5.0 "Lollipop" or newer required.
+See the [release page][5] for lastest updates and changelogs.
+
+## How to install?
+
+Follow the [steps to install][6] an APK in your device.
+
+## Requeriments
+
+- Android 5.0 "Lollipop" or newer required.
 
 # Contributing
 
@@ -51,3 +61,4 @@ The project is licensed under the [GNU GPL v3][2] license.
   [screen2thumb]:  docs/screenshot_2_thumb.png
   [screen3]: docs/screenshot_3.png
   [screen3thumb]:  docs/screenshot_3_thumb.png
+  [release]: 
