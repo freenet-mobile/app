@@ -61,4 +61,3 @@ The project is licensed under the [GNU GPL v3][2] license.
   [screen2thumb]:  docs/screenshot_2_thumb.png
   [screen3]: docs/screenshot_3.png
   [screen3thumb]:  docs/screenshot_3_thumb.png
-  [release]: 
