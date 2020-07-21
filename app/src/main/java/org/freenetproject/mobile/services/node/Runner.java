@@ -1,8 +1,13 @@
 package org.freenetproject.mobile.services.node;
 
+import net.pterodactylus.fcp.ClientHello;
+import net.pterodactylus.fcp.FcpConnection;
+import net.pterodactylus.fcp.ModifyConfig;
+
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.tanukisoftware.wrapper.WrapperManager;
 
+import java.io.IOException;
 import java.security.Security;
 
 import freenet.node.NodeStarter;
@@ -91,16 +96,28 @@ public class Runner {
      *
      * @return
      */
-    public synchronized int pause() {
-        return NodeStarter.pause();
+    public synchronized int pause() throws IOException {
+        changeOpennetConfig(false);
+        return 0;
     }
 
     /**
      *
      * @return
      */
-    public synchronized int resume() {
-        return NodeStarter.resume();
+    public synchronized int resume() throws IOException {
+        changeOpennetConfig(true);
+        return 0;
+    }
+
+    private void changeOpennetConfig(Boolean enabled) throws IOException {
+        FcpConnection fcpConnection = new FcpConnection("127.0.0.1", 9481);
+        fcpConnection.connect();
+        fcpConnection.sendMessage(new ClientHello("freenet-mobile"));
+
+        ModifyConfig modifyConfig = new ModifyConfig("identifier");
+        modifyConfig.setOption("node.opennet.enabled", enabled.toString());
+        fcpConnection.sendMessage(modifyConfig);
     }
 
     public Boolean isStarted() {
