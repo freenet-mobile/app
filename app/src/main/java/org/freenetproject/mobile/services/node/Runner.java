@@ -20,19 +20,16 @@ import freenet.node.NodeStarter;
  */
 public class Runner {
     private static Runner instance = null;
-    private Runner() { }
     private FcpConnection fcpConnection;
 
-    private static Boolean DEBUG = false;
-    private static Integer DEBUG_START_DELAY = 1000; // ms
-    private static Integer DEBUG_STOP_DELAY = 1000;
+    private Runner() {
+        Security.removeProvider("BC");
+        Security.insertProviderAt(new BouncyCastleProvider(), 1);
+    }
 
     public static Runner getInstance() {
         if (instance == null) {
-            Security.removeProvider("BC");
-            Security.insertProviderAt(new BouncyCastleProvider(), 1);
-
-            instance = new Runner();
+           instance = new Runner();
         }
         return instance;
     }
@@ -51,12 +48,8 @@ public class Runner {
         }
 
         try {
-            if (DEBUG) {
-                Thread.sleep(DEBUG_START_DELAY);
-            } else {
-                NodeStarter.start_osgi(args);
-            }
-        } catch (IllegalStateException | InterruptedException e) {
+            NodeStarter.start_osgi(args);
+        } catch (IllegalStateException e) {
             return -2;
         }
 
@@ -77,12 +70,8 @@ public class Runner {
         }
 
         try {
-            if (DEBUG) {
-                Thread.sleep(DEBUG_STOP_DELAY);
-            } else {
-                NodeStarter.stop_osgi(0);
-                WrapperManager.stop(0);
-            }
+            NodeStarter.stop_osgi(0);
+            WrapperManager.stop(0);
         } catch (NullPointerException e){
             // Node was already stopped
         } catch (Exception e) {

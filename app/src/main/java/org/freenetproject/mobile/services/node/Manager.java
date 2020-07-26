@@ -45,14 +45,14 @@ public class Manager {
 
     private MutableLiveData<Status> status = new MutableLiveData<Status>();
     private Manager() {
+        status.postValue(
+            runner.isStarted() ? Status.STARTED : Status.STOPPED
+        );
     }
 
     public static Manager getInstance() {
         if (instance == null) {
             instance = new Manager();
-            instance.status.postValue(
-                    instance.runner.isStarted() ? Status.STARTED : Status.STOPPED
-            );
         }
 
         return instance;
