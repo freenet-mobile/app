@@ -26,14 +26,6 @@ public class MainFragment extends Fragment {
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-        // Retrieve the last saved status from SharedPreferences or defaults to STOPPED
-        SharedPreferences sharedPref = requireActivity().getPreferences(Context.MODE_PRIVATE);
-        int savedStatus = sharedPref.getInt("status", Manager.Status.STOPPED.ordinal());
-        Manager.Status currentStatus = Manager.Status.values()[savedStatus];
-
-        Manager manager = Manager.getInstance();
-        manager.init(currentStatus, requireContext());
-
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_main, container, false);
     }

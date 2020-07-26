@@ -1,5 +1,7 @@
 package org.freenetproject.mobile.services.node;
 
+import android.util.Log;
+
 import net.pterodactylus.fcp.ClientHello;
 import net.pterodactylus.fcp.FcpConnection;
 import net.pterodactylus.fcp.ModifyConfig;
@@ -19,7 +21,8 @@ import freenet.node.NodeStarter;
 public class Runner {
     private static Runner instance = null;
     private Runner() { }
-    private Boolean isRunning = false;
+    private FcpConnection fcpConnection;
+
     private static Boolean DEBUG = false;
     private static Integer DEBUG_START_DELAY = 1000; // ms
     private static Integer DEBUG_STOP_DELAY = 1000;
@@ -53,7 +56,6 @@ public class Runner {
             } else {
                 NodeStarter.start_osgi(args);
             }
-            isRunning = true;
         } catch (IllegalStateException | InterruptedException e) {
             return -2;
         }
@@ -85,8 +87,6 @@ public class Runner {
             // Node was already stopped
         } catch (Exception e) {
             return -2;
-        } finally {
-            isRunning = false;
         }
 
         return 0;
@@ -110,18 +110,37 @@ public class Runner {
         return 0;
     }
 
-    private void enableOpennet(Boolean enabled) throws IOException {
-        FcpConnection fcpConnection = new FcpConnection("127.0.0.1", 9481);
-        fcpConnection.connect();
-        fcpConnection.sendMessage(new ClientHello("freenet-mobile"));
+    private FcpConnection getConnection() throws IOException {
+        if (fcpConnection != null) {
+            return fcpConnection;
+        }
 
+        try {
+            fcpConnection = new FcpConnection("127.0.0.1", 9481);
+            fcpConnection.connect();
+            fcpConnection.sendMessage(new ClientHello("freenet-mobile"));
+        } catch (Exception e) {
+            fcpConnection = null;
+            Log.i("Freenet", "Failed to connect through FCP. Node shutdown or wrong port: " + e.getMessage());
+            throw e;
+        }
+
+        return fcpConnection;
+    }
+
+    private void enableOpennet(Boolean enabled) throws IOException {
         ModifyConfig modifyConfig = new ModifyConfig("identifier");
         modifyConfig.setOption("node.opennet.enabled", enabled.toString());
-        fcpConnection.sendMessage(modifyConfig);
+        getConnection().sendMessage(modifyConfig);
     }
 
     public Boolean isStarted() {
-        return isRunning;
+        try {
+            getConnection();
+            return true;
+        } catch (Exception e) {
+           return false;
+        }
     }
 
     public Boolean isStopped() {

@@ -50,13 +50,12 @@ public class Manager {
     public static Manager getInstance() {
         if (instance == null) {
             instance = new Manager();
+            instance.status.postValue(
+                    instance.runner.isStarted() ? Status.STARTED : Status.STOPPED
+            );
         }
 
         return instance;
-    }
-
-    public void init(Status value, Context context) {
-        status.setValue(value);
     }
 
     public LiveData<Status> getStatus() {
@@ -135,12 +134,11 @@ public class Manager {
         Intent serviceIntent = new Intent(context, Service.class);
         context.stopService(serviceIntent);
 
-        // Flagging the status as Stopped as it kills the app instantly
-        status.postValue(Status.STOPPED);
         try {
             if (runner.stop() != 0) {
                 status.postValue(Status.ERROR);
             }
+            status.postValue(Status.STOPPED);
         } catch (Exception e) {
             status.postValue(Status.ERROR);
         }
