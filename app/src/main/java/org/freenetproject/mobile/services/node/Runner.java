@@ -97,7 +97,7 @@ public class Runner {
      * @return
      */
     public synchronized int pause() throws IOException {
-        changeOpennetConfig(false);
+        enableOpennet(false);
         return 0;
     }
 
@@ -106,11 +106,11 @@ public class Runner {
      * @return
      */
     public synchronized int resume() throws IOException {
-        changeOpennetConfig(true);
+        enableOpennet(true);
         return 0;
     }
 
-    private void changeOpennetConfig(Boolean enabled) throws IOException {
+    private void enableOpennet(Boolean enabled) throws IOException {
         FcpConnection fcpConnection = new FcpConnection("127.0.0.1", 9481);
         fcpConnection.connect();
         fcpConnection.sendMessage(new ClientHello("freenet-mobile"));
