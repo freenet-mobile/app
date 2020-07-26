@@ -14,7 +14,7 @@ Freenet is a peer-to-peer platform for censorship-resistant communication and pu
 
 # Installing
 
-<a href="https://github.com/desyncr/freenet-mobile/releases/download/v0.1.1-beta/freenet-mobile-release.apk" alt="Download APK">
+<a href="https://github.com/desyncr/freenet-mobile/releases/download/v0.1.2-beta/freenet-mobile-release.apk" alt="Download APK">
     <img src="./docs/apk-file-format-symbol.png" width="200">
 </a>
 
