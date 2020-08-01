@@ -1,4 +1,4 @@
-# Freenet Mobile [![Release](https://img.shields.io/github/v/release/desyncr/freenet-mobile)][5] [![License](https://img.shields.io/github/license/desyncr/freenet-mobile)][2]
+# Freenet Mobile [![Release](https://img.shields.io/github/v/release/freenet-mobile/app)][5] [![License](https://img.shields.io/github/license/freenet-mobile/app)][2]
 
 Access [Freenet][7] from the palm of your hand.
 
@@ -14,7 +14,7 @@ Freenet is a peer-to-peer platform for censorship-resistant communication and pu
 
 # Installing
 
-<a href="https://github.com/desyncr/freenet-mobile/releases/download/v0.1.2-beta/freenet-mobile-release.apk" alt="Download APK">
+<a href="https://github.com/freenet-mobile/app/releases/download/v0.1.2-beta/freenet-mobile-release.apk" alt="Download APK">
     <img src="./docs/apk-file-format-symbol.png" width="200">
 </a>
 
@@ -46,11 +46,11 @@ There are many ways to contribute:
 
 The project is licensed under the [GNU GPL v3][2] license.
 
-  [1]: https://trello.com/b/gA60mTAo/freenet-mnode
+  [1]: https://github.com/freenet-mobile/app/projects/1
   [2]: http://www.gnu.org/licenses/gpl.html
   [3]: https://github.com/freenet
-  [4]: https://github.com/desyncr/freenet-mobile/issues
-  [5]: https://github.com/desyncr/freenet-mobile/releases
+  [4]: https://github.com/freenet-mobile/app/issues
+  [5]: https://github.com/freenet-mobile/app/releases
   [6]: https://www.lifewire.com/install-apk-on-android-4177185
   [7]: https://freenetproject.org/
   [donate]: https://freenetproject.org/pages/donate.html
