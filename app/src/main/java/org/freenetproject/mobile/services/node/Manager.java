@@ -9,7 +9,10 @@ import android.util.Log;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
+import com.jakewharton.processphoenix.ProcessPhoenix;
+
 import org.freenetproject.mobile.R;
+import org.freenetproject.mobile.ui.main.activity.MainActivity;
 
 import java.io.FileNotFoundException;
 import java.util.HashMap;
@@ -138,7 +141,18 @@ public class Manager {
             if (runner.stop() != 0) {
                 status.postValue(Status.ERROR);
             }
+
             status.postValue(Status.STOPPED);
+
+            Log.i("Freenet", "Calling rebirth");
+            ProcessPhoenix.triggerRebirth(
+                    context,
+                    new Intent(
+                            context,
+                            MainActivity.class
+                    )
+            );
+
         } catch (Exception e) {
             status.postValue(Status.ERROR);
         }

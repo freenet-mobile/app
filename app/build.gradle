@@ -58,6 +58,8 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-livedata:2.2.0"
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0"
 
+    implementation 'com.jakewharton:process-phoenix:2.0.0'
+
     implementation 'org.bouncycastle:bcpkix-jdk15on:1.59'
     implementation "org.bouncycastle:bcprov-jdk15on:1.59"
 

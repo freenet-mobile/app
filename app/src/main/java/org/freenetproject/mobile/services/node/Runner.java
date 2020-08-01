@@ -71,7 +71,6 @@ public class Runner {
 
         try {
             NodeStarter.stop_osgi(0);
-            WrapperManager.stop(0);
         } catch (NullPointerException e){
             // Node was already stopped
         } catch (Exception e) {
