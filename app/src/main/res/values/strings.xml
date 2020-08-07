@@ -7,7 +7,7 @@
     <string name="error_starting_up">Error starting Freenet.</string>
     <string name="tap_to_navigate">Tap here to Navigate.</string>
     <string name="may_take_a_while">This may take a while.</string>
-    <string name="error_detail">Restart the application and try again.\nIf the error persist reinstall the application.</string>
+    <string name="error_detail">Restart the application and try again.\nIf the error persists reinstall the application.</string>
     <string name="connected_to_the_network">You\'re connected to the Freenet network.</string>
     <string name="start_label">Start</string>
     <string name="shutdown_label">Shutdown</string>
@@ -18,12 +18,12 @@
     <string name="freenet_web">Freenet Web</string>
     <!-- Battery and Data Preferences -->
     <string name="preserve_data">Preserve data</string>
-    <string name="preserve_data_summary">Freenet makes an intensive use of network data. With this option enabled Freenet will run only when connected to Wifi.\n\nThe node must be restarted to activate this setting.</string>
+    <string name="preserve_data_summary">Freenet makes intensive use of network data. With this option enabled Freenet will run only when connected to Wifi.\n\nThe node must be restarted to activate this setting.</string>
     <string name="preserve_battery">Preserve battery</string>
     <string name="preserve_battery_summary">Freenet may cause the battery to discharge quickly. With this option enabled Freenet will run only when charging.\n\nThe node must be restarted to activate this setting.</string>
     <!-- Freenet Web Preferences -->
     <string name="web_access">Access from PC</string>
-    <string name="web_access_summary">Access Freenet running on your phone from a PC or Tablet. The device must be on the same network. Access it through the phone local IP and port: 9999 (ex. 192.168.x.x:9999).</string>
+    <string name="web_access_summary">Access Freenet running on your phone from a PC or Tablet. The device must be on the same network. Access it through the phone\'s local IP and port: 9999 (ex. 192.168.x.x:9999).</string>
     <string name="node_paused">Freenet is paused.</string>
     <string name="app_version" translatable="false">v%1$s</string>
 </resources>
