@@ -15,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import org.freenetproject.mobile.BuildConfig;
 import org.freenetproject.mobile.R;
 import org.freenetproject.mobile.services.node.Manager;
 import org.freenetproject.mobile.ui.main.viewmodel.MainViewModel;
@@ -89,7 +90,7 @@ public class MainFragment extends Fragment {
             } else if (status.equals(Manager.Status.ERROR)) {
                 statusText.setText(R.string.error_starting_up);
             } else {
-                statusText.setText("");
+                statusText.setText(getString(R.string.app_version, BuildConfig.VERSION_NAME));
             }
         });
     }

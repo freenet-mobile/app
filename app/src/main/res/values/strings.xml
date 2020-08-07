@@ -25,4 +25,5 @@
     <string name="web_access">Access from PC</string>
     <string name="web_access_summary">Access Freenet running on your phone from a PC or Tablet. The device must be on the same network. Access it through the phone local IP and port: 9999 (ex. 192.168.x.x:9999).</string>
     <string name="node_paused">Freenet is paused.</string>
+    <string name="app_version" translatable="false">v%1$s</string>
 </resources>
