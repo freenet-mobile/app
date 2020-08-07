@@ -10,7 +10,7 @@ Freenet is a peer-to-peer platform for censorship-resistant communication and pu
 
 - **Simple and intuitive interface** for controlling the node: start and stop with a single tap.
 
-- **Runs on background** for better performance to access content.
+- **Runs in background** for better performance to access content.
 
 # Installing
 
@@ -24,9 +24,9 @@ See the [release page][5] for lastest updates and changelogs.
 
 Follow the [steps to install][6] an APK in your device.
 
-## Requeriments
+## Requirements
 
-- Android 5.0 "Lollipop" or newer required.
+- Android 5.1 "Lollipop" or newer required.
 
 # Contributing
 
