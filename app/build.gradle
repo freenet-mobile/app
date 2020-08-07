@@ -74,7 +74,7 @@ dependencies {
     implementation 'com.github.desyncr:onion-fec:0.0.2'
     implementation 'com.github.desyncr:freenet-ext:0.60.2'
     implementation 'com.github.Bombe:jFCPlib:v0.1.6'
-    implementation 'com.github.desyncr:fred:1485.2m'
+    implementation 'com.github.desyncr:fred:1486.1m'
 
     // For running a locally built freenet.jar
     //implementation "net.java.dev.jna:jna:4.2.2"
