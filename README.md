@@ -22,10 +22,6 @@ Follow the [steps to install][6] an APK in your device.
 
 See the [release page][5] for lastest updates and changelogs.
 
-## Requirements
-
-- Android 5.1 "Lollipop" or newer required.
-
 # FAQ
 
 ### Are there plans of putting the app on F-Droid, Google Play Store?
