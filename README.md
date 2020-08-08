@@ -12,21 +12,45 @@ Freenet is a peer-to-peer platform for censorship-resistant communication and pu
 
 - **Runs in background** for better performance to access content.
 
-# Installing
+# Download
 
 <a href="https://github.com/freenet-mobile/app/releases/download/v0.1.4-beta/freenet-mobile-release.apk" alt="Download APK">
     <img src="./docs/apk-file-format-symbol.png" width="200">
 </a>
 
-See the [release page][5] for lastest updates and changelogs.
-
-## How to install?
-
 Follow the [steps to install][6] an APK in your device.
+
+See the [release page][5] for lastest updates and changelogs.
 
 ## Requirements
 
 - Android 5.1 "Lollipop" or newer required.
+
+# FAQ
+
+### Are there plans of putting the app on F-Droid, Google Play Store?
+
+For sure. We'll work to have it published both on F-Droid and Google Play Store.
+
+### Will there ever be an iOS version? Is it even possible?
+
+Apparently it's [technically possible](https://multi-os-engine.org/). We're not sure we'll focus our efforts on it right now.
+
+### Wouldn't that be a huge battery drain? What about data-plan?
+
+The app is pre-configured to keep battery and network data usage to a minimum. You can configure the app to avoid data-plan use as well.
+
+### Can I use the app on my everyday phone?
+
+Yes, you can. Configure it to "preserve data", so it only connects on Wifi and "preserve battery" to run only when charging.
+
+### Does it run on my Android X, Y, Z phone?
+
+The application runs on Android Lollipop 5.1 and above. So any modern phone should work.
+
+### What can I _do_ with it?
+
+You can access and create content on Freenet. Access FMS Archive to see what the Freenet community is talking about.
 
 # Contributing
 
