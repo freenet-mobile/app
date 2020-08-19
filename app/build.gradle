@@ -74,7 +74,7 @@ dependencies {
     implementation 'com.github.freenet-mobile:onion-common:0.0.3'
     implementation 'com.github.freenet-mobile:onion-fec:0.0.3'
     implementation 'com.github.freenet-mobile:freenet-ext:0.60.3'
-    implementation 'com.github.freenet-mobile:fred:1486.3m'
+    implementation 'com.github.freenet-mobile:fred:1486.4m'
 
     // For running a locally built freenet.jar
     //implementation "net.java.dev.jna:jna:4.5.2"
