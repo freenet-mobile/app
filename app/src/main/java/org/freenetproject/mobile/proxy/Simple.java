@@ -12,6 +12,8 @@ import java.net.Socket;
  * From: https://resources.oreilly.com/examples/9781565923713/blob/master/SimpleProxyServer.java
  */
 public class Simple implements Runnable {
+    public static int defaultLocalPort = 9999;
+
     public void run(String remotehost, int remoteport, int localport) throws IOException {
         // Create a ServerSocket to listen for connections with
         ServerSocket ss = new ServerSocket(localport);
@@ -109,7 +111,7 @@ public class Simple implements Runnable {
     public void run() {
         Log.d("Freenet", "Proxy thread started");
         try {
-            run("127.0.0.1", 8888, 9999);
+            run("127.0.0.1", 8888, defaultLocalPort);
         } catch (IOException e) {
             e.printStackTrace();
         }
