@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'me.moallemi.advanced-build-version'
 
 android {
     compileSdkVersion 30
@@ -11,7 +12,7 @@ android {
         applicationId "org.freenetproject.mobile"
         minSdkVersion 22
         targetSdkVersion 30
-        versionCode 14
+        versionCode advancedVersioning.versionCode
         versionName "0.1.4"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -34,6 +35,17 @@ android {
         main {
             jniLibs.srcDirs = ["libs"]
         }
+    }
+}
+
+advancedVersioning {
+    codeOptions {
+        versionCodeType 'AUTO_INCREMENT_ONE_STEP'
+        dependsOnTasks 'debug', 'release', 'assemble'
+    }
+    outputOptions {
+        renameOutput true
+        nameFormat 'freenet-mobile-${buildType}-${versionName}'
     }
 }
 
