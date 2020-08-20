@@ -27,7 +27,7 @@
     <string name="node_paused">Freenet is paused.</string>
     <string name="app_version" translatable="false">v%1$s</string>
 
-    <string name="text_about" translatable="false"><![CDATA[
+    <string name="text_about"><![CDATA[
 <h2>Version</h2>
 v%1$s
 <p>
@@ -37,6 +37,15 @@ Open source application built around Freenet Project.
 <h2>Developer info</h2>
 <p>
 DC* <a href="https://github.com/desyncr">github</a>
+</p>
+
+<h2>Donate</h2>
+<p>
+Help us keep Internet freedom alive and expand human liberty.
+<a href="https://freenetproject.org/appeal-for-donations.html">Learn more about our fundraiser</a>.
+</p>
+<p>
+All support is very much appreciated.
 </p>
 
 <h2>Resources</h2>

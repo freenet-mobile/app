@@ -22,4 +22,50 @@
     <string name="web_access">Acceso desde PC</string>
     <string name="web_access_summary">Acceda a Freenet en su teléfono desde una PC o tableta. El dispositivo debe estar en la misma red. Acceda a él a través del teléfono IP local y el puerto: 9999 (ej. 192.168.x.x: 9999).</string>
     <string name="node_paused">Freenet está pausado.</string>
+    <string name="text_about"><![CDATA[
+<h2>Versión</h2>
+v%1$s
+<p>
+Aplicación de código abierto construida alrededor de Freenet Project.
+</p>
+
+<h2>Información del desarrollador</h2>
+<p>
+DC* <a href="https://github.com/desyncr">github</a>
+</p>
+
+<h2>Donar</h2>
+<p>
+Ayúdanos a mantener viva la libertad en Internet y a expandir la libertad humana.
+<a href="https://freenetproject.org/appeal-for-donations.html">Obtenga más información sobre nuestra recaudación de fondos</a>.
+</p>
+<p>
+Se agradece mucho todo el apoyo.
+</p>
+
+<h2>Recursos</h2>
+<p>
+<ul>
+<li><a href="https://github.com/freenet-mobile/app/issues">Problemas y apoyo</a></li>
+<li><a href="https://github.com/freenet-mobile/app/projects/1">Hoja de ruta de desarrollo</a></li>
+</ul>
+</p>
+
+<h2>Bibliotecas</h2>
+<ul>
+<li>fred: <a href="https://github.com/freenet/fred">freenet/fred</a></li>
+<li>freenet-ext: <a href="https://github.com/freenet-mobile/freenet-ext">freenet-mobile/freenet-ext</a></li>
+<li>onion-common: <a href="https://github.com/freenet-mobile/onion-common">freenet-mobile/onion-common</a></li>
+<li>onion-fec: <a href="https://github.com/freenet-mobile/onion-fec">freenet-mobile/onion-fec</a></li>
+<li>jFCPlib: <a href="https://github.com/Bombe/jFCPlib">Bombe/jFCPlib</a></li>
+<li>mantissa: <a href="https://github.com/freenet-mobile/mantissa">freenet-mobile/mantissa</a></li>
+<li>lzma-sdk: org.b1.pack:lzma-sdk-4j</li>
+<li>bouncycastle: org.bouncycastle:bcprov-jdk15on</li>
+<li>process-phoenix: com.jakewharton:process-phoenix</li>
+
+<h2>Licencia</h2>
+<p>
+Licencia pública general GNU v3.0. Lea la licencia <a href="https://github.com/freenet-mobile/app/blob/master/LICENSE">aquí</a>.
+</p>
+        ]]></string>
 </resources>

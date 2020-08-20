@@ -22,4 +22,50 @@
     <string name="web_access_summary">Greifen Sie von einem PC oder Tablet auf Freenet zu, das auf Ihrem Telefon ausgeführt wird. Das Gerät muss sich im selben Netzwerk befinden. Greifen Sie über die lokale IP-Adresse und den Port des Telefons darauf zu: 9999 (z. B. 192.168.x.x:9999).</string>
     <string name="node_paused">Freenet ist angehalten.</string>
     <string name="preserve_battery">Batterie schonen</string>
+    <string name="text_about"><![CDATA[
+<h2>Ausführung</h2>
+v%1$s
+<p>
+Open Source-Anwendung rund um Freenet Project.
+</p>
+
+<h2>Entwicklerinfo</h2>
+<p>
+DC* <a href="https://github.com/desyncr">github</a>
+</p>
+
+<h2>Spenden</h2>
+<p>
+Helfen Sie uns, die Freiheit des Internets am Leben zu erhalten und die Freiheit des Menschen zu erweitern.
+<a href="https://freenetproject.org/appeal-for-donations.html">Erfahren Sie mehr über unsere Spendenaktion</a>.
+</p>
+<p>
+Jede Unterstützung wird sehr geschätzt.
+</p>
+
+<h2>Ressourcen</h2>
+<p>
+<ul>
+<li><a href="https://github.com/freenet-mobile/app/issues">Probleme und Support</a></li>
+<li><a href="https://github.com/freenet-mobile/app/projects/1">Entwicklungsfahrplan</a></li>
+</ul>
+</p>
+
+<h2>Bibliotheken</h2>
+<ul>
+<li>fred: <a href="https://github.com/freenet/fred">freenet/fred</a></li>
+<li>freenet-ext: <a href="https://github.com/freenet-mobile/freenet-ext">freenet-mobile/freenet-ext</a></li>
+<li>onion-common: <a href="https://github.com/freenet-mobile/onion-common">freenet-mobile/onion-common</a></li>
+<li>onion-fec: <a href="https://github.com/freenet-mobile/onion-fec">freenet-mobile/onion-fec</a></li>
+<li>jFCPlib: <a href="https://github.com/Bombe/jFCPlib">Bombe/jFCPlib</a></li>
+<li>mantissa: <a href="https://github.com/freenet-mobile/mantissa">freenet-mobile/mantissa</a></li>
+<li>lzma-sdk: org.b1.pack:lzma-sdk-4j</li>
+<li>bouncycastle: org.bouncycastle:bcprov-jdk15on</li>
+<li>process-phoenix: com.jakewharton:process-phoenix</li>
+
+<h2>Lizenz</h2>
+<p>
+GNU General Public License v3.0. Lesen Sie hier die <a href="https://github.com/freenet-mobile/app/blob/master/LICENSE">Lizenz</a>
+</p>
+        ]]></string>
 </resources>
