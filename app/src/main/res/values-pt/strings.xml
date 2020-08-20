@@ -22,4 +22,50 @@
     <string name="web_access">Acesso do PC</string>
     <string name="web_access_summary">Acesse o Freenet em execução no seu telefone a partir de um PC ou tablet. O dispositivo deve estar na mesma rede. Acesse-o através do: http://%1$s:%2$d.</string>
     <string name="node_paused">Freenet está em pausa.</string>
+    <string name="text_about"><![CDATA[
+<h2>Versão</h2>
+v%1$s
+<p>
+Aplicativo de código aberto construído em torno do Projeto Freenet.
+</p>
+
+<h2>Informação do desenvolvedor</h2>
+<p>
+DC* <a href="https://github.com/desyncr">github</a>
+</p>
+
+<h2>Doar</h2>
+<p>
+Ajude-nos a manter viva a liberdade na Internet e a expandir a liberdade humana.
+<a href="https://freenetproject.org/appeal-for-donations.html">Saiba mais sobre nossa arrecadação de fundos</a>.
+</p>
+<p>
+Todo o apoio é muito apreciado.
+</p>
+
+<h2>Recursos</h2>
+<p>
+<ul>
+<li><a href="https://github.com/freenet-mobile/app/issues">Problemas e suporte</a></li>
+<li><a href="https://github.com/freenet-mobile/app/projects/1">Roteiro de desenvolvimento</a></li>
+</ul>
+</p>
+
+<h2>Bibliotecas</h2>
+<ul>
+<li>fred: <a href="https://github.com/freenet/fred">freenet/fred</a></li>
+<li>freenet-ext: <a href="https://github.com/freenet-mobile/freenet-ext">freenet-mobile/freenet-ext</a></li>
+<li>onion-common: <a href="https://github.com/freenet-mobile/onion-common">freenet-mobile/onion-common</a></li>
+<li>onion-fec: <a href="https://github.com/freenet-mobile/onion-fec">freenet-mobile/onion-fec</a></li>
+<li>jFCPlib: <a href="https://github.com/Bombe/jFCPlib">Bombe/jFCPlib</a></li>
+<li>mantissa: <a href="https://github.com/freenet-mobile/mantissa">freenet-mobile/mantissa</a></li>
+<li>lzma-sdk: org.b1.pack:lzma-sdk-4j</li>
+<li>bouncycastle: org.bouncycastle:bcprov-jdk15on</li>
+<li>process-phoenix: com.jakewharton:process-phoenix</li>
+
+<h2>Licença</h2>
+<p>
+GNU General Public License v3.0. Leia a licença <a href="https://github.com/freenet-mobile/app/blob/master/LICENSE">aqui</a>.
+</p>
+        ]]></string>
 </resources>

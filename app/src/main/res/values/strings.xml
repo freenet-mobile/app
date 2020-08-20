@@ -26,4 +26,51 @@
     <string name="web_access_summary">Access Freenet running on your phone from a PC or Tablet. The device must be on the same network. Access it through: http://%1$s:%2$d.</string>
     <string name="node_paused">Freenet is paused.</string>
     <string name="app_version" translatable="false">v%1$s</string>
+
+    <string name="text_about"><![CDATA[
+<h2>Version</h2>
+v%1$s
+<p>
+Open source application built around Freenet Project.
+</p>
+
+<h2>Developer info</h2>
+<p>
+DC* <a href="https://github.com/desyncr">github</a>
+</p>
+
+<h2>Donate</h2>
+<p>
+Help us keep Internet freedom alive and expand human liberty.
+<a href="https://freenetproject.org/appeal-for-donations.html">Learn more about our fundraiser</a>.
+</p>
+<p>
+All support is very much appreciated.
+</p>
+
+<h2>Resources</h2>
+<p>
+<ul>
+<li><a href="https://github.com/freenet-mobile/app/issues">Issues and support</a></li>
+<li><a href="https://github.com/freenet-mobile/app/projects/1">Development roadmap</a></li>
+</ul>
+</p>
+
+<h2>Libraries</h2>
+<ul>
+<li>fred: <a href="https://github.com/freenet/fred">freenet/fred</a></li>
+<li>freenet-ext: <a href="https://github.com/freenet-mobile/freenet-ext">freenet-mobile/freenet-ext</a></li>
+<li>onion-common: <a href="https://github.com/freenet-mobile/onion-common">freenet-mobile/onion-common</a></li>
+<li>onion-fec: <a href="https://github.com/freenet-mobile/onion-fec">freenet-mobile/onion-fec</a></li>
+<li>jFCPlib: <a href="https://github.com/Bombe/jFCPlib">Bombe/jFCPlib</a></li>
+<li>mantissa: <a href="https://github.com/freenet-mobile/mantissa">freenet-mobile/mantissa</a></li>
+<li>lzma-sdk: org.b1.pack:lzma-sdk-4j</li>
+<li>bouncycastle: org.bouncycastle:bcprov-jdk15on</li>
+<li>process-phoenix: com.jakewharton:process-phoenix</li>
+
+<h2>License</h2>
+<p>
+GNU General Public License v3.0. Read license <a href="https://github.com/freenet-mobile/app/blob/master/LICENSE">here</a>.
+</p>
+        ]]></string>
 </resources>

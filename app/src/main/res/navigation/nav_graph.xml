@@ -9,5 +9,5 @@
         android:id="@+id/FirstFragment"
         android:name="org.freenetproject.mobile.ui.main.activity.MainFragment"
         android:label=""
-        tools:layout="@layout/fragment_main"/>
+        tools:layout="@layout/fragment_main" />
 </navigation>

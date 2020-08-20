@@ -4,7 +4,7 @@
     package="org.freenetproject.mobile">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -19,18 +19,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ui.about.activity.AboutActivity"
+            android:label="App info"
+            android:parentActivityName=".ui.main.activity.MainActivity" ></activity>
+        <activity
             android:name=".ui.settings.activity.SettingsActivity"
             android:label="@string/title_activity_settings"
-            android:parentActivityName=".ui.main.activity.MainActivity"
-            ></activity>
+            android:parentActivityName=".ui.main.activity.MainActivity" />
 
         <service
             android:name=".services.node.Service"
             android:enabled="true"
             android:exported="false">
             <intent-filter>
-                <action android:name="org.freenetproject.mobilenode.intent.action.START_NODE"></action>
-                <action android:name="org.freenetproject.mobilenode.intent.action.STOP_NODE"></action>
+                <action android:name="org.freenetproject.mobilenode.intent.action.START_NODE" />
+                <action android:name="org.freenetproject.mobilenode.intent.action.STOP_NODE" />
             </intent-filter>
         </service>
 
@@ -44,7 +47,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

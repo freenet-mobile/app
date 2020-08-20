@@ -18,6 +18,7 @@ import androidx.lifecycle.ViewModelProvider;
 import org.freenetproject.mobile.BuildConfig;
 import org.freenetproject.mobile.R;
 import org.freenetproject.mobile.services.node.Manager;
+import org.freenetproject.mobile.ui.about.activity.AboutActivity;
 import org.freenetproject.mobile.ui.main.viewmodel.MainViewModel;
 import org.freenetproject.mobile.ui.settings.activity.SettingsActivity;
 
@@ -38,6 +39,7 @@ public class MainFragment extends Fragment {
         Manager manager = Manager.getInstance();
         updateSharedPreferences(manager, view);
         updateSettings(manager, view);
+        updateAbout(manager, view);
         updateControls(manager, view);
         updateStatus(manager, view);
         updateStatusDetail(manager, view);
@@ -134,6 +136,13 @@ public class MainFragment extends Fragment {
         Button settings = view.findViewById(R.id.settings_button);
         settings.setOnClickListener(view1 -> {
             startActivity(new Intent(getActivity(), SettingsActivity.class));
+        });
+    }
+
+    private void updateAbout(Manager m, View view) {
+        Button settings = view.findViewById(R.id.about_button);
+        settings.setOnClickListener(view1 -> {
+            startActivity(new Intent(getActivity(), AboutActivity.class));
         });
     }
 }

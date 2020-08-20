@@ -22,4 +22,50 @@
     <string name="web_access">Accès depuis un PC</string>
     <string name="web_access_summary">Accédez à Freenet en cours d\'exécution sur votre téléphone depuis un PC ou une tablette. L\'appareil doit être sur le même réseau. Accédez-y via: http://%1$s:%2$d.</string>
     <string name="node_paused">Freenet est en pause.</string>
+    <string name="text_about"><![CDATA[
+<h2>Version</h2>
+v%1$s
+<p>
+Application open source construite autour du projet Freenet.
+</p>
+
+<h2>Informations développeur</h2>
+<p>
+DC* <a href="https://github.com/desyncr">github</a>
+</p>
+
+<h2>Faire un don</h2>
+<p>
+Aidez-nous à préserver la liberté d\'Internet et à étendre la liberté humaine.
+<a href="https://freenetproject.org/appeal-for-donations.html">En savoir plus sur notre collecte de fonds</a>.
+</p>
+<p>
+Tout soutien est très apprécié.
+</p>
+
+<h2>Ressources</h2>
+<p>
+<ul>
+<li><a href="https://github.com/freenet-mobile/app/issues">Problèmes et assistance</a></li>
+<li><a href="https://github.com/freenet-mobile/app/projects/1">Feuille de route de développement</a></li>
+</ul>
+</p>
+
+<h2>Bibliothèques</h2>
+<ul>
+<li>fred: <a href="https://github.com/freenet/fred">freenet/fred</a></li>
+<li>freenet-ext: <a href="https://github.com/freenet-mobile/freenet-ext">freenet-mobile/freenet-ext</a></li>
+<li>onion-common: <a href="https://github.com/freenet-mobile/onion-common">freenet-mobile/onion-common</a></li>
+<li>onion-fec: <a href="https://github.com/freenet-mobile/onion-fec">freenet-mobile/onion-fec</a></li>
+<li>jFCPlib: <a href="https://github.com/Bombe/jFCPlib">Bombe/jFCPlib</a></li>
+<li>mantissa: <a href="https://github.com/freenet-mobile/mantissa">freenet-mobile/mantissa</a></li>
+<li>lzma-sdk: org.b1.pack:lzma-sdk-4j</li>
+<li>bouncycastle: org.bouncycastle:bcprov-jdk15on</li>
+<li>process-phoenix: com.jakewharton:process-phoenix</li>
+
+<h2>Licence</h2>
+<p>
+Licence publique générale GNU v3.0. Lire la licence <a href="https://github.com/freenet-mobile/app/blob/master/LICENSE">ici</a>.
+</p>
+        ]]></string>
 </resources>
