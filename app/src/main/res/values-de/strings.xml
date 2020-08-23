@@ -63,9 +63,15 @@ Jede Unterstützung wird sehr geschätzt.
 <li>bouncycastle: org.bouncycastle:bcprov-jdk15on</li>
 <li>process-phoenix: com.jakewharton:process-phoenix</li>
 
+<h2>Bestätigung</h2>
+<p>
+<a href="https://freenetproject.org/pages/help.html#can-i-get-trouble-if-i-run-a-node">Lesen und verstehen Sie</a> die potenziellen Risiken beim Laufen ein Freenet-Knoten.
+</p>
+
 <h2>Lizenz</h2>
 <p>
 GNU General Public License v3.0. Lesen Sie hier die <a href="https://github.com/freenet-mobile/app/blob/master/LICENSE">Lizenz</a>
 </p>
         ]]></string>
+    <string name="acknowledgement_text">Ich habe die potenziellen Risiken beim Ausführen eines Freenet-Knotens <a href="https://freenetproject.org/pages/help.html#can-i-get-trouble-if-i-run-a-node">gelesen und verstanden</a>.</string>
 </resources>
