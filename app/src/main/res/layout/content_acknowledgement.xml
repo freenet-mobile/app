@@ -7,7 +7,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/content_main_fragment"
+        android:id="@+id/content_ack_fragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:defaultNavHost="true"
@@ -17,9 +17,9 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        android:name="org.freenetproject.mobile.ui.main.activity.MainFragment"
+        android:name="org.freenetproject.mobile.ui.acknowledgement.activity.AcknowledgementFragment"
         android:label=""
-        tools:layout="@layout/fragment_main"
+        tools:layout="@layout/fragment_acknowledgement"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

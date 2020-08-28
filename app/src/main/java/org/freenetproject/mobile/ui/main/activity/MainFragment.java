@@ -19,6 +19,8 @@ import org.freenetproject.mobile.BuildConfig;
 import org.freenetproject.mobile.R;
 import org.freenetproject.mobile.services.node.Manager;
 import org.freenetproject.mobile.ui.about.activity.AboutActivity;
+import org.freenetproject.mobile.ui.acknowledgement.activity.AcknowledgementActivity;
+import org.freenetproject.mobile.ui.acknowledgement.activity.AcknowledgementFragment;
 import org.freenetproject.mobile.ui.main.viewmodel.MainViewModel;
 import org.freenetproject.mobile.ui.settings.activity.SettingsActivity;
 
@@ -28,6 +30,14 @@ public class MainFragment extends Fragment {
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
+        SharedPreferences prefs = getContext().getSharedPreferences(
+                getContext().getPackageName(), Context.MODE_PRIVATE
+        );
+
+        if (!prefs.getBoolean(AcknowledgementFragment.ACKNOWLEDGEMENT_KEY, false)) {
+            startActivity(new Intent(getContext(), AcknowledgementActivity.class));
+        }
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_main, container, false);
     }
