@@ -12,7 +12,11 @@ import org.tanukisoftware.wrapper.WrapperManager;
 import java.io.IOException;
 import java.security.Security;
 
+import freenet.crypt.KeyGenUtils;
+import freenet.node.Node;
 import freenet.node.NodeStarter;
+import freenet.pluginmanager.PluginManager;
+import plugins.Sharesite.Plugin;
 
 /**
  * Small wrapper around NodeStarter and WrapperManager to start and stop the node. Also is responsible
@@ -48,7 +52,11 @@ public class Runner {
         }
 
         try {
-            NodeStarter.start_osgi(args);
+            Node node = NodeStarter.start_osgi(args);
+
+            PluginManager pm = node.getPluginManager();
+            Plugin sharesite = new Plugin();
+            pm.startPlugin(sharesite);
         } catch (IllegalStateException e) {
             return -2;
         }
