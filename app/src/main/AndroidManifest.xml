@@ -24,7 +24,7 @@
         </activity>
         <activity
             android:name=".ui.about.activity.AboutActivity"
-            android:label="App info"
+            android:label="@string/title_activity_about"
             android:parentActivityName=".ui.main.activity.MainActivity" />
         <activity
             android:name=".ui.settings.activity.SettingsActivity"

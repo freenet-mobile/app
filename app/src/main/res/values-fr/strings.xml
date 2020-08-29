@@ -73,5 +73,6 @@ Tout soutien est très apprécié.
 Licence publique générale GNU v3.0. Lire la licence <a href="https://github.com/freenet-mobile/app/blob/master/LICENSE">ici</a>.
 </p>
         ]]></string>
-    <string name="acknowledgement_text">J\'ai <a href="https://freenetproject.org/pages/help.html#can-i-get-trouble-if-i-run-a-node">lu et compris</a> les risques potentiels impliquant l\'exécution d\'un nœud Freenet.</string>
+    <string name="acknowledgement_text"><![CDATA[J\'ai <a href="https://freenetproject.org/pages/help.html#can-i-get-trouble-if-i-run-a-node">lu et compris</a> les risques potentiels impliquant l\'exécution d\'un nœud Freenet.]]></string>
+    <string name="title_activity_about">Informations sur l\'application</string>
 </resources>

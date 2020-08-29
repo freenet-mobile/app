@@ -73,5 +73,6 @@ Jede Unterstützung wird sehr geschätzt.
 GNU General Public License v3.0. Lesen Sie hier die <a href="https://github.com/freenet-mobile/app/blob/master/LICENSE">Lizenz</a>
 </p>
         ]]></string>
-    <string name="acknowledgement_text">Ich habe die potenziellen Risiken beim Ausführen eines Freenet-Knotens <a href="https://freenetproject.org/pages/help.html#can-i-get-trouble-if-i-run-a-node">gelesen und verstanden</a>.</string>
+    <string name="acknowledgement_text"><![CDATA[Ich habe die potenziellen Risiken beim Ausführen eines Freenet-Knotens <a href="https://freenetproject.org/pages/help.html#can-i-get-trouble-if-i-run-a-node">gelesen und verstanden</a>.]]></string>
+    <string name="title_activity_about">App-Information</string>
 </resources>

@@ -13,6 +13,7 @@
     <string name="shutdown_label">Shutdown</string>
     <string name="freenet">Freenet</string>
     <string name="title_activity_settings">Settings</string>
+    <string name="title_activity_about">App info</string>
     <!-- Preference Titles -->
     <string name="battery_and_data">Battery and data usage</string>
     <string name="freenet_web">Freenet Web</string>
