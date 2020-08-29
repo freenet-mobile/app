@@ -86,12 +86,14 @@ dependencies {
     implementation 'com.github.freenet-mobile:onion-common:0.0.3'
     implementation 'com.github.freenet-mobile:onion-fec:0.0.4'
     implementation 'com.github.freenet-mobile:freenet-ext:0.60.3'
-    implementation 'com.github.freenet-mobile:fred:1486.4m'
+    implementation 'com.github.freenet-mobile:fred:1486.5m'
+    implementation 'com.github.desyncr:plugin-sharesite:0.4.7.2m'
 
     // For running a locally built freenet.jar
     //implementation "net.java.dev.jna:jna:4.5.2"
     //implementation "net.java.dev.jna:jna-platform:4.5.2"
     //implementation files('libs/freenet.jar')
+
 
     implementation 'androidx.preference:preference:1.1.1'
 
