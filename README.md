@@ -48,6 +48,10 @@ The application runs on Android Lollipop 5.1 and above. So any modern phone shou
 
 You can access and create content on Freenet. Access FMS Archive to see what the Freenet community is talking about.
 
+### Will there be a "Mobile FMS"?
+
+We'll work on Forums, File sharing, Blogging and Friend-to-friend support on the Mobile app.
+
 # Contributing
 
 [Freenet][3] and [Freenet Mobile][1] are open source projects developed entirely by volunteers. If you would like to contribute to the project, you are very welcome.
