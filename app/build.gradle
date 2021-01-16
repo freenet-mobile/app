@@ -80,7 +80,7 @@ dependencies {
     implementation 'com.github.freenet-mobile:freenet-ext:0.60.3'
 
     implementation 'net.java.dev.jna:jna:4.5.2@aar'
-    implementation ('com.github.freenet-mobile:fred:1486.7m') {
+    implementation ('com.github.freenet-mobile:fred:1489.3m') {
         exclude group: 'net.java.dev.jna', module: 'jna'
         exclude group: 'net.java.dev.jna', module: 'jna-platform'
     }
