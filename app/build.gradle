@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'me.moallemi.advanced-build-version'
 
 android {
     compileSdkVersion 30
@@ -12,7 +11,7 @@ android {
         applicationId "org.freenetproject.mobile"
         minSdkVersion 22
         targetSdkVersion 30
-        versionCode advancedVersioning.versionCode
+        versionCode 291
         versionName "0.2.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -21,7 +20,7 @@ android {
             abiFilters 'arm64-v8a', 'x86_64', 'x86', 'armeabi-v7a'
         }
 
-        setProperty("archivesBaseName", "freenet-mobile")
+        setProperty("archivesBaseName", "freenet-mobile-v$versionName")
     }
 
     buildTypes {
@@ -29,17 +28,6 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
-    }
-}
-
-advancedVersioning {
-    codeOptions {
-        versionCodeType 'AUTO_INCREMENT_ONE_STEP'
-        dependsOnTasks 'debug', 'release', 'assemble'
-    }
-    outputOptions {
-        renameOutput true
-        nameFormat 'freenet-mobile-${buildType}-${versionName}'
     }
 }
 
