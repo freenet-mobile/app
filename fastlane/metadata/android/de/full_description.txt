@@ -1,0 +1,8 @@
+Freenet ist eine Peer-to-Peer-Plattform für zensurresistente Kommunikation und Veröffentlichung. Sie können anonym Dateien freigeben, "Freesites" (Websites, auf die nur über Freenet zugegriffen werden kann) durchsuchen und veröffentlichen und in Foren chatten, ohne Angst vor Zensur zu haben. Freenet ist dezentralisiert, um es weniger anfällig für Angriffe zu machen. Wenn es im "Darknet"-Modus verwendet wird, in dem Benutzer nur eine Verbindung zu ihren Freunden herstellen, ist es sehr schwer zu erkennen.
+
+Weitere Informationen zu Freenet finden Sie <a href='https://freenetproject.org/pages/about.html'>hier</a>. Mit der <i>Freenet Mobile-App</i> können Sie Freenet mit einem einzigen Tastendruck steuern, nach Ihren Wünschen konfigurieren und Ihren Knoten in Sekundenschnelle starten.
+
+<b>Funktionen:</b>
+
+* Einfache und intuitive Benutzeroberfläche zur Steuerung des Knotens: Starten und Stoppen mit einem einzigen Tastendruck.
+* Läuft im Hintergrund für eine bessere Leistung beim Zugriff auf Inhalte.

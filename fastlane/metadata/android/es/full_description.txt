@@ -1,0 +1,8 @@
+Freenet es una plataforma peer-to-peer para publicaciones y comunicaciones resistentes a la censura. Le permite compartir archivos de forma anónima, navegar y publicar "freesites" (sitios web accesibles solo a través de Freenet) y chatear en foros, sin temor a la censura. Freenet está descentralizado para ser menos vulnerable a ataques, y si se usa en el modo "darknet", donde los usuarios solo se conectan con sus amigos, es muy difícil de detectar.
+
+Para saber más sobre Freenet, consulte <a href='https://freenetproject.org/pages/about.html'>aquí</a>. La aplicación <i>Freenet Móvil</i> le permite controlar Freenet con un solo toque, configurarlo según sus necesidades e iniciar su nodo en cuestión de segundos.
+
+<b>Funciones:</b>
+
+* Interfaz simple e intuitiva para controlar el nodo: iniciar y detener con un solo toque.
+* Se ejecuta en segundo plano para un mejor rendimiento para acceder al contenido.
