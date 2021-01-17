@@ -1,4 +1,5 @@
-# Freenet Mobile [![Release](https://img.shields.io/github/v/release/freenet-mobile/app)][5] [![License](https://img.shields.io/github/license/freenet-mobile/app)][2]
+# Freenet Mobile
+[![Release](https://img.shields.io/github/v/release/freenet-mobile/app)][5] [![License](https://img.shields.io/github/license/freenet-mobile/app)][2]
 
 Access [Freenet][7] from the palm of your hand.
 
