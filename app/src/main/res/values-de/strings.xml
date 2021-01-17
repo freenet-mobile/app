@@ -31,7 +31,8 @@ Open Source-Anwendung rund um Freenet Project.
 
 <h2>Entwicklerinfo</h2>
 <p>
-DC* <a href="https://github.com/desyncr">github</a>
+Freenet mobile: <a href="https://github.com/desyncr">Desyncr</a>,
+Freenet: See <a href="https://github.com/freenet/wiki/wiki/People">contributors</a>
 </p>
 
 <h2>Spenden</h2>
@@ -40,7 +41,7 @@ Helfen Sie uns, die Freiheit des Internets am Leben zu erhalten und die Freiheit
 <a href="https://freenetproject.org/appeal-for-donations.html">Erfahren Sie mehr über unsere Spendenaktion</a>.
 </p>
 <p>
-Jede Unterstützung wird sehr geschätzt.
+<b>Jede Unterstützung wird sehr geschätzt.</b>
 </p>
 
 <h2>Ressourcen</h2>
@@ -49,6 +50,16 @@ Jede Unterstützung wird sehr geschätzt.
 <li><a href="https://github.com/freenet-mobile/app/issues">Probleme und Support</a></li>
 <li><a href="https://github.com/freenet-mobile/app/projects/1">Entwicklungsfahrplan</a></li>
 </ul>
+</p>
+
+<h2>Bestätigung</h2>
+<p>
+<a href="https://freenetproject.org/pages/help.html#can-i-get-trouble-if-i-run-a-node">Lesen und verstehen Sie</a> die potenziellen Risiken beim Laufen ein Freenet-Knoten.
+</p>
+
+<h2>Lizenz</h2>
+<p>
+GNU General Public License v3.0. Lesen Sie hier die <a href="https://github.com/freenet-mobile/app/blob/master/LICENSE">Lizenz</a>
 </p>
 
 <h2>Bibliotheken</h2>
@@ -62,17 +73,7 @@ Jede Unterstützung wird sehr geschätzt.
 <li>lzma-sdk: org.b1.pack:lzma-sdk-4j</li>
 <li>bouncycastle: org.bouncycastle:bcprov-jdk15on</li>
 <li>process-phoenix: com.jakewharton:process-phoenix</li>
-
-<h2>Bestätigung</h2>
-<p>
-<a href="https://freenetproject.org/pages/help.html#can-i-get-trouble-if-i-run-a-node">Lesen und verstehen Sie</a> die potenziellen Risiken beim Laufen ein Freenet-Knoten.
-</p>
-
-<h2>Lizenz</h2>
-<p>
-GNU General Public License v3.0. Lesen Sie hier die <a href="https://github.com/freenet-mobile/app/blob/master/LICENSE">Lizenz</a>
-</p>
-        ]]></string>
+]]></string>
     <string name="acknowledgement_text"><![CDATA[Ich habe die potenziellen Risiken beim Ausführen eines Freenet-Knotens <a href="https://freenetproject.org/pages/help.html#can-i-get-trouble-if-i-run-a-node">gelesen und verstanden</a>.]]></string>
     <string name="title_activity_about">App-Information</string>
 </resources>

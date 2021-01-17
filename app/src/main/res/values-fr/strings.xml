@@ -31,7 +31,8 @@ Application open source construite autour du projet Freenet.
 
 <h2>Informations développeur</h2>
 <p>
-DC* <a href="https://github.com/desyncr">github</a>
+Freenet mobile: <a href="https://github.com/desyncr">Desyncr</a>,
+Freenet: Voir les <a href="https://github.com/freenet/wiki/wiki/People">contributeurs</a>
 </p>
 
 <h2>Faire un don</h2>
@@ -51,6 +52,16 @@ Tout soutien est très apprécié.
 </ul>
 </p>
 
+<h2>Remerciements</h2>
+<p>
+<a href="https://freenetproject.org/pages/help.html#can-i-get-trouble-if-i-run-a-node">Lire et comprendre</a> les risques potentiels liés à la course un nœud Freenet.
+</p>
+
+<h2>Licence</h2>
+<p>
+Licence publique générale GNU v3.0. Lire la licence <a href="https://github.com/freenet-mobile/app/blob/master/LICENSE">ici</a>.
+</p>
+
 <h2>Bibliothèques</h2>
 <ul>
 <li>fred: <a href="https://github.com/freenet/fred">freenet/fred</a></li>
@@ -62,17 +73,7 @@ Tout soutien est très apprécié.
 <li>lzma-sdk: org.b1.pack:lzma-sdk-4j</li>
 <li>bouncycastle: org.bouncycastle:bcprov-jdk15on</li>
 <li>process-phoenix: com.jakewharton:process-phoenix</li>
-
-<h2>Remerciements</h2>
-<p>
-<a href="https://freenetproject.org/pages/help.html#can-i-get-trouble-if-i-run-a-node">Lire et comprendre</a> les risques potentiels liés à la course un nœud Freenet.
-</p>
-
-<h2>Licence</h2>
-<p>
-Licence publique générale GNU v3.0. Lire la licence <a href="https://github.com/freenet-mobile/app/blob/master/LICENSE">ici</a>.
-</p>
-        ]]></string>
+]]></string>
     <string name="acknowledgement_text"><![CDATA[J\'ai <a href="https://freenetproject.org/pages/help.html#can-i-get-trouble-if-i-run-a-node">lu et compris</a> les risques potentiels impliquant l\'exécution d\'un nœud Freenet.]]></string>
     <string name="title_activity_about">Informations sur l\'application</string>
 </resources>
