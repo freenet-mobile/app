@@ -31,7 +31,8 @@ Aplicación de código abierto construida alrededor de Freenet Project.
 
 <h2>Información del desarrollador</h2>
 <p>
-DC* <a href="https://github.com/desyncr">github</a>
+Freenet mobile: <a href="https://github.com/desyncr">Desyncr</a>,
+Freenet: Ver <a href="https://github.com/freenet/wiki/wiki/People">colaboradores</a>
 </p>
 
 <h2>Donar</h2>
@@ -40,7 +41,7 @@ Ayúdanos a mantener viva la libertad en Internet y a expandir la libertad human
 <a href="https://freenetproject.org/appeal-for-donations.html">Obtenga más información sobre nuestra recaudación de fondos</a>.
 </p>
 <p>
-Se agradece mucho todo el apoyo.
+<b>Se agradece mucho todo el apoyo.</b>
 </p>
 
 <h2>Recursos</h2>
@@ -49,6 +50,15 @@ Se agradece mucho todo el apoyo.
 <li><a href="https://github.com/freenet-mobile/app/issues">Problemas y apoyo</a></li>
 <li><a href="https://github.com/freenet-mobile/app/projects/1">Hoja de ruta de desarrollo</a></li>
 </ul>
+</p>
+<h2>Reconocimiento</h2>
+<p>
+<a href="https://freenetproject.org/pages/help.html#can-i-get-trouble-if-i-run-a-node">Lea y comprenda</a> los riesgos potenciales que implica correr un nodo Freenet.
+</p>
+
+<h2>Licencia</h2>
+<p>
+Licencia pública general GNU v3.0. Lea la licencia <a href="https://github.com/freenet-mobile/app/blob/master/LICENSE">aquí</a>.
 </p>
 
 <h2>Bibliotecas</h2>
@@ -62,17 +72,8 @@ Se agradece mucho todo el apoyo.
 <li>lzma-sdk: org.b1.pack:lzma-sdk-4j</li>
 <li>bouncycastle: org.bouncycastle:bcprov-jdk15on</li>
 <li>process-phoenix: com.jakewharton:process-phoenix</li>
-
-<h2>Reconocimiento</h2>
-<p>
-<a href="https://freenetproject.org/pages/help.html#can-i-get-trouble-if-i-run-a-node">Lea y comprenda</a> los riesgos potenciales que implica correr un nodo Freenet.
-</p>
-
-<h2>Licencia</h2>
-<p>
-Licencia pública general GNU v3.0. Lea la licencia <a href="https://github.com/freenet-mobile/app/blob/master/LICENSE">aquí</a>.
-</p>
-        ]]></string>
+</ul>
+]]></string>
     <string name="acknowledgement_text"><![CDATA[<a href="https://freenetproject.org/pages/help.html#can-i-get-trouble-if-i-run-a-node">He leído y entiendo</a> los riesgos potenciales que implica la ejecución de un nodo Freenet.]]></string>
     <string name="title_activity_about">Informacion de la applicacion</string>
 </resources>

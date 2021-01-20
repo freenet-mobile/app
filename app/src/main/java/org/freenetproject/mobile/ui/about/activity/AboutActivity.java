@@ -3,6 +3,7 @@ package org.freenetproject.mobile.ui.about.activity;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
+import android.webkit.WebView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,8 +18,11 @@ public class AboutActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
 
-        TextView aboutText = findViewById(R.id.textview_about);
-        aboutText.setText(Html.fromHtml(getString(R.string.text_about, BuildConfig.VERSION_NAME)));
-        aboutText.setMovementMethod(LinkMovementMethod.getInstance());
+        WebView wv = (WebView) findViewById(R.id.about_webview);
+        wv.loadData(
+                getResources().getString(R.string.text_about, BuildConfig.VERSION_NAME),
+                "text/html; charset=utf-8",
+                null
+        );
     }
 }

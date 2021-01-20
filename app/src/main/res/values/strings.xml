@@ -37,7 +37,8 @@ Open source application built around Freenet Project.
 
 <h2>Developer info</h2>
 <p>
-DC* <a href="https://github.com/desyncr">github</a>
+Freenet mobile: <a href="https://github.com/desyncr">Desyncr</a>,
+Freenet: Siehe <a href="https://github.com/freenet/wiki/wiki/People">Mitwirkende</a>
 </p>
 
 <h2>Donate</h2>
@@ -46,7 +47,7 @@ Help us keep Internet freedom alive and expand human liberty.
 <a href="https://freenetproject.org/appeal-for-donations.html">Learn more about our fundraiser</a>.
 </p>
 <p>
-All support is very much appreciated.
+<b>All support is very much appreciated.</b>
 </p>
 
 <h2>Resources</h2>
@@ -57,7 +58,18 @@ All support is very much appreciated.
 </ul>
 </p>
 
+<h2>Acknowledgement</h2>
+<p>
+<a href="https://freenetproject.org/pages/help.htmlcan-i-get-trouble-if-i-run-a-node">Read and understand</a> the potential risks involving running a Freenet node.
+</p>
+
+<h2>License</h2>
+<p>
+GNU General Public License v2.0. Read license <a href="https://github.com/freenet-mobile/app/blob/master/LICENSE">here</a>.
+</p>
+
 <h2>Libraries</h2>
+<p>
 <ul>
 <li>fred: <a href="https://github.com/freenet/fred">freenet/fred</a></li>
 <li>freenet-ext: <a href="https://github.com/freenet-mobile/freenet-ext">freenet-mobile/freenet-ext</a></li>
@@ -68,16 +80,8 @@ All support is very much appreciated.
 <li>lzma-sdk: org.b1.pack:lzma-sdk-4j</li>
 <li>bouncycastle: org.bouncycastle:bcprov-jdk15on</li>
 <li>process-phoenix: com.jakewharton:process-phoenix</li>
-
-<h2>Acknowledgement</h2>
-<p>
-<a href="https://freenetproject.org/pages/help.html#can-i-get-trouble-if-i-run-a-node">Read and understand</a> the potential risks involving running a Freenet node.
+</ul>
 </p>
-
-<h2>License</h2>
-<p>
-GNU General Public License v3.0. Read license <a href="https://github.com/freenet-mobile/app/blob/master/LICENSE">here</a>.
-</p>
-        ]]></string>
+]]></string>
     <string name="acknowledgement_text"><![CDATA[I have <a href="https://freenetproject.org/pages/help.html#can-i-get-trouble-if-i-run-a-node">read and understand</a> the potential risks involving running a Freenet node.]]></string>
 </resources>

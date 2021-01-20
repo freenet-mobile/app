@@ -31,7 +31,8 @@ Aplicativo de código aberto construído em torno do Projeto Freenet.
 
 <h2>Informação do desenvolvedor</h2>
 <p>
-DC* <a href="https://github.com/desyncr">github</a>
+Freenet mobile: <a href="https://github.com/desyncr">Desyncr</a>,
+Freenet: Veja <a href="https://github.com/freenet/wiki/wiki/People">contribuidores</a>
 </p>
 
 <h2>Doar</h2>
@@ -40,7 +41,7 @@ Ajude-nos a manter viva a liberdade na Internet e a expandir a liberdade humana.
 <a href="https://freenetproject.org/appeal-for-donations.html">Saiba mais sobre nossa arrecadação de fundos</a>.
 </p>
 <p>
-Todo o apoio é muito apreciado.
+<b>Todo o apoio é muito apreciado.</b>
 </p>
 
 <h2>Recursos</h2>
@@ -49,6 +50,16 @@ Todo o apoio é muito apreciado.
 <li><a href="https://github.com/freenet-mobile/app/issues">Problemas e suporte</a></li>
 <li><a href="https://github.com/freenet-mobile/app/projects/1">Roteiro de desenvolvimento</a></li>
 </ul>
+</p>
+
+<h2>Reconhecimento</h2>
+<p>
+<a href="https://freenetproject.org/pages/help.html#can-i-get-trouble-if-i-run-a-node">Leia e entenda</a> os riscos potenciais que envolvem a corrida um nó Freenet.
+</p>
+
+<h2>Licença</h2>
+<p>
+GNU General Public License v3.0. Leia a licença <a href="https://github.com/freenet-mobile/app/blob/master/LICENSE">aqui</a>.
 </p>
 
 <h2>Bibliotecas</h2>
@@ -62,17 +73,8 @@ Todo o apoio é muito apreciado.
 <li>lzma-sdk: org.b1.pack:lzma-sdk-4j</li>
 <li>bouncycastle: org.bouncycastle:bcprov-jdk15on</li>
 <li>process-phoenix: com.jakewharton:process-phoenix</li>
-
-<h2>Reconhecimento</h2>
-<p>
-<a href="https://freenetproject.org/pages/help.html#can-i-get-trouble-if-i-run-a-node">Leia e entenda</a> os riscos potenciais que envolvem a corrida um nó Freenet.
-</p>
-
-<h2>Licença</h2>
-<p>
-GNU General Public License v3.0. Leia a licença <a href="https://github.com/freenet-mobile/app/blob/master/LICENSE">aqui</a>.
-</p>
-        ]]></string>
+</ul>
+]]></string>
     <string name="acknowledgement_text"><![CDATA[Eu <a href="https://freenetproject.org/pages/help.html#can-i-get-trouble-if-i-run-a-node">li e entendi</a> os riscos potenciais envolvendo a execução de um nó Freenet.]]></string>
     <string name="title_activity_about">Informações do aplicativo</string>
 </resources>
