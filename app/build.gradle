@@ -12,7 +12,7 @@ android {
         minSdkVersion 22
         targetSdkVersion 30
         versionCode 292
-        versionName "0.2.1"
+        versionName "0.2.1-beta"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
