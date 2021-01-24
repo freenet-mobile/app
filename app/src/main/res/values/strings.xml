@@ -26,11 +26,11 @@
     <string name="web_access">Access from PC</string>
     <string name="web_access_summary">Access Freenet running on your phone from a PC or Tablet. The device must be on the same network. Access it through: http://%1$s:%2$d.</string>
     <string name="node_paused">Freenet is paused.</string>
-    <string name="app_version" translatable="false">v%1$s</string>
+    <string name="app_version" translatable="false">%1$s</string>
 
     <string name="text_about"><![CDATA[
 <h2>Version</h2>
-v%1$s
+%1$s
 <p>
 Open source application built around Freenet Project.
 </p>
