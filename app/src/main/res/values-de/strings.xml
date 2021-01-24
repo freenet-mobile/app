@@ -1,14 +1,14 @@
 <resources>
     <string name="app_name">Freenet Mobile</string>
     <string name="action_settings">Konfiguration</string>
-    <string name="node_running">Freenet läuft.</string>
-    <string name="node_starting_up">Inbetriebnahme.</string>
-    <string name="node_shutting_down">Herunterfahren.</string>
-    <string name="error_starting_up">Fehler beim Starten von Freenet.</string>
-    <string name="tap_to_navigate">Tippen Sie hier, um zu navigieren.</string>
-    <string name="may_take_a_while">Das kann eine Weile dauern.</string>
+    <string name="node_running">Freenet läuft</string>
+    <string name="node_starting_up">Inbetriebnahme</string>
+    <string name="node_shutting_down">Herunterfahren</string>
+    <string name="error_starting_up">Fehler beim Starten von Freenet</string>
+    <string name="tap_to_navigate">Tippen Sie hier, um zu navigieren</string>
+    <string name="may_take_a_while">Das kann eine Weile dauern</string>
     <string name="error_detail">Starten Sie die Anwendung neu und versuchen Sie es erneut. Wenn der Fehler weiterhin besteht, installieren Sie die Anwendung neu.</string>
-    <string name="connected_to_the_network">Sie sind mit dem Freenet-Netzwerk verbunden.</string>
+    <string name="connected_to_the_network">Sie sind mit dem Freenet-Netzwerk verbunden</string>
     <string name="start_label">Anfang</string>
     <string name="shutdown_label">Herunterfahren</string>
     <string name="freenet">Freenet</string>

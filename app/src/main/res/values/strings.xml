@@ -1,14 +1,14 @@
 <resources>
     <string name="app_name">Freenet mobile</string>
     <string name="action_settings">Settings</string>
-    <string name="node_running">Freenet is running.</string>
-    <string name="node_starting_up">Starting up.</string>
-    <string name="node_shutting_down">Shutting down.</string>
-    <string name="error_starting_up">Error starting Freenet.</string>
-    <string name="tap_to_navigate">Tap here to Navigate.</string>
-    <string name="may_take_a_while">This may take a while.</string>
+    <string name="node_running">Freenet is running</string>
+    <string name="node_starting_up">Starting up</string>
+    <string name="node_shutting_down">Shutting down</string>
+    <string name="error_starting_up">Error starting Freenet</string>
+    <string name="tap_to_navigate">Tap here to Navigate</string>
+    <string name="may_take_a_while">This may take a while</string>
     <string name="error_detail">Restart the application and try again.\nIf the error persists reinstall the application.</string>
-    <string name="connected_to_the_network">You\'re connected to the Freenet network.</string>
+    <string name="connected_to_the_network">You\'re connected to the Freenet network</string>
     <string name="start_label">Start</string>
     <string name="shutdown_label">Shutdown</string>
     <string name="freenet">Freenet</string>
@@ -38,7 +38,7 @@ Open source application built around Freenet Project.
 <h2>Developer info</h2>
 <p>
 Freenet mobile: <a href="https://github.com/desyncr">Desyncr</a>,
-Freenet: Siehe <a href="https://github.com/freenet/wiki/wiki/People">Mitwirkende</a>
+Freenet: See <a href="https://github.com/freenet/wiki/wiki/People">contributors</a>.
 </p>
 
 <h2>Donate</h2>
