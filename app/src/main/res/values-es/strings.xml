@@ -24,7 +24,7 @@
     <string name="node_paused">Freenet está pausado.</string>
     <string name="text_about"><![CDATA[
 <h2>Versión</h2>
-%1$s
+v%1$s
 <p>
 Aplicación de código abierto construida alrededor de Freenet Project.
 </p>

@@ -24,7 +24,7 @@
     <string name="preserve_battery">Batterie schonen</string>
     <string name="text_about"><![CDATA[
 <h2>Ausführung</h2>
-%1$s
+v%1$s
 <p>
 Open Source-Anwendung rund um Freenet Project.
 </p>
