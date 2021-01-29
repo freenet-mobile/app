@@ -13,15 +13,13 @@ Freenet is a peer-to-peer platform for censorship-resistant communication and pu
 
 - **Runs in background** for better performance to access content.
 
-# Download
+# Install
 
-<a href="https://github.com/freenet-mobile/app/releases/download/v0.2.2-beta/freenet-mobile-v0.2.2-beta-release.apk" alt="Download APK">
-    <img src="./docs/apk-file-format-symbol.png" width="200">
-</a>
+[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
+    alt="Get it on F-Droid"
+    height="80">](https://f-droid.org/packages/org.freenetproject.mobile)
 
-Follow the [steps to install][6] an APK in your device.
-
-See the [release page][5] for lastest updates and changelogs.
+You can also see the [release page][5] for lastest updates and changelogs.
 
 # FAQ
 
