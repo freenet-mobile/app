@@ -19,13 +19,13 @@ La aplicación Freenet Mobile le permite controlar Freenet con un solo toque, co
 
 # Instalar
 
-[<img src = "https://fdroid.gitlab.io/artwork/badge/get-it-on-es.png"
-    alt = "Consíguelo en F-Droid"
-    altura = "80">](https://f-droid.org/packages/org.freenetproject.mobile)
+[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on-es.png"
+    alt="Consíguelo en F-Droid"
+    height="80">](https://f-droid.org/packages/org.freenetproject.mobile)
 
 También puede ver la [página de lanzamiento][5] para obtener las últimas actualizaciones y registros de cambios.
 
-# PREGUNTAS MÁS FRECUENTES
+# Preguntas más frecuentes
 
 ### ¿Necesito ejecutar un nodo Freenet?
 
