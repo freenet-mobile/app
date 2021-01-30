@@ -1,5 +1,6 @@
 # Freenet Mobile
-[![Release](https://img.shields.io/github/v/release/freenet-mobile/app)][5] [![License](https://img.shields.io/github/license/freenet-mobile/app)][2]
+
+[![Release](https://img.shields.io/f-droid/v/org.freenetproject.mobile?color=blue)][8] [![License](https://img.shields.io/github/license/freenet-mobile/app?color=blue)][2]
 
 Access [Freenet][7] from the palm of your hand.
 
@@ -76,6 +77,7 @@ The project is licensed under the [GNU GPL v3][2] license.
   [5]: https://github.com/freenet-mobile/app/releases
   [6]: https://www.lifewire.com/install-apk-on-android-4177185
   [7]: https://freenetproject.org/
+  [8]: https://f-droid.org/packages/org.freenetproject.mobile/
   [donate]: https://freenetproject.org/pages/donate.html
   [about-freenet]: https://freenetproject.org/pages/about.html
   [screen1]: docs/screenshot_1.png
