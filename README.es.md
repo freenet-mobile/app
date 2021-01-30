@@ -93,7 +93,7 @@ El proyecto tiene la licencia [GNU GPL v3][2].
   [screen2thumb]:  docs/screenshot_2_thumb.png
   [screen3]: docs/screenshot_3.png
   [screen3thumb]:  docs/screenshot_3_thumb.png
-   [readme]: README.md
+  [readme]: README.md
   [readme-en]: README.md
   [readme-de]: README.de.md
   [readme-es]: README.es.md
