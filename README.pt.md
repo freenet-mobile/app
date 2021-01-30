@@ -6,7 +6,7 @@
 
 Freenet é uma plataforma ponto a ponto para comunicação e publicação resistentes à censura. Ele permite que você compartilhe arquivos anonimamente, navegue e publique "freesites" (sites acessíveis apenas através do Freenet) e converse em fóruns, sem medo de censura.
 
-O Freenet é descentralizado para torná-lo menos vulnerável a ataques. Os dados são distribuídos de forma automática e redundante pela rede. Se usado no modo "darknet", onde os usuários se conectam apenas aos amigos, é muito difícil de detectar. Para saber mais sobre a Freenet, clique [aqui][about].
+O Freenet é descentralizado para torná-lo menos vulnerável a ataques. Os dados são distribuídos de forma automática e redundante pela rede. Se usado no modo "darknet", onde os usuários se conectam apenas aos amigos, é muito difícil de detectar. Para saber mais sobre a Freenet, clique [aqui][about-freenet].
 
 O aplicativo Freenet Mobile permite que você controle o Freenet com um único toque, configure-o de acordo com suas necessidades e inicialize seu nó em questão de segundos.
 
