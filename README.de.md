@@ -12,7 +12,7 @@ Mit der Freenet Mobile-App können Sie Freenet mit einem einzigen Tastendruck st
 
 # Funktionen
 
-* **Einfache und intuitive Benutzeroberfläche zur Steuerung des Knotens**: Starten und Stoppen mit einem einzigen Tastendruck.
+* **Einfache und intuitive Benutzeroberfläche** zur Steuerung des Knotens: Starten und Stoppen mit einem einzigen Tastendruck.
 * **Läuft im Hintergrund** für eine bessere Leistung beim Zugriff auf Inhalte. 
 
 # Installieren
@@ -69,7 +69,7 @@ Es gibt viele Möglichkeiten, einen Beitrag zu leisten:
 
 - Verbreiten Sie das Wort: Wenn Sie das Freenet mögen, teilen Sie es mit der Welt. Sie können auch Inhalte in Freenet erstellen.
 
-- Spenden: Freenet wird von Freiwilligen betrieben. Sie können an The Freenet Project Inc, eine gemeinnützige Organisation gemäß 501(c)(3), spenden. Mehr [hier][donate]
+- Spenden: Freenet wird von Freiwilligen betrieben. Sie können an The Freenet Project Inc, eine gemeinnützige Organisation gemäß 501(c)(3), spenden. Mehr [hier][donate].
 
 # Lizenz
 
