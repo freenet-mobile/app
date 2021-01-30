@@ -19,19 +19,15 @@ Mit der Freenet Mobile-App können Sie Freenet mit einem einzigen Tastendruck st
 
 [<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on-de.png"
     alt="Holen Sie es sich auf F-Droid"
-    height="80">](https://f-droid.org/packages/org.freenetproject.mobile)
+    height="80">](https://f-droid.org/de/packages/org.freenetproject.mobile)
 
 Auf der [Release-Seite][5] finden Sie auch die neuesten Updates und Änderungsprotokolle.
 
 # FAQ
 
-### Gibt es Pläne, die App auf F-Droid, Google Play Store, zu stellen?
+### Muss ich einen Freenet-Knoten ausführen?
 
-Sicher. Wir werden daran arbeiten, dass es sowohl im F-Droid als auch im Google Play Store veröffentlicht wird.
-
-### Wird es jemals eine iOS-Version geben? Ist es überhaupt möglich?
-
-Anscheinend ist es [technisch möglich](https://multi-os-engine.org/). Wir sind uns nicht sicher, ob wir uns jetzt darauf konzentrieren werden.
+Die App selbst führt einen Freenet-Knoten aus. Es ist nicht erforderlich, irgendwo anders einen externen Knoten zu installieren und zu konfigurieren.
 
 ### Wäre das nicht ein riesiger Batterieverbrauch? Was ist mit Datenplan?
 
@@ -52,6 +48,14 @@ Sie können auf Inhalte in Freenet zugreifen und diese erstellen. Greifen Sie au
 ### Wird es ein "Mobile FMS" geben?
 
 Wir werden an Foren, Dateifreigabe, Bloggen und Freund-zu-Freund-Support in der mobilen App arbeiten.
+
+### Gibt es Pläne, die App auf Google Play Store, zu stellen?
+
+Aufgrund der Play Store-Aktionen von Google gegen andere Apps möchten wir die App derzeit nicht auf dieser Plattform veröffentlichen.
+
+### Wird es jemals eine iOS-Version geben? Ist es überhaupt möglich?
+
+Anscheinend ist es [technisch möglich](https://multi-os-engine.org/). Wir sind uns nicht sicher, ob wir uns jetzt darauf konzentrieren werden.
 
 # Mitwirken
 
