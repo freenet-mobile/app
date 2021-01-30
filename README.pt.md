@@ -2,6 +2,8 @@
 
 [![Release](https://img.shields.io/f-droid/v/org.freenetproject.mobile?color=blue)][8] [![License](https://img.shields.io/github/license/freenet-mobile/app?color=blue)][2]
 
+[English][readme] | [German][readme-de] | [Spanish][readme-es] | Portuguese | [French][readme-fr]
+
 Freenet é uma plataforma ponto a ponto para comunicação e publicação resistentes à censura. Ele permite que você compartilhe arquivos anonimamente, navegue e publique "freesites" (sites acessíveis apenas através do Freenet) e converse em fóruns, sem medo de censura.
 
 O Freenet é descentralizado para torná-lo menos vulnerável a ataques. Os dados são distribuídos de forma automática e redundante pela rede. Se usado no modo "darknet", onde os usuários se conectam apenas aos amigos, é muito difícil de detectar. Para saber mais sobre a Freenet, clique [aqui][about].
@@ -91,3 +93,9 @@ O projeto está licenciado sob a licença [GNU GPL v3][2].
   [screen2thumb]:  docs/screenshot_2_thumb.png
   [screen3]: docs/screenshot_3.png
   [screen3thumb]:  docs/screenshot_3_thumb.png
+  [readme]: README.md
+  [readme-en]: README.md
+  [readme-de]: README.de.md
+  [readme-es]: README.es.md
+  [readme-pt]: README.pt.md
+  [readme-fr]: README.fr.md
