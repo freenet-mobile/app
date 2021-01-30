@@ -26,13 +26,9 @@ You can also see the [release page][5] for lastest updates and changelogs.
 
 # FAQ
 
-### Are there plans of putting the app on F-Droid, Google Play Store?
+### Do I need to run a Freenet node?
 
-For sure. We'll work to have it published both on F-Droid and Google Play Store.
-
-### Will there ever be an iOS version? Is it even possible?
-
-Apparently it's [technically possible](https://multi-os-engine.org/). We're not sure we'll focus our efforts on it right now.
+The App itself runs a Freenet node. No need to have an external node installed and configured anywhere else.
 
 ### Wouldn't that be a huge battery drain? What about data-plan?
 
@@ -53,6 +49,14 @@ You can access and create content on Freenet. Access FMS Archive to see what the
 ### Will there be a "Mobile FMS"?
 
 We'll work on Forums, File sharing, Blogging and Friend-to-friend support on the Mobile app.
+
+### Are there plans of putting the app on Google Play Store?
+
+Due to Google's Play Store actions against other apps we're not currently looking into publish the app on this platform.
+
+### Will there ever be an iOS version? Is it even possible?
+
+Apparently it's [technically possible](https://multi-os-engine.org/). We're not sure we'll focus our efforts on it right now.
 
 # Contributing
 
