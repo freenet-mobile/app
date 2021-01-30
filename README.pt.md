@@ -23,7 +23,7 @@ O aplicativo Freenet Mobile permite que você controle o Freenet com um único t
 
 Você também pode ver a [página de lançamento][5] para as últimas atualizações e changelogs.
 
-# FAQ
+# Perguntas frequentes
 
 ### Eu preciso executar um nó Freenet?
 
