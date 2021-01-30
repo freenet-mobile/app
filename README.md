@@ -2,9 +2,11 @@
 
 [![Release](https://img.shields.io/f-droid/v/org.freenetproject.mobile?color=blue)][8] [![License](https://img.shields.io/github/license/freenet-mobile/app?color=blue)][2]
 
-Access [Freenet][7] from the palm of your hand.
+Freenet is a peer-to-peer platform for censorship-resistant communication and publishing. It lets you anonymously share files, browse and publish "freesites" (web sites accessible only through Freenet) and chat on forums, without fear of censorship.
 
-Freenet is a peer-to-peer platform for censorship-resistant communication and publishing. To know more about Freenet look [here][about-freenet].
+Freenet is decentralised to make it less vulnerable to attacks. Data is distributed automatically and redundant over the network. If used in "darknet" mode, where users only connect to their friends, is very difficult to detect. To know more about Freenet look [here][7].
+
+The Freenet Mobile app allows you to control Freenet with a single tap, configure it to your needs, and start up your node in a matter of seconds.
 
 [![Screenshot 1][screen1thumb]][screen1] [![Screenshot 2][screen2thumb]][screen2] [![Screenshot 3][screen3thumb]][screen3]
 
