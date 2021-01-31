@@ -77,7 +77,6 @@ dependencies {
     implementation ('com.github.desyncr:plugin-sharesite:0.4.7.4m') {
         exclude group: 'net.java.dev.jna', module: 'jna'
         exclude group: 'net.java.dev.jna', module: 'jna-platform'
-        exclude group: 'net.java', module: 'textile-j'
     }
 
     // For running a locally built freenet.jar
