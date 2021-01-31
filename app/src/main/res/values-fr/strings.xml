@@ -7,7 +7,7 @@
     <string name="error_starting_up">Erreur au commencer de Freenet</string>
     <string name="tap_to_navigate">Appuyez ici pour naviguer</string>
     <string name="may_take_a_while">Cela peut prendre un peu de temps</string>
-    <string name="error_detail">Redémarrez l\'application et réessayez. Si l\'erreur persiste, réinstallez l\'application.</string>
+    <string name="error_detail">Redémarrez l\'application et réessayez.\nSi l\'erreur persiste, réinstallez l\'application.</string>
     <string name="connected_to_the_network">Vous êtes connecté au réseau Freenet</string>
     <string name="start_label">Commencer</string>
     <string name="shutdown_label">Fermer</string>

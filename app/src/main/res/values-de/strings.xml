@@ -7,7 +7,7 @@
     <string name="error_starting_up">Fehler beim Starten von Freenet</string>
     <string name="tap_to_navigate">Tippen Sie hier, um zu navigieren</string>
     <string name="may_take_a_while">Das kann eine Weile dauern</string>
-    <string name="error_detail">Starten Sie die Anwendung neu und versuchen Sie es erneut. Wenn der Fehler weiterhin besteht, installieren Sie die Anwendung neu.</string>
+    <string name="error_detail">Starten Sie die Anwendung neu und versuchen Sie es erneut.\nWenn der Fehler weiterhin besteht, installieren Sie die Anwendung neu.</string>
     <string name="connected_to_the_network">Sie sind mit dem Freenet-Netzwerk verbunden</string>
     <string name="start_label">Anfang</string>
     <string name="shutdown_label">Herunterfahren</string>
