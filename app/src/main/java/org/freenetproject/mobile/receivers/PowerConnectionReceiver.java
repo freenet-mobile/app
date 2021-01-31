@@ -20,11 +20,16 @@ public class PowerConnectionReceiver extends BroadcastReceiver {
         switch(Objects.requireNonNull(intent.getAction())){
             case Intent.ACTION_POWER_CONNECTED:
                 Log.i("Freenet", "Resuming service from power change");
-                Manager.getInstance().resumeService(context, Manager.CONTEXT_BATTERY);
+                new Thread(() -> {
+                    Manager.getInstance().resumeService(context, Manager.CONTEXT_BATTERY);
+                }).start();
+
                 break;
             case Intent.ACTION_POWER_DISCONNECTED:
                 Log.i("Freenet", "Pausing service from power change");
-                Manager.getInstance().pauseService(context, Manager.CONTEXT_BATTERY);
+                new Thread(() -> {
+                    Manager.getInstance().pauseService(context, Manager.CONTEXT_BATTERY);
+                }).start();
                 break;
         }
     }
