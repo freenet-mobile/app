@@ -16,7 +16,7 @@
     <string name="battery_and_data">Utilisation de la batterie et des données</string>
     <string name="freenet_web">Freenet Web</string>
     <string name="preserve_data">Conserver les données</string>
-    <string name="preserve_data_summary">Freenet utilise intensivement les données du réseau. Avec cette option activée, Freenet ne fonctionnera que lorsqu\'il sera connecté au Wifi.\n\nCes paramètres ne s'appliquent pas aux connexions ami à ami. Doit redémarrer le nœud pour appliquer.</string>
+    <string name="preserve_data_summary">Freenet utilise intensivement les données du réseau. Avec cette option activée, Freenet ne fonctionnera que lorsqu\'il sera connecté au Wifi.\n\nCes paramètres ne s\'appliquent pas aux connexions ami à ami. Doit redémarrer le nœud pour appliquer.</string>
     <string name="preserve_battery">Préserver la batterie</string>
     <string name="preserve_battery_summary">Freenet peut provoquer une décharge rapide de la batterie. Avec cette option activée, Freenet ne fonctionnera que lors du chargement.</string>
     <string name="web_access">Accès depuis un PC</string>
