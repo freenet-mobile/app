@@ -7,7 +7,7 @@
     <string name="error_starting_up">Erro ao iniciar o Freenet</string>
     <string name="tap_to_navigate">Toque aqui para navegar</string>
     <string name="may_take_a_while">Isso pode demorar um pouco</string>
-    <string name="error_detail">Reinicie o aplicativo e tente novamente. Se o erro persistir, reinstale o aplicativo.</string>
+    <string name="error_detail">Reinicie o aplicativo e tente novamente.\nSe o erro persistir, reinstale o aplicativo.</string>
     <string name="connected_to_the_network">Você está conectado à rede Freenet</string>
     <string name="start_label">Começar</string>
     <string name="shutdown_label">Desligar</string>
@@ -16,11 +16,11 @@
     <string name="battery_and_data">Bateria e uso de dados</string>
     <string name="freenet_web">Freenet Web</string>
     <string name="preserve_data">Preservar dados</string>
-    <string name="preserve_data_summary">A Freenet faz um uso intensivo dos dados da rede. Com esta opção ativada, o Freenet será executado apenas quando conectado ao Wifi.  O nó deve ser reiniciado para ativar esta configuração.</string>
+    <string name="preserve_data_summary">A Freenet faz um uso intensivo dos dados da rede. Com esta opção ativada, o Freenet será executado apenas quando conectado ao Wifi.\n\nEstas configurações não se aplicam às conexões de amigo para amigo. Precisa reiniciar o nó para aplicar.</string>
     <string name="preserve_battery">Preservar bateria</string>
-    <string name="preserve_battery_summary">O Freenet pode fazer com que a bateria descarregue rapidamente. Com esta opção ativada, o Freenet funcionará apenas durante o carregamento.  O nó deve ser reiniciado para ativar esta configuração.</string>
+    <string name="preserve_battery_summary">O Freenet pode fazer com que a bateria descarregue rapidamente. Com esta opção ativada, o Freenet funcionará apenas durante o carregamento.</string>
     <string name="web_access">Acesso do PC</string>
-    <string name="web_access_summary">Acesse o Freenet em execução no seu telefone a partir de um PC ou tablet. O dispositivo deve estar na mesma rede. Acesse-o através do: http://%1$s:%2$d.</string>
+    <string name="web_access_summary">Acesse o Freenet em execução no seu telefone a partir de um PC ou tablet. O dispositivo deve estar na mesma rede. Acesse-o através do: http://%1$s:%2$d.\n\nPrecisa reiniciar o nó para aplicar.</string>
     <string name="node_paused">Freenet está em pausa.</string>
     <string name="text_about"><![CDATA[
 <h2>Versão</h2>
