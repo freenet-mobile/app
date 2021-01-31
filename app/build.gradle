@@ -74,7 +74,7 @@ dependencies {
         exclude group: 'net.java.dev.jna', module: 'jna-platform'
     }
 
-    implementation ('com.github.desyncr:plugin-sharesite:0.4.7.6m') {
+    implementation ('com.github.desyncr:plugin-sharesite:0.4.7.4m') {
         exclude group: 'net.java.dev.jna', module: 'jna'
         exclude group: 'net.java.dev.jna', module: 'jna-platform'
         exclude group: 'net.java', module: 'textile-j'
