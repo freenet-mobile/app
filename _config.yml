@@ -1,5 +1,6 @@
 title: Freenet Mobile
 theme: jekyll-theme-slate
+site_favicon: assets/css/favicon.ico
 
 theme_settings:
   favicon: assets/css/favicon.ico
