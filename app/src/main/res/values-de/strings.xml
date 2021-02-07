@@ -54,7 +54,7 @@ Helfen Sie uns, die Freiheit des Internets am Leben zu erhalten und die Freiheit
 
 <h2>Bestätigung</h2>
 <p>
-<a href="https://freenetproject.org/pages/help.html#can-i-get-trouble-if-i-run-a-node">Lesen und verstehen Sie</a> die potenziellen Risiken beim Laufen ein Freenet-Knoten.
+<a href="https://freenetproject.org/pages/help.html&num;can-i-get-trouble-if-i-run-a-node">Lesen und verstehen Sie</a> die potenziellen Risiken beim Laufen ein Freenet-Knoten.
 </p>
 
 <h2>Lizenz</h2>
@@ -75,6 +75,6 @@ GNU General Public License v3.0. Lesen Sie hier die <a href="https://github.com/
 <li>process-phoenix: com.jakewharton:process-phoenix</li>
 </ul>
 ]]></string>
-    <string name="acknowledgement_text"><![CDATA[Ich habe die potenziellen Risiken beim Ausführen eines Freenet-Knotens <a href="https://freenetproject.org/pages/help.html#can-i-get-trouble-if-i-run-a-node">gelesen und verstanden</a>.]]></string>
+    <string name="acknowledgement_text"><![CDATA[Ich habe die potenziellen Risiken beim Ausführen eines Freenet-Knotens <a href="https://freenetproject.org/pages/help.html&num;can-i-get-trouble-if-i-run-a-node">gelesen und verstanden</a>.]]></string>
     <string name="title_activity_about">App-Information</string>
 </resources>
