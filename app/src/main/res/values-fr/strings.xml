@@ -54,7 +54,7 @@ Aidez-nous à préserver la liberté d\'Internet et à étendre la liberté huma
 
 <h2>Remerciements</h2>
 <p>
-<a href="https://freenetproject.org/pages/help.html#can-i-get-trouble-if-i-run-a-node">Lire et comprendre</a> les risques potentiels liés à la course un nœud Freenet.
+<a href="https://freenetproject.org/pages/help.html&num;can-i-get-trouble-if-i-run-a-node">Lire et comprendre</a> les risques potentiels liés à la course un nœud Freenet.
 </p>
 
 <h2>Licence</h2>
@@ -75,6 +75,6 @@ Licence publique générale GNU v3.0. Lire la licence <a href="https://github.co
 <li>process-phoenix: com.jakewharton:process-phoenix</li>
 </ul>
 ]]></string>
-    <string name="acknowledgement_text"><![CDATA[J\'ai <a href="https://freenetproject.org/pages/help.html#can-i-get-trouble-if-i-run-a-node">lu et compris</a> les risques potentiels impliquant l\'exécution d\'un nœud Freenet.]]></string>
+    <string name="acknowledgement_text"><![CDATA[J\'ai <a href="https://freenetproject.org/pages/help.html&num;can-i-get-trouble-if-i-run-a-node">lu et compris</a> les risques potentiels impliquant l\'exécution d\'un nœud Freenet.]]></string>
     <string name="title_activity_about">Informations sur l\'application</string>
 </resources>
