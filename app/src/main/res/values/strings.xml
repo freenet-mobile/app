@@ -83,5 +83,5 @@ GNU General Public License v2.0. Read license <a href="https://github.com/freene
 </ul>
 </p>
 ]]></string>
-    <string name="acknowledgement_text"><![CDATA[I have <a href="https://freenetproject.org/pages/help.html#can-i-get-trouble-if-i-run-a-node">read and understand</a> the potential risks involving running a Freenet node.]]></string>
+    <string name="acknowledgement_text"><![CDATA[I have <a href="https://freenetproject.org/pages/help.html&num;can-i-get-trouble-if-i-run-a-node">read and understand</a> the potential risks involving running a Freenet node.]]></string>
 </resources>
