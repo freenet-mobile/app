@@ -36,6 +36,10 @@ The App itself runs a Freenet node. No need to have an external node installed a
 
 The app is pre-configured to keep battery and network data usage to a minimum. You can configure the app to avoid data-plan use as well.
 
+### What about wearing out the phone's storage?
+
+The app is pre-configured to store data on memory only. This way it avoid doing writes and wearing out the flash memory.
+
 ### Can I use the app on my everyday phone?
 
 Yes, you can. Configure it to "preserve data", so it only connects on Wifi and "preserve battery" to run only when charging.
