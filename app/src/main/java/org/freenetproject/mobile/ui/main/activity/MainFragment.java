@@ -97,11 +97,10 @@ public class MainFragment extends Fragment {
                 );
 
             controlButton.setBackgroundResource(
-                STATUS_ACTION_MAP.getOrDefault(
-                        m.getStatus().getValue().ordinal(),
-                        R.drawable.ic_baseline_play_circle_outline_24
-                )
-            );
+                STATUS_ACTION_MAP.containsKey(m.getStatus().getValue().ordinal()) ?
+                    STATUS_ACTION_MAP.get(m.getStatus().getValue().ordinal()) :
+                    R.drawable.ic_baseline_play_circle_outline_24
+                );
         });
     }
 
