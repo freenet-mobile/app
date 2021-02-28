@@ -218,12 +218,40 @@ public class Manager {
         return 0;
     }
 
+    public Boolean resetService(Context context) {
+        Intent serviceIntent = new Intent(context, Service.class);
+        context.stopService(serviceIntent);
+
+        try {
+            runner.stop();
+        } catch (Exception e) {
+            Log.e("Freenet", "Error stopping node: " + e.getMessage());
+        }
+
+        Log.i("Freenet", "Calling rebirth");
+        ProcessPhoenix.triggerRebirth(
+                context,
+                new Intent(
+                        context,
+                        MainActivity.class
+                )
+        );
+        return true;
+    }
+
+    public Boolean isStopped() {
+        return status.getValue().equals(Status.STOPPED);
+    }
     public Boolean isPaused() {
         return status.getValue().equals(Status.PAUSED);
     }
 
     public Boolean isRunning() {
         return status.getValue().equals(Status.STARTED);
+    }
+
+    public Boolean hasError() {
+        return status.getValue().equals(Status.ERROR);
     }
 
     public Boolean isTransitioning() {
