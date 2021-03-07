@@ -14,6 +14,7 @@ import android.util.Log;
 import androidx.preference.PreferenceManager;
 
 import org.freenetproject.mobile.proxy.Simple;
+import org.freenetproject.mobile.receivers.BatteryLevelReceiver;
 import org.freenetproject.mobile.receivers.PowerConnectionReceiver;
 import org.freenetproject.mobile.ui.notification.Notification;
 
@@ -29,12 +30,16 @@ public class Service extends android.app.Service {
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         Boolean preserveBattery = sharedPreferences.getBoolean("preserve_battery", true);
+
         // Register power connection receiver
         if (preserveBattery) {
             IntentFilter powerConnectedFilter = new IntentFilter();
             powerConnectedFilter.addAction(Intent.ACTION_POWER_CONNECTED);
             powerConnectedFilter.addAction(Intent.ACTION_POWER_DISCONNECTED);
             registerReceiver(powerConnectionReceiver, powerConnectedFilter);
+
+            registerReceiver(new BatteryLevelReceiver(), new IntentFilter(
+                    Intent.ACTION_BATTERY_LOW));
         }
 
         Boolean preserveData = sharedPreferences.getBoolean("preserve_data",true);
