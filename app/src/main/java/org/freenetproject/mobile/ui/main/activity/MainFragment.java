@@ -3,9 +3,7 @@ package org.freenetproject.mobile.ui.main.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +20,7 @@ import org.freenetproject.mobile.BuildConfig;
 import org.freenetproject.mobile.R;
 import org.freenetproject.mobile.services.node.Manager;
 import org.freenetproject.mobile.ui.about.activity.AboutActivity;
+import org.freenetproject.mobile.ui.bootstrap.activity.BootstrapActivity;
 import org.freenetproject.mobile.ui.acknowledgement.activity.AcknowledgementActivity;
 import org.freenetproject.mobile.ui.acknowledgement.activity.AcknowledgementFragment;
 import org.freenetproject.mobile.ui.main.viewmodel.MainViewModel;
@@ -130,13 +129,9 @@ public class MainFragment extends Fragment {
             if (status.equals(Manager.Status.STARTED)) {
                 detailText.setText(R.string.tap_to_navigate);
                 detailText.setOnClickListener(view12 -> {
-                    Uri uri = Uri.parse(
-                        view.getContext().getString(R.string.default_url)
-                    );
-
-                    startActivity(
-                        new Intent(Intent.ACTION_VIEW).setData(uri)
-                    );
+                   startActivity(
+                           new Intent(getContext(), BootstrapActivity.class)
+                   );
                 });
             } else if (status.equals(Manager.Status.STARTING_UP)) {
                 detailText.setText(R.string.may_take_a_while);

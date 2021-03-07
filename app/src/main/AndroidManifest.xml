@@ -31,6 +31,12 @@
             android:label="@string/title_activity_settings"
             android:parentActivityName=".ui.main.activity.MainActivity" />
 
+        <activity
+            android:name=".ui.bootstrap.activity.BootstrapActivity"
+            android:label=""
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".ui.main.activity.MainActivity" />
+
         <service
             android:name=".services.node.Service"
             android:enabled="true"
