@@ -9,12 +9,20 @@ import android.graphics.Color;
 import android.os.Build;
 
 import org.freenetproject.mobile.R;
+import org.freenetproject.mobile.services.node.Manager;
 import org.freenetproject.mobile.ui.main.activity.MainActivity;
+
+import java.util.Observer;
 
 /**
  * Class responsible for creating the notification in order to be able to run Freenet on background.
  */
 public class Notification {
+    private static android.app.Notification.Builder builder;
+    private static NotificationManager nm;
+    private static Manager manager = Manager.getInstance();
+    private static final String CHANNEL_ID = "FREENET SERVICE";
+
     /**
      * Create a notification to remain on background.
      *
@@ -22,9 +30,7 @@ public class Notification {
      * @return
      */
     public static android.app.Notification show(Context context) {
-        final String CHANNEL_ID = "FREENET SERVICE";
-
-        NotificationManager nm = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+        nm = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
             NotificationChannel nc = null;
@@ -35,14 +41,13 @@ public class Notification {
             nm.createNotificationChannel(nc);
         }
 
-        android.app.Notification.Builder builder;
         if (android.os.Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
             builder = new android.app.Notification.Builder(context);
         } else {
             builder = new android.app.Notification.Builder(context, CHANNEL_ID);
         }
 
-        return builder
+        builder
             .setContentTitle(context.getString(R.string.node_running))
             .setContentText(context.getString(R.string.connected_to_the_network))
             .setSmallIcon(R.drawable.ic_freenet_logo_notification)
@@ -55,8 +60,25 @@ public class Notification {
                     ),
                     PendingIntent.FLAG_UPDATE_CURRENT
                 )
-            )
-            .build();
+            );
+
+        manager.getStatus().observeForever(status -> {
+            if (status.equals(Manager.Status.STARTED)) {
+                builder.setContentTitle(context.getString(R.string.node_running));
+                builder.setContentText(context.getString(R.string.connected_to_the_network));
+            } else if (status.equals(Manager.Status.PAUSED)) {
+                builder.setContentTitle(context.getString(R.string.node_paused));
+                builder.setContentText(context.getString(R.string.battery_and_data));
+            } else if (status.equals(Manager.Status.ERROR)) {
+                builder.setContentTitle(context.getString(R.string.error_starting_up));
+                builder.setContentText(context.getString(R.string.error_detail));
+            }
+
+            nm.notify(1, builder.build());
+        });
+
+
+        return builder.build();
     }
 
     /**
