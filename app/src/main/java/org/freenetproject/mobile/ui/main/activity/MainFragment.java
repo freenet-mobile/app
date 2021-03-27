@@ -82,7 +82,7 @@ public class MainFragment extends Fragment {
                 if (m.isStopped()) {
                     m.startService(view.getContext());
                 } else if (m.isRunning() || m.isPaused()) {
-                    m.stopService(view.getContext());
+                    m.restartService(view.getContext());
                 } else if (m.hasError()) {
                     m.resetService(view.getContext());
                 }

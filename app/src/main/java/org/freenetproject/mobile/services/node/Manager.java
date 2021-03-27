@@ -144,18 +144,31 @@ public class Manager {
 
             status.postValue(Status.STOPPED);
 
-            Log.i("Freenet", "Calling rebirth");
-            ProcessPhoenix.triggerRebirth(
-                    context,
-                    new Intent(
-                            context,
-                            MainActivity.class
-                    )
-            );
 
         } catch (Exception e) {
             status.postValue(Status.ERROR);
         }
+
+        return 0;
+    }
+
+    /**
+     * Stop the node and restart the application.
+     *
+     * @param context
+     * @return
+     */
+    public int restartService(Context context) {
+        stopService(context);
+
+        Log.i("Freenet", "Calling rebirth");
+        ProcessPhoenix.triggerRebirth(
+                context,
+                new Intent(
+                        context,
+                        MainActivity.class
+                )
+        );
 
         return 0;
     }
