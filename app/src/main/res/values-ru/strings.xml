@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Freenet mobile</string>
+    <string name="action_settings">Настройки</string>
+    <string name="node_running">Freenet запущен</string>
+    <string name="node_starting_up">Запуск</string>
+    <string name="node_shutting_down">Отключение</string>
+    <string name="error_starting_up">Ошибка запуска Freenet</string>
+    <string name="tap_to_navigate">Нажмите здесь, чтобы перейти к навигации</string>
+    <string name="may_take_a_while">Это может занять время</string>
+    <string name="error_detail">Перезапустите приложение и попробуйте снова. \n
+   Если ошибка сохраняется переустановите приложение.</string>
+    <string name="connected_to_the_network">Вы подключены к сети Freenet</string>
+    <string name="start_label">Запуск</string>
+    <string name="shutdown_label">Отключение</string>
+    <string name="freenet">Freenet</string>
+    <string name="title_activity_settings">Настройки</string>
+    <string name="title_activity_about">Информация о приложении</string>
+    <!-- Preference Titles -->
+    <string name="battery_and_data">Использование данных и батареи</string>
+    <string name="freenet_web">Freenet-веб</string>
+    <!-- Battery and Data Preferences -->
+    <string name="preserve_data">Хранение данных</string>
+    <string name="preserve_data_summary">Freenet интенсивно использует сетевые данные. При включенной опции Freenet будет работать только при подключении к Wifi.\n
+   \n
+   Эти настройки не применимы к соединениям \"друг с другом\". Необходимо перезапустить узел для применения.</string>
+    <string name="preserve_battery">Сохранение батареи</string>
+    <string name="preserve_battery_summary">Freenet может привести к быстрой разрядке аккумулятора. При включенной опции Freenet будет работать только при зарядке.</string>
+    <!-- Freenet Web Preferences -->
+    <string name="web_access">Доступ через компьютер</string>
+    <string name="web_access_summary">Доступ к сети Freenet с телефона, компьютера или планшета. Устройство должно находиться в одной сети. Доступ по адресу: http://%1$s:%2$d.\n
+   \n
+   Нужно перезапустить узел для применения изменений.</string>
+    <string name="node_paused">Freenet приостановлен</string>
+
+    <string name="text_about"><h2>Версия</h2> v%1$s. <a href="https://github.com/freenet-mobile/app/releases/tag/v%1$s">Журнал изменений</a>. <p> Приложение с открытым исходным кодом, построенное на базе Freenet Project. </p>  <h2>Информация для разработчиков</h2> <p> Freenet mobile: <a href="https://github.com/desyncr">Desyncr</a>, Freenet: <a href="https://github.com/freenet/wiki/wiki/People">contributors</a>. </p>  <h2>Пожертвования </h2> <p> Помогите нам сохранить свободу Интернета и расширить человеческую свободу. <a href="https://freenetproject.org/appeal-for-donations.html">Узнайте больше о нашей акции по сбору средств</a>. </p> <p> <b>Любая поддержка очень ценится.</b> </p>  <h2>Ресурсы</h2> <p> <ul> <li><a href="https://github.com/freenet-mobile/app/issues">Issues and support</a></li> <li><a href="https://github.com/freenet-mobile/app/projects/1">Дорожная карта разработки</a></li> </ul> </p>  <h2>Благодарности</h2> <p> <a href="https://freenetproject.org/pages/help.html&num;can-i-get-trouble-if-i-run-a-node">Прочесть и понять </a> потенциальные риски запуска узла Freenet. </p>  <h2>License</h2> <p> GNU General Public License v2.0. Прочесть лицензию <a href="https://github.com/freenet-mobile/app/blob/master/LICENSE">here</a>. </p>  <h2>Libraries</h2> <p> <ul> <li>fred: <a href="https://github.com/freenet/fred">freenet/fred</a></li> <li>freenet-ext: <a href="https://github.com/freenet-mobile/freenet-ext">freenet-mobile/freenet-ext</a></li> <li>onion-common: <a href="https://github.com/freenet-mobile/onion-common">freenet-mobile/onion-common</a></li> <li>onion-fec: <a href="https://github.com/freenet-mobile/onion-fec">freenet-mobile/onion-fec</a></li> <li>jFCPlib: <a href="https://github.com/Bombe/jFCPlib">Bombe/jFCPlib</a></li> <li>mantissa: <a href="https://github.com/freenet-mobile/mantissa">freenet-mobile/mantissa</a></li> <li>lzma-sdk: org.b1.pack:lzma-sdk-4j</li> <li>bouncycastle: org.bouncycastle:bcprov-jdk15on</li> <li>process-phoenix: com.jakewharton:process-phoenix</li> </ul> </p></string>
+    <string name="acknowledgement_text"><a href="https://freenetproject.org/pages/help.html&num;can-i-get-trouble-if-i-run-a-node"> прочёл и ознакомился </a>  с потенциальными рисками связанными с заруском узла Freenet</string>
+</resources>
