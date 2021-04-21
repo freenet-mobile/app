@@ -85,6 +85,7 @@ public class Manager {
                         context.getDir("data", Context.MODE_PRIVATE).getAbsolutePath(),
                         res.openRawResource(R.raw.seednodes),
                         res.openRawResource(R.raw.freenet),
+                        res.openRawResource(R.raw.bookmarks),
                         res.getConfiguration().locale.getDisplayLanguage()
                 );
             } catch (FileNotFoundException e) {

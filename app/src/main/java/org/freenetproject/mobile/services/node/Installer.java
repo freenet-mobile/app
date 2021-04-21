@@ -20,6 +20,7 @@ public class Installer {
 
     private final String FREENET_INI = "freenet.ini";
     private final String SEEDNODES = "seednodes.fref";
+    private final String BOOKMARKS = "bookmarks.dat";
 
     public static Installer getInstance() {
         if (instance == null) {
@@ -35,10 +36,11 @@ public class Installer {
      * @param path Path to installation location.
      * @param seeds Input stream of seeds file.
      * @param config Input stream of default configuration.
+     * @param bookmarks Input stream of default bookmarks
      *
      * @throws FileNotFoundException
      */
-    public void install(String path, InputStream seeds, InputStream config, String lang) throws FileNotFoundException {
+    public void install(String path, InputStream seeds, InputStream config, InputStream bookmarks, String lang) throws FileNotFoundException {
         File f = new File(path);
         if (!f.exists() || !f.canWrite()) {
             throw new FileNotFoundException("Invalid installation directory: " + path);
@@ -49,6 +51,7 @@ public class Installer {
         // Install bundled configurations
         createConfiguration(seeds, getSeednodesPath());
         createConfiguration(config, getFreenetIniPath());
+        createConfiguration(bookmarks, getBookmarksPath());
 
         // Update freenet.ini with dynamic configuration
         final FileOutputStream ini = new FileOutputStream(getFreenetIniPath(), true);
@@ -137,5 +140,9 @@ public class Installer {
 
     public String getFreenetIniPath() {
         return path + "/" + FREENET_INI;
+    }
+
+    public String getBookmarksPath() {
+        return path + "/" + BOOKMARKS;
     }
 }
