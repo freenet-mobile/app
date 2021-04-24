@@ -53,7 +53,11 @@ dependencies {
     implementation 'com.jakewharton:process-phoenix:2.0.0'
 
     // Freenet dependencies
-    implementation 'com.github.freenet-mobile:node-wrapper:0.3'
+    implementation ('com.github.freenet-mobile:node-wrapper:0.4') {
+        exclude group: 'net.java.dev.jna', module: 'jna'
+        exclude group: 'net.java.dev.jna', module: 'jna-platform'
+    }
+    implementation 'net.java.dev.jna:jna:4.5.2@aar'
 
     // For running a locally built freenet.jar
     //implementation "net.java.dev.jna:jna:4.5.2"
