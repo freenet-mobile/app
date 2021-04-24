@@ -34,6 +34,7 @@ android {
 repositories {
     jcenter()
     maven { url 'https://jitpack.io' }
+    maven { url 'https://mvn.freenetproject.org' }
 }
 
 dependencies {
@@ -53,38 +54,18 @@ dependencies {
     implementation 'com.jakewharton:process-phoenix:2.0.0'
 
     // Freenet dependencies
-    implementation 'org.bouncycastle:bcpkix-jdk15on:1.59'
-    implementation "org.bouncycastle:bcprov-jdk15on:1.59"
-
-    implementation "tanukisoft:wrapper:3.2.3"
-    implementation "org.apache.commons:commons-compress:1.4.1"
-    implementation "org.b1.pack:lzma-sdk-4j:9.22.0"
-
-    implementation 'com.github.Bombe:jFCPlib:v0.1.6'
-
-    implementation 'com.github.freenet-mobile:mantissa:0.0.3'
-    implementation "com.github.freenet-mobile:lzmajio:0.95.4"
-    implementation 'com.github.freenet-mobile:onion-common:0.0.3'
-    implementation 'com.github.freenet-mobile:onion-fec:0.0.4'
-    implementation 'com.github.freenet-mobile:freenet-ext:0.60.3'
-
+    implementation ('com.github.freenet-mobile:node-wrapper:0.5') {
+        exclude group: 'org.freenetproject', module: 'freenet-ext'
+        exclude group: 'net.java.dev.jna', module: 'jna'
+        exclude group: 'net.java.dev.jna', module: 'jna-platform'
+    }
     implementation 'net.java.dev.jna:jna:4.5.2@aar'
-    implementation ('com.github.freenet-mobile:fred:1490.2m') {
-        exclude group: 'net.java.dev.jna', module: 'jna'
-        exclude group: 'net.java.dev.jna', module: 'jna-platform'
-    }
-
-    implementation ('com.github.desyncr:plugin-sharesite:0.4.7.7m') {
-        exclude group: 'net.java.dev.jna', module: 'jna'
-        exclude group: 'net.java.dev.jna', module: 'jna-platform'
-        exclude group: 'net.java', module: 'textile-j'
-    }
+    // End Freenet dependencies
 
     // For running a locally built freenet.jar
     //implementation "net.java.dev.jna:jna:4.5.2"
     //implementation "net.java.dev.jna:jna-platform:4.5.2"
     //implementation files('libs/freenet.jar')
-
 
     implementation 'androidx.preference:preference:1.1.1'
 
