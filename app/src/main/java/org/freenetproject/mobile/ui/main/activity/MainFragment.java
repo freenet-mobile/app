@@ -14,8 +14,6 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.google.common.collect.ImmutableMap;
-
 import org.freenetproject.mobile.BuildConfig;
 import org.freenetproject.mobile.R;
 import org.freenetproject.mobile.services.node.Manager;
@@ -24,18 +22,20 @@ import org.freenetproject.mobile.ui.bootstrap.activity.BootstrapActivity;
 import org.freenetproject.mobile.ui.acknowledgement.activity.AcknowledgementActivity;
 import org.freenetproject.mobile.ui.acknowledgement.activity.AcknowledgementFragment;
 import org.freenetproject.mobile.ui.main.viewmodel.MainViewModel;
-import org.freenetproject.mobile.ui.notification.Notification;
 import org.freenetproject.mobile.ui.settings.activity.SettingsActivity;
 
+import java.util.HashMap;
+import java.io.IOException;
 import java.util.Map;
 
 public class MainFragment extends Fragment {
-    static final Map<Integer, Integer> STATUS_ACTION_MAP = ImmutableMap.<Integer, Integer>builder()
-            .put(Manager.Status.STARTED.ordinal(), R.drawable.ic_baseline_power_settings_new_24)
-            .put(Manager.Status.PAUSED.ordinal(), R.drawable.ic_baseline_power_settings_new_24)
-            .put(Manager.Status.STOPPED.ordinal(), R.drawable.ic_baseline_play_circle_outline_24)
-            .put(Manager.Status.ERROR.ordinal(), R.drawable.ic_baseline_replay_24)
-            .build();
+    static final Map<Integer, Integer> STATUS_ACTION_MAP = new HashMap<Integer, Integer>() {{
+      put(Manager.Status.STOPPED.ordinal(), R.drawable.ic_baseline_info_24);
+      put(Manager.Status.STARTED.ordinal(), R.drawable.ic_baseline_power_settings_new_24);
+      put(Manager.Status.PAUSED.ordinal(), R.drawable.ic_baseline_power_settings_new_24);
+      put(Manager.Status.STOPPED.ordinal(), R.drawable.ic_baseline_play_circle_outline_24);
+      put(Manager.Status.ERROR.ordinal(), R.drawable.ic_baseline_replay_24);
+    }};
 
     @Override
     public View onCreateView(
@@ -80,7 +80,11 @@ public class MainFragment extends Fragment {
                 // When running or paused the node can be shutdown,but it can not
                 // be paused or started.
                 if (m.isStopped()) {
-                    m.startService(view.getContext());
+                    try {
+                        m.startService(view.getContext());
+                    } catch (IOException e) {
+                        // Should set an error message
+                    }
                 } else if (m.isRunning() || m.isPaused()) {
                     m.restartService(view.getContext());
                 } else if (m.hasError()) {

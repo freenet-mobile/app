@@ -9,7 +9,7 @@ android {
     }
     defaultConfig {
         applicationId "org.freenetproject.mobile"
-        minSdkVersion 22
+        minSdkVersion 26
         targetSdkVersion 30
         versionCode 303
         versionName '0.3.2-beta'
@@ -55,7 +55,7 @@ dependencies {
     implementation 'com.google.guava:guava:24.1-jre'
 
     // Freenet dependencies
-    implementation ('com.github.freenet-mobile:node-wrapper:0.6') {
+    implementation ('com.github.freenet-mobile:node-wrapper:1.1') {
         exclude group: 'org.freenetproject', module: 'freenet-ext'
         exclude group: 'net.java.dev.jna', module: 'jna'
         exclude group: 'net.java.dev.jna', module: 'jna-platform'
