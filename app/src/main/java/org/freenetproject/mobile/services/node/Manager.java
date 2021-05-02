@@ -20,6 +20,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * Class responsible for exposing data to the UI. It also exposes methods for the UI to interact with,
@@ -226,22 +227,23 @@ public class Manager {
     }
 
     public Boolean isStopped() {
-        return status.getValue().equals(Status.STOPPED);
+        return Objects.equals(status.getValue(), Status.STOPPED);
     }
     public Boolean isPaused() {
-        return status.getValue().equals(Status.PAUSED);
+        return Objects.equals(status.getValue(), Status.PAUSED);
     }
 
     public Boolean isRunning() {
-        return status.getValue().equals(Status.STARTED);
+        return Objects.equals(status.getValue(), Status.STARTED);
     }
 
     public Boolean hasError() {
-        return status.getValue().equals(Status.ERROR);
+        return Objects.equals(status.getValue(), Status.ERROR);
     }
 
     public Boolean isTransitioning() {
         Status value = status.getValue();
+        assert value != null;
         return !value.equals(Status.STARTED)
                 && !value.equals(Status.STOPPED)
                 && !value.equals(Status.PAUSED);
