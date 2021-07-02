@@ -11,8 +11,8 @@ android {
         applicationId "org.freenetproject.mobile"
         minSdkVersion 22
         targetSdkVersion 30
-        versionCode 304
-        versionName '0.3.3-beta'
+        versionCode 305
+        versionName '0.3.4-beta'
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
