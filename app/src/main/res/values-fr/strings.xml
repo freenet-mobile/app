@@ -24,7 +24,9 @@
     <string name="node_paused">Freenet est en pause.</string>
     <string name="text_about"><![CDATA[
 <h2>Version</h2>
-v%1$s. <a href="https://github.com/freenet-mobile/app/releases/tag/v%1$s">See Changelog</a>.
+Freenet Mobile v%1$s. <a href="https://github.com/freenet-mobile/app/releases/tag/v%1$s">See Changelog</a>.
+<br>
+Freenet %2$s Build #%3$s.
 <p>
 Application open source construite autour du projet Freenet.
 </p>
