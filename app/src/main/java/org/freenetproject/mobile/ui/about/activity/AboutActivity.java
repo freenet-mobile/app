@@ -1,18 +1,13 @@
 package org.freenetproject.mobile.ui.about.activity;
 
 import android.os.Bundle;
-import android.text.Html;
-import android.text.method.LinkMovementMethod;
 import android.webkit.WebView;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import org.freenetproject.mobile.BuildConfig;
 import org.freenetproject.mobile.R;
 
-import freenet.node.Node;
-import freenet.node.NodeStarter;
 import freenet.node.Version;
 
 public class AboutActivity extends AppCompatActivity {
