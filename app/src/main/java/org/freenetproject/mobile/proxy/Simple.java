@@ -107,13 +107,17 @@ public class Simple implements Runnable {
         }
     }
 
-    @Override
-    public void run() {
+    public void run(String address, int port) {
         Log.d("Freenet", "Proxy thread started");
         try {
-            run("127.0.0.1", 8888, defaultLocalPort);
+            run(address, port, defaultLocalPort);
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void run() {
+        run("127.0.0.1", 8888);
     }
 }
