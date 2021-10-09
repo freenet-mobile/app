@@ -24,7 +24,9 @@
     <string name="preserve_battery">Batterie schonen</string>
     <string name="text_about"><![CDATA[
 <h2>Ausführung</h2>
-v%1$s. <a href="https://github.com/freenet-mobile/app/releases/tag/v%1$s">See Changelog</a>.
+Freenet Mobile v%1$s. <a href="https://github.com/freenet-mobile/app/releases/tag/v%1$s">See Changelog</a>.
+<br>
+Freenet %2$s Build #%3$s.
 <p>
 Open Source-Anwendung rund um Freenet Project.
 </p>
