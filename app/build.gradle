@@ -11,8 +11,8 @@ android {
         applicationId "org.freenetproject.mobile"
         minSdkVersion 22
         targetSdkVersion 30
-        versionCode 305
-        versionName '0.3.4-beta'
+        versionCode 306
+        versionName '0.3.5-beta'
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
@@ -54,7 +54,7 @@ dependencies {
     implementation 'com.google.guava:guava:24.1-jre'
 
     // Freenet dependencies
-    implementation ('com.github.freenet-mobile:node-wrapper:0.9') {
+    implementation ('com.github.freenet-mobile:node-wrapper:0.10') {
         exclude group: 'org.freenetproject', module: 'freenet-ext'
         exclude group: 'net.java.dev.jna', module: 'jna'
         exclude group: 'net.java.dev.jna', module: 'jna-platform'
