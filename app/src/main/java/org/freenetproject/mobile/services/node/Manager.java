@@ -2,8 +2,8 @@ package org.freenetproject.mobile.services.node;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
-import android.os.Build;
 import android.util.Log;
 
 import androidx.lifecycle.LiveData;
@@ -11,48 +11,47 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.jakewharton.processphoenix.ProcessPhoenix;
 
+import org.freenetproject.mobile.NodeController;
+import org.freenetproject.mobile.NodeControllerImpl;
 import org.freenetproject.mobile.R;
 import org.freenetproject.mobile.ui.main.activity.MainActivity;
 
-import java.io.FileNotFoundException;
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-
-import org.freenetproject.mobile.Runner;
-import org.freenetproject.mobile.Installer;
+import java.util.Objects;
 
 /**
  * Class responsible for exposing data to the UI. It also exposes methods for the UI to interact with,
  * such as startService and stopService.
  */
 public class Manager {
-
+    public static final String CONTEXT_NETWORK = "network";
+    public static final String CONTEXT_BATTERY = "battery";
     private static Manager instance = null;
-    private final Runner runner = Runner.getInstance();
+    private final Map<String, Boolean> contextRunFlag = new HashMap<String, Boolean>() {{
+        put(CONTEXT_NETWORK, true);
+        put(CONTEXT_BATTERY, true);
+    }};
 
+    // when adding a new state that has transitions be sure to update isTransitioning method
     public enum Status {
         STARTING_UP,
         STARTED,
         STOPPING,
         STOPPED,
         ERROR,
-        INSTALLING,
         PAUSED,
-        PAUSING // when adding a new state that has transitions be sure to update isTransitioning method
+        PAUSING
     }
 
-    public static final String CONTEXT_NETWORK = "network";
-    public static final String CONTEXT_BATTERY = "battery";
+    private NodeController nc;
+    private final MutableLiveData<Status> status = new MutableLiveData<Status>();
 
-    private Map<String, Boolean> contextRunFlag = new HashMap<String, Boolean>() {{
-        put(CONTEXT_NETWORK, true);
-        put(CONTEXT_BATTERY, true);
-    }};
-
-    private MutableLiveData<Status> status = new MutableLiveData<Status>();
     private Manager() {
         status.postValue(
-            runner.isStarted() ? Status.STARTED : Status.STOPPED
+            nc != null && nc.isRunning() ? Status.STARTED : Status.STOPPED
         );
     }
 
@@ -77,92 +76,73 @@ public class Manager {
      * Checks if the node is installed and install it otherwise.
      *
      * @param context Application context.
-     * @return
      */
-    public int startService(Context context) {
-        if (!Installer.getInstance().isInstalled()) {
-            status.postValue(Status.INSTALLING);
-            try {
-                Resources res = context.getResources();
-                Installer.getInstance().install(
-                        context.getDir("data", Context.MODE_PRIVATE).getAbsolutePath(),
-                        res.openRawResource(R.raw.seednodes),
-                        res.openRawResource(R.raw.freenet),
-                        res.openRawResource(R.raw.bookmarks),
-                        res.getConfiguration().locale.getDisplayLanguage()
-                );
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-        }
+    public void startService(Context context) throws IOException {
+        File path = context.getDir("data", Context.MODE_PRIVATE);
 
-        int ret = startNode();
-        if (ret == 0) {
-            Intent serviceIntent = new Intent(context, Service.class);
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                context.startForegroundService(serviceIntent);
-            } else {
-                context.startService(serviceIntent);
-            }
-        } else {
-            Log.e("Freenet", "Error starting freenet (" + ret + ")");
-            status.postValue(Status.ERROR);
-        }
-
-        return 0;
-    }
-
-    private int startNode() {
         status.postValue(Status.STARTING_UP);
-        int ret = -1;
-        try {
-            ret = runner.start(new String[]{Installer.getInstance().getFreenetIniPath()});
-            if (ret == 0) {
-                status.postValue(Status.STARTED);
-            } else if (ret == -1) {
-                // Already running
-                status.postValue(Status.STARTED);
-            } else {
-                status.postValue(Status.ERROR);
+
+        nc = new NodeControllerImpl(path.toPath());
+
+        SharedPreferences prefs = context.getSharedPreferences(
+            context.getPackageName(), Context.MODE_PRIVATE
+        );
+
+        Resources res = context.getResources();
+        // Setup first-run configuration
+        if (prefs.getBoolean("first-run", true)) {
+            nc.setConfig("seednodes.fref", res.openRawResource(R.raw.seednodes));
+            nc.setConfig("bookmarks.dat", res.openRawResource(R.raw.bookmarks));
+        }
+
+        nc.start();
+
+        if (nc.isRunning()) {
+
+            if (prefs.getBoolean("first-run", true)) {
+                // Setup first-run runtime configuration
+                nc.setConfig("node.l10n", res.getConfiguration().getLocales().get(0).toLanguageTag());
             }
-        } catch (Exception e) {
+
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putBoolean("first-run", false);
+            editor.apply();
+
+            Intent serviceIntent = new Intent(context, Service.class);
+            context.startForegroundService(serviceIntent);
+            status.postValue(Status.STARTED);
+
+        } else {
             status.postValue(Status.ERROR);
         }
-        return ret;
+
     }
 
     /**
      * Stops the service through the Runner class. Also stops the Services.Node.Service.
      *
      * @param context Application context.
-     * @return
      */
-    public int stopService(Context context) {
+    public void stopService(Context context) {
         Intent serviceIntent = new Intent(context, Service.class);
         context.stopService(serviceIntent);
 
         try {
-            if (runner.stop() != 0) {
-                status.postValue(Status.ERROR);
-            }
-
+            nc.shutdown();
             status.postValue(Status.STOPPED);
-
 
         } catch (Exception e) {
             status.postValue(Status.ERROR);
         }
 
-        return 0;
     }
 
     /**
      * Stop the node and restart the application.
      *
-     * @param context
-     * @return
+     * @param context Application context
      */
-    public int restartService(Context context) {
+    public void restartService(Context context) {
         stopService(context);
 
         Log.i("Freenet", "Calling rebirth");
@@ -174,73 +154,64 @@ public class Manager {
                 )
         );
 
-        return 0;
     }
 
     /**
      * Pauses the node running on the device while maintaining the service running on foreground.
      *
-     * @param context
-     * @return
+     * @param context Application context
+     * @param serviceContext String description for the calling context
      */
-    public int pauseService(Context context, String serviceContext) {
+    public void pauseService(Context context, String serviceContext) {
         if (isPaused()) {
-            return -1;
+            return;
         }
         contextRunFlag.put(serviceContext, false);
 
         status.postValue(Status.PAUSING);
         try {
-            if (runner.pause() == 0) {
-                status.postValue(Status.PAUSED);
-            } else {
-                status.postValue(Status.ERROR);
-
-            }
+            nc.pause();
+            status.postValue(Status.PAUSED);
         } catch (Exception e) {
             status.postValue(Status.ERROR);
         }
 
-        return 0;
     }
 
     /**
      * Starts up or resume a service.
      *
-     * @param context
-     * @return
+     * @param context Application context
+     * @param serviceContext String description for the calling context
      */
-    public int resumeService(Context context, String serviceContext) {
+    public void resumeService(Context context, String serviceContext) {
         if (!isPaused()) {
-            return -2;
+            return;
         }
         contextRunFlag.put(serviceContext, true);
 
         for (Boolean value : contextRunFlag.values()) {
-           if (!value)
-               return -3; // a given context has flagged not to run
+            if (!value) {
+                return; // a given context has flagged not to run
+            }
         }
 
         status.postValue(Status.STARTING_UP);
         try {
-            if (runner.resume() == 0) {
-                status.postValue(Status.STARTED);
-            } else {
-                status.postValue(Status.ERROR);
-            }
+            nc.resume();
+            status.postValue(Status.STARTED);
         } catch (Exception e) {
             status.postValue(Status.ERROR);
         }
 
-        return 0;
     }
 
-    public Boolean resetService(Context context) {
+    public void resetService(Context context) {
         Intent serviceIntent = new Intent(context, Service.class);
         context.stopService(serviceIntent);
 
         try {
-            runner.stop();
+            nc.shutdown();
         } catch (Exception e) {
             Log.e("Freenet", "Error stopping node: " + e.getMessage());
         }
@@ -253,26 +224,26 @@ public class Manager {
                         MainActivity.class
                 )
         );
-        return true;
     }
 
     public Boolean isStopped() {
-        return status.getValue().equals(Status.STOPPED);
+        return Objects.equals(status.getValue(), Status.STOPPED);
     }
     public Boolean isPaused() {
-        return status.getValue().equals(Status.PAUSED);
+        return Objects.equals(status.getValue(), Status.PAUSED);
     }
 
     public Boolean isRunning() {
-        return status.getValue().equals(Status.STARTED);
+        return Objects.equals(status.getValue(), Status.STARTED);
     }
 
     public Boolean hasError() {
-        return status.getValue().equals(Status.ERROR);
+        return Objects.equals(status.getValue(), Status.ERROR);
     }
 
     public Boolean isTransitioning() {
         Status value = status.getValue();
+        assert value != null;
         return !value.equals(Status.STARTED)
                 && !value.equals(Status.STOPPED)
                 && !value.equals(Status.PAUSED);
