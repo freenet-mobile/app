@@ -11,6 +11,8 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.jakewharton.processphoenix.ProcessPhoenix;
 
+import org.freenetproject.mobile.Config;
+import org.freenetproject.mobile.Connector;
 import org.freenetproject.mobile.NodeController;
 import org.freenetproject.mobile.NodeControllerImpl;
 import org.freenetproject.mobile.R;
@@ -21,6 +23,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Random;
 
 /**
  * Class responsible for exposing data to the UI. It also exposes methods for the UI to interact with,
@@ -78,19 +81,29 @@ public class Manager {
      * @param context Application context.
      */
     public void startService(Context context) throws IOException {
+        SharedPreferences prefs = context.getSharedPreferences(
+                context.getPackageName(), Context.MODE_PRIVATE
+        );
+
+        Resources res = context.getResources();
+
         File path = context.getDir("data", Context.MODE_PRIVATE);
 
         status.postValue(Status.STARTING_UP);
 
-        nc = new NodeControllerImpl(path.toPath());
+        final boolean isFirstRun = prefs.getBoolean("first-run", true);
 
-        SharedPreferences prefs = context.getSharedPreferences(
-            context.getPackageName(), Context.MODE_PRIVATE
-        );
+        // on first install
+        if (isFirstRun) {
+            initializeConfiguration(path, context);
+        }
 
-        Resources res = context.getResources();
+        // instantiate connector with given port
+        Connector connector = new Connector("127.0.0.1", prefs.getInt("fcp.port", 9481));
+        nc = new NodeControllerImpl(path.toPath(), new Config(), connector);
+
         // Setup first-run configuration
-        if (prefs.getBoolean("first-run", true)) {
+        if (isFirstRun) {
             nc.setConfig("seednodes.fref", res.openRawResource(R.raw.seednodes));
             nc.setConfig("bookmarks.dat", res.openRawResource(R.raw.bookmarks));
         }
@@ -98,12 +111,6 @@ public class Manager {
         nc.start();
 
         if (nc.isRunning()) {
-
-            if (prefs.getBoolean("first-run", true)) {
-                // Setup first-run runtime configuration
-                nc.setConfig("node.l10n", res.getConfiguration().getLocales().get(0).toLanguageTag());
-            }
-
             SharedPreferences.Editor editor = prefs.edit();
             editor.putBoolean("first-run", false);
             editor.apply();
@@ -111,11 +118,42 @@ public class Manager {
             Intent serviceIntent = new Intent(context, Service.class);
             context.startForegroundService(serviceIntent);
             status.postValue(Status.STARTED);
-
         } else {
             status.postValue(Status.ERROR);
         }
 
+    }
+
+    /**
+     *
+     * @param path
+     * @param context
+     * @throws IOException
+     */
+    private void initializeConfiguration(File path, Context context) throws IOException {
+        SharedPreferences prefs = context.getSharedPreferences(
+                context.getPackageName(), Context.MODE_PRIVATE
+        );
+
+        // generate random port
+        final int TOP_RANGE = 32767, BOTTOM_RANGE = 5001;
+
+        // store in shared preferences
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putInt("fproxy.port", new Random().nextInt(TOP_RANGE - BOTTOM_RANGE) + BOTTOM_RANGE);
+        editor.putInt("fcp.port", new Random().nextInt(TOP_RANGE - BOTTOM_RANGE) + BOTTOM_RANGE);
+        editor.apply();
+
+        // update config with given ports
+        Config config = new Config();
+        config.loadOrDefault(path.toPath());
+        config.set("fproxy.port", String.valueOf(prefs.getInt("fproxy.port", 8888)));
+        config.set("fcp.port", String.valueOf(prefs.getInt("fcp.port", 9481)));
+
+        Resources res = context.getResources();
+        config.set("node.l10n", res.getConfiguration().getLocales().get(0).toLanguageTag());
+
+        config.persist();
     }
 
     /**
