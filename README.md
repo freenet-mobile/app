@@ -84,7 +84,7 @@ The project is licensed under the [GNU GPL v3][2] license.
 
   [1]: https://github.com/freenet-mobile/app/projects/1
   [2]: http://www.gnu.org/licenses/gpl.html
-  [3]: https://github.com/freenet
+  [3]: https://freenetproject.org
   [4]: https://github.com/freenet-mobile/app/issues
   [5]: https://github.com/freenet-mobile/app/releases
   [6]: https://www.lifewire.com/install-apk-on-android-4177185
