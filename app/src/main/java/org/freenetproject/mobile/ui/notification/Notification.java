@@ -58,7 +58,7 @@ public class Notification {
                     new Intent(
                         context.getApplicationContext(), MainActivity.class
                     ),
-                    PendingIntent.FLAG_UPDATE_CURRENT
+                    PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE
                 )
             );
 
